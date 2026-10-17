@@ -160,7 +160,6 @@
         .option-btn.wrong { background: var(--danger-bg); border-color: var(--danger-red); color: #fff; }
         .option-btn.wrong .option-letter { background: var(--danger-red); border-color: var(--danger-red); color: #fff; }
         
-        /* Kodlabb / Skriv själv-läge */
         .code-input-area {
             width: 100%;
             height: 120px;
@@ -264,12 +263,10 @@
             <div class="question-text" id="question-text"></div>
             <pre id="code-block" style="display:none;"></pre>
             
-            <!-- Standard flerval -->
             <div class="options-list" id="options-container"></div>
 
-            <!-- Kodlabb (skriv själv) -->
             <div id="code-lab-container" style="display:none;">
-                <textarea class="code-input-area" id="user-code-input" placeholder="Skriv din Python-kod här... (t.ex. def ... eller for ...)"></textarea>
+                <textarea class="code-input-area" id="user-code-input" placeholder="Skriv din Python-kod här..."></textarea>
                 <br>
                 <button class="primary-btn" onclick="checkCodeAnswer()">Kontrollera kod svar →</button>
             </div>
@@ -299,88 +296,75 @@
 
 <script>
 const allQuestions = [
-    // --- KODLABB (SKRIV SJÄLV) ---
     {
-        cat: "CODE",
-        lesson: "Kodlabb – Funktioner (Lektion 9)",
+        cat: "CODE", lesson: "Kodlabb – Funktioner (Lektion 9)",
         q: "Skriv en funktion som heter 'plus' som tar emot två parametrar (a och b), adderar dem och returnerar summan.",
-        code: "# Exempel på anrop:\n# print(plus(3, 4)) -> ska ge 7",
-        type: "code",
+        code: "# Exempel på anrop:\n# print(plus(3, 4)) -> ska ge 7", type: "code",
         keywords: ["def", "plus", "return", "+"],
-        explanation: "Rätt syntax: def plus(a, b):\n    return a + b"
+        explanation: "Rätt syntax:\ndef plus(a, b):\n    return a + b"
     },
     {
-        cat: "CODE",
-        lesson: "Kodlabb – For-loop & Range (Lektion 4)",
+        cat: "CODE", lesson: "Kodlabb – For-loop & Range (Lektion 4)",
         q: "Skriv en for-loop som skriver ut alla tal från och med 1 till och med 5 (använd range).",
-        code: "",
-        type: "code",
+        code: "", type: "code",
         keywords: ["for", "range(1, 6)", "print"],
         explanation: "Rätt syntax:\nfor x in range(1, 6):\n    print(x)"
     },
     {
-        cat: "CODE",
-        lesson: "Kodlabb – Input & Typkonvertering (Lektion 4)",
-        q: "Skriv kod som frågar användaren efter sin ålder med input(), konverterar svaret till ett heltal (int) och sparar det i en variabel som heter 'ålder'.",
-        code: "",
-        type: "code",
+        cat: "CODE", lesson: "Kodlabb – Input & Konvertering (Lektion 4)",
+        q: "Skriv kod som frågar användaren efter sin ålder med input(), konverterar till heltal (int) och sparar i variabeln 'ålder'.",
+        code: "", type: "code",
         keywords: ["input", "int", "ålder"],
         explanation: "Rätt syntax:\nålder = int(input(\"Hur gammal är du?\"))"
     },
     {
-        cat: "CODE",
-        lesson: "Kodlabb – Villkor (Lektion 5)",
-        q: "Skriv en if-sats som kollar om variabeln 'poäng' är större än eller lika med 50. Om den är det, skriv ut 'Godkänt'.",
-        code: "",
-        type: "code",
+        cat: "CODE", lesson: "Kodlabb – Villkor (Lektion 5)",
+        q: "Skriv en if-sats som kollar om 'poäng' är >= 50. Om det är sant, skriv ut 'Godkänt'.",
+        code: "", type: "code",
         keywords: ["if", "poäng", ">=", "print", "Godkänt"],
         explanation: "Rätt syntax:\nif poäng >= 50:\n    print(\"Godkänt\")"
     },
     {
-        cat: "CODE",
-        lesson: "Kodlabb – Listor & Append (Lektion 7)",
-        q: "Skriv kod som skapar en tom lista som heter 'namn', och lägger till strängen 'Alice' i listan med rätt listmetod.",
-        code: "",
-        type: "code",
+        cat: "CODE", lesson: "Kodlabb – Listor (Lektion 7)",
+        q: "Skriv kod som skapar en tom lista 'namn', och lägger till strängen 'Alice' med rätt listmetod.",
+        code: "", type: "code",
         keywords: ["namn", "[]", "append", "Alice"],
         explanation: "Rätt syntax:\nnamn = []\nnamn.append(\"Alice\")"
     },
-
-    // --- TEORIFRÅGOR (Lektion 1 till 9) ---
     {
         cat: "L1_3", lesson: "Lektion 1 – Grunder", q: "Vad kallas datorns grundspråk som består av ettor och nollor?", code: "", type: "mc",
         options: ["Assembleringsspråk", "Maskinkod", "Högnivåspråk", "Källkod"], answer: 1,
-        explanation: "Datorers grundspråk kallas maskinkod (ettor och nollor)."
+        explanation: "Datorers grundspråk kallas maskinkod."
     },
     {
         cat: "L1_3", lesson: "Lektion 1 – Grunder", q: "Vad gör en interpretator (tolk) i Python?", code: "", type: "mc",
-        options: ["Översätter hela programmet till en .exe-fil i förväg", "Översätter och kör koden rad för rad under körning", "Komprimerar filstorleken", "Felsöker syntaxfel automatiskt"], answer: 1,
+        options: ["Översätter hela programmet till en .exe-fil", "Översätter och kör koden rad för rad under körning", "Komprimerar filstorleken", "Felsöker automatiskt"], answer: 1,
         explanation: "En interpretator tolkar och kör programmet rad för rad."
     },
     {
         cat: "L1_3", lesson: "Lektion 2 – Variabler", q: "Vilket variabelnamn är tillåtet i Python?", code: "", type: "mc",
         options: ["1_tal", "mitt-tal", "mitt_tal", "mitt tal"], answer: 2,
-        explanation: "Variabelnamn får innehålla bokstäver, siffror och understreck (_) men får inte börja med siffra eller ha mellanslag."
+        explanation: "Variabelnamn får innehålla bokstäver, siffror och understreck (_) men ej börja med siffra eller ha mellanslag."
     },
     {
-        cat: "L1_3", lesson: "Lektion 2 – Datatyper", q: "Vilken datatyp får variabeln s i s = '123'?", code: "", type: "mc",
-        options: ["int (heltal)", "float (decimaltal)", "str (sträng/text)", "bool (boolesk)"], answer: 2,
+        cat: "L1_3", lesson: "Lektion 2 – Datatyper", q: "Vilken datatyp får s i s = '123'?", code: "", type: "mc",
+        options: ["int", "float", "str", "bool"], answer: 2,
         explanation: "Eftersom '123' står inom citattecken är det en textsträng (str)."
     },
     {
-        cat: "L1_3", lesson: "Lektion 2 – Prioritet", q: "Vad blir resultatet av uttrycket: print(8 * 2 * (5 - 3) + 16 / 4 - 1)", code: "", type: "mc",
+        cat: "L1_3", lesson: "Lektion 2 – Prioritet", q: "Vad blir resultatet av: print(8 * 2 * (5 - 3) + 16 / 4 - 1)", code: "", type: "mc",
         options: ["35.0", "11.0", "39.0", "24.0"], answer: 0,
-        explanation: "Parentes först (2), sedan multiplikation/division (32 och 4.0), sedan addition/subtraktion = 35.0."
+        explanation: "Parentes först, sedan multiplikation/division, sedan addition/subtraktion = 35.0."
     },
     {
-        cat: "L1_3", lesson: "Lektion 3 – Operatorer", q: "Vad gör operatorn // (heltalsdivision) i Python?", code: "print(7 // 2)", type: "mc",
-        options: ["Returnerar både kvot och rest", "Utför division och tar bort decimalerna (ger heltal)", "Beräknar roten ur talet", "Multiplicerar talet med 2"], answer: 1,
+        cat: "L1_3", lesson: "Lektion 3 – Operatorer", q: "Vad gör operatorn // (heltalsdivision)?", code: "print(7 // 2)", type: "mc",
+        options: ["Returnerar kvot och rest", "Utför division och tar bort decimalerna", "Beräknar roten ur", "Multiplicerar med 2"], answer: 1,
         explanation: "// utför division men kapar decimalerna (7 // 2 blir 3)."
     },
     {
         cat: "L1_3", lesson: "Lektion 3 – Boolean", q: "Vilket av följande utvärderas till False?", code: "", type: "mc",
         options: ["bool('Hej')", "bool(5)", "bool(0)", "bool('0')"], answer: 2,
-        explanation: "Talet 0 (och tomma strängar/listor) blir False. '0' som textsträng har innehåll och blir True."
+        explanation: "Talet 0 blir False. '0' som textsträng har innehåll och blir True."
     },
     {
         cat: "L4_7", lesson: "Lektion 4 – Input", q: "Vad skrivs ut om användaren skriver 8 i: tal = input('Tal: '); print(5 * tal)", code: "", type: "mc",
@@ -393,57 +377,50 @@ const allQuestions = [
         explanation: "Startar på 1, men slutvärdet (6) inkluderas ej."
     },
     {
-        cat: "L4_7", lesson: "Lektion 5 – Villkor", q: "Vad är det för fel i koden: if x = 10:", code: "", type: "mc",
-        options: ["Man måste använda dubbla likhetstecken (==) vid jämförelse", "Man får inte ha siffror efter x", "if saknar semikolon", "Koden är helt korrekt"], answer: 0,
+        cat: "L4_7", lesson: "Lektion 5 – Villkor", q: "Vad är fel i koden: if x = 10:", code: "", type: "mc",
+        options: ["Man måste använda dubbla likhetstecken (==) vid jämförelse", "Man får inte ha siffror efter x", "if saknar semikolon", "Koden är korrekt"], answer: 0,
         explanation: "Enkelt = är tilldelning. Vid jämförelse i villkor krävs ==."
     },
     {
-        cat: "L4_7", lesson: "Lektion 6 – While", q: "Vad skiljer en while-loop från en for-loop?",
-        code: "", type: "mc",
+        cat: "L4_7", lesson: "Lektion 6 – While", q: "Vad skiljer en while-loop från en for-loop?", code: "", type: "mc",
         options: [
             "While upprepar kod så länge ett villkor är True; for upprepar ett bestämt antal gånger",
-            "For-loopar kan inte avbrytas med break",
-            "While-loopar används bara för matematiska beräkningar",
-            "Det är ingen skillnad"
+            "For-loopar kan inte avbrytas",
+            "While används bara för matte",
+            "Ingen skillnad"
         ],
         answer: 0,
-        explanation: "While styrs av ett villkor, for styrs av en sekvens/antal varv."
+        explanation: "While styrs av villkor, for styrs av sekvens/antal varv."
     },
     {
         cat: "L4_7", lesson: "Lektion 7 – Break/Continue", q: "Vad gör nyckelordet break i en loop?", code: "", type: "mc",
-        options: [
-            "Avbryter hela loopen omedelbart",
-            "Hoppar över resten av nuvarande varv och går till nästa",
-            "Pausar programmet i 5 sekunder",
-            "Startar om loopen från början"
-        ],
-        answer: 0,
+        options: ["Avbryter hela loopen omedelbart", "Hoppar över nuvarande varv", "Pausar programmet", "Startar om loopen"], answer: 0,
         explanation: "break avslutar hela loopen direkt."
     },
     {
         cat: "L4_7", lesson: "Lektion 7 – Listor", q: "Vilken listmetod lägger till ett element sist i listan?", code: "", type: "mc",
         options: ["add()", "insert()", "append()", "push()"], answer: 2,
-        explanation: "append() lägger till elementet sist i listan."
+        explanation: "append() lägger till elementet sist."
     },
     {
         cat: "L4_7", lesson: "Lektion 7 – Listmetoder", q: "Hur tar man bort ett element baserat på dess INDEX?", code: "", type: "mc",
         options: ["lista.remove(index)", "lista.pop(index)", "lista.delete(index)", "lista.clear(index)"], answer: 1,
-        explanation: "pop(index) tar bort via index, medan remove(värde) tar bort via värde."
+        explanation: "pop(index) tar bort via index, remove(värde) via värde."
     },
     {
         cat: "L8_9", lesson: "Lektion 8 – Slicing", q: "Om lista = [1, 4, 9, 16, 25], vad ger print(lista[1:3])?", code: "", type: "mc",
         options: ["[4, 9]", "[4, 9, 16]", "[1, 4, 9]", "[9, 16]"], answer: 0,
-        explanation: "Index 1 är 4, index 2 är 9. Index 3 (16) inkluderas ej. Svar: [4, 9]."
+        explanation: "Index 1 är 4, index 2 är 9. Index 3 (16) ingår ej. Svar: [4, 9]."
     },
     {
-        cat: "L8_9", lesson: "Lektion 8 – Math-modulen", q: "Hur beräknar man kvadratroten av ett tal i Python efter 'import math'?", code: "", type: "mc",
+        cat: "L8_9", lesson: "Lektion 8 – Math", q: "Hur beräknar man kvadratroten efter 'import math'?", code: "", type: "mc",
         options: ["math.root(x)", "math.sqrt(x)", "math.pow(x)", "sqrt.math(x)"], answer: 1,
         explanation: "math.sqrt(x) beräknar kvadratroten."
     },
     {
         cat: "L8_9", lesson: "Lektion 9 – Funktioner", q: "Vilket nyckelord används för att skicka tillbaka ett värde från en funktion?", code: "", type: "mc",
         options: ["send", "output", "return", "give"], answer: 2,
-        explanation: "return skickar tillbaka resultatet från funktionen."
+        explanation: "return skickar tillbaka resultatet."
     }
 ];
 
@@ -468,182 +445,4 @@ function selectCategory(cat, btnEl) {
     if (btnEl) btnEl.classList.add('active');
 
     if (cat === 'ALL') {
-        currentQuestions = allQuestions.filter(q => q.cat !== 'CODE');
-    } else if (cat === 'CODE') {
-        currentQuestions = allQuestions.filter(q => q.cat === 'CODE');
-    } else if (cat === 'EXAM') {
-        currentQuestions = shuffleArray(allQuestions).slice(0, 20);
-    } else {
-        currentQuestions = allQuestions.filter(q => q.cat === cat);
-    }
-    startQuizSession();
-}
-
-function shuffleCurrentQuiz() {
-    currentQuestions = shuffleArray(currentQuestions);
-    startQuizSession();
-}
-
-function startQuizSession() {
-    currentIndex = 0;
-    score = 0;
-    wrongQuestions = [];
-    document.getElementById('results-view').style.display = 'none';
-    document.getElementById('quiz-view').style.display = 'block';
-    renderQuestion();
-}
-
-function renderQuestion() {
-    const qObj = currentQuestions[currentIndex];
-    document.getElementById('question-counter').textContent = `Fråga ${currentIndex + 1} av ${currentQuestions.length}`;
-    document.getElementById('score-tracker').textContent = `Poäng: ${score} rätt`;
-    document.getElementById('progress-bar').style.width = `${((currentIndex) / currentQuestions.length) * 100}%`;
-
-    document.getElementById('lesson-badge').textContent = qObj.lesson;
-    document.getElementById('question-text').textContent = qObj.q;
-
-    const codeBlock = document.getElementById('code-block');
-    if (qObj.code && qObj.code.trim() !== "") {
-        codeBlock.style.display = 'block';
-        codeBlock.textContent = qObj.code;
-    } else {
-        codeBlock.style.display = 'none';
-    }
-
-    const optionsContainer = document.getElementById('options-container');
-    const codeLabContainer = document.getElementById('code-lab-container');
-
-    if (qObj.type === 'code') {
-        optionsContainer.style.display = 'none';
-        codeLabContainer.style.display = 'block';
-        document.getElementById('user-code-input').value = '';
-    } else {
-        codeLabContainer.style.display = 'none';
-        optionsContainer.style.display = 'flex';
-        optionsContainer.innerHTML = '';
-        const letters = ['A', 'B', 'C', 'D'];
-        qObj.options.forEach((optText, idx) => {
-            const btn = document.createElement('button');
-            btn.className = 'option-btn';
-            btn.innerHTML = `<span class="option-letter">${letters[idx]}</span><span>${optText}</span>`;
-            btn.onclick = () => handleMcAnswer(idx, btn);
-            optionsContainer.appendChild(btn);
-        });
-    }
-
-    document.getElementById('feedback-box').className = 'feedback-box';
-    document.getElementById('next-btn').style.display = 'none';
-}
-
-function handleMcAnswer(selectedIndex, clickedBtn) {
-    const qObj = currentQuestions[currentIndex];
-    const buttons = document.querySelectorAll('.option-btn');
-    buttons.forEach(b => b.disabled = true);
-
-    const feedbackBox = document.getElementById('feedback-box');
-    const feedbackTitle = document.getElementById('feedback-title');
-    const feedbackExp = document.getElementById('feedback-explanation');
-
-    if (selectedIndex === qObj.answer) {
-        clickedBtn.classList.add('correct');
-        score++;
-        feedbackTitle.textContent = "✓ Rätt svar!";
-        feedbackTitle.className = "feedback-title correct";
-    } else {
-        clickedBtn.classList.add('wrong');
-        buttons[qObj.answer].classList.add('correct');
-        wrongQuestions.push(qObj);
-        feedbackTitle.textContent = "✗ Fel svar";
-        feedbackTitle.className = "feedback-title wrong";
-    }
-
-    document.getElementById('score-tracker').textContent = `Poäng: ${score} rätt`;
-    feedbackExp.textContent = qObj.explanation;
-    feedbackBox.className = 'feedback-box show';
-
-    showNextButton();
-}
-
-function checkCodeAnswer() {
-    const qObj = currentQuestions[currentIndex];
-    const userCode = document.getElementById('user-code-input').value.trim();
-    
-    // Kontrollera om alla nyckelord finns med i användarens kod
-    let allFound = true;
-    for (let kw of qObj.keywords) {
-        if (!userCode.toLowerCase().includes(kw.toLowerCase())) {
-            allFound = false;
-            break;
-        }
-    }
-
-    const feedbackBox = document.getElementById('feedback-box');
-    const feedbackTitle = document.getElementById('feedback-title');
-    const feedbackExp = document.getElementById('feedback-explanation');
-
-    if (allFound && userCode.length > 2) {
-        score++;
-        feedbackTitle.textContent = "✓ Snyggt! Koden innehåller rätt nyckelord och struktur.";
-        feedbackTitle.className = "feedback-title correct";
-    } else {
-        wrongQuestions.push(qObj);
-        feedbackTitle.textContent = "✗ Din kod saknar några viktiga delar.";
-        feedbackTitle.className = "feedback-title wrong";
-    }
-
-    document.getElementById('score-tracker').textContent = `Poäng: ${score} rätt`;
-    feedbackExp.innerHTML = `<strong>Rätt förslag / Syntax:</strong><br><pre>${qObj.explanation}</pre>`;
-    feedbackBox.className = 'feedback-box show';
-
-    showNextButton();
-}
-
-function showNextButton() {
-    const nextBtn = document.getElementById('next-btn');
-    nextBtn.textContent = (currentIndex + 1 < currentQuestions.length) ? "Nästa fråga →" : "Visa slutresultat →";
-    nextBtn.style.display = 'inline-block';
-}
-
-function nextQuestion() {
-    currentIndex++;
-    if (currentIndex < currentQuestions.length) {
-        renderQuestion();
-    } else {
-        showResults();
-    }
-}
-
-function showResults() {
-    document.getElementById('quiz-view').style.display = 'none';
-    const resView = document.getElementById('results-view');
-    resView.style.display = 'block';
-
-    const total = currentQuestions.length;
-    const pct = Math.round((score / total) * 100);
-    document.getElementById('final-score').textContent = `${score} / ${total} (${pct}%)`;
-
-    document.getElementById('final-message').textContent = pct >= 80 ? "Grymt jobbat! Du bemästrar både teori och egen kodskrivning." : "Bra kämpat! Öva lite till på kodlabbet så sitter allt perfekt inför provet.";
-
-    const retryBtn = document.getElementById('retry-wrong-btn');
-    if (wrongQuestions.length > 0) {
-        retryBtn.style.display = 'inline-block';
-        retryBtn.textContent = `Öva på dina fel (${wrongQuestions.length} st)`;
-    } else {
-        retryBtn.style.display = 'none';
-    }
-}
-
-function restartQuiz() {
-    selectCategory(currentCategory, document.querySelector('.filter-btn.active'));
-}
-
-function retryWrongQuestions() {
-    currentQuestions = [...wrongQuestions];
-    startQuizSession();
-}
-
-selectCategory('ALL', document.querySelector('.filter-btn'));
-</script>
-
-</body>
-</html>
+        currentQuestions = allQuestions.
