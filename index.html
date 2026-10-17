@@ -1,0 +1,1507 @@
+
+Gemini
+
+Ny chatt
+Bibliotek
+Planerad
+Studenter
+
+Mer
+Ny anteckningsbok
+skolprojekt Edessa
+Nybörjarguide för UNIX- och bash-skript
+Programmeringsbegrepp med Dan Hellberg
+Quiz med delpoäng för stavfel
+talkort
+Jämförelse av textmängd på talkort
+Redovisning
+VMware vs VirtualBox för AzerothCore
+Tips för OSI-lager redovisning
+Här gör vi programmering nivå 1 frågor.
+Förberedelse för programmeringsprov
+Namnlös
+Getting and Using Ghostcontrol PS5 Payload
+Terminologi och argument i Bash
+PS5 External HDD Game Storage
+Why Aliens Seem So Cute
+Xbox-spel som saknas på PlayStation
+Python-kod för listor rättad
+Packa upp flera arkivfiler i Windows
+Så är videon AI-genererad
+Utveckling av Python-bankprogram
+Utökning av Python-mattequiz
+Bash-hantering av variabler och mappar
+Skicka variabler mellan bash-skript
+MATLAB-kod för att skicka variabler mellan filer
+PS5 fpkg intern filstruktur
+Hur man tar bort Bully
+Skriptets argumenthantering och numrering
+Förstå positionsparametrar i Bash-skript
+Grundläggande Linux-kommandon
+Grundläggande Linux-kommandon och skript
+Genomgång av CPU-Z flikar
+Är Furello dropshipping?
+
+Aktivitet
+Huddinge, Sverige
+Utifrån din IP-adress
+Konversation med Gemini
+Okej vi ska fixa detta nu lyssna här jag har teoriprov på programmering nivå 1 från Jensen education. Jag skickar dig alla lektioner på det material vi har sen kan vi bygga upp något så jag kan öva på teoriprovet.
+
+Langa fram materialet så sätter vi igång direkt. Klistra in lektionsanteckningar, presentationer, kodexempel eller målbeskrivningar – ta det i sjok eller allt på en gång.
+
+Så fort underlaget är inne kan vi strukturera upp plugget genom att:
+
+Dela upp i kärnområden – Bryta ner teorin i moduler (t.ex. syntax & datatyper, kontrollstrukturer/loopar, funktioner & scope, datastrukturer/listor, samt felhantering och algoritmik).
+
+Klargöra begrepp och fällor – Gå igenom tekniska termer och typiska "kuggfrågor" som brukar dyka upp på skriftliga prov (t.ex. skillnad på tilldelning och jämförelse, muterbarhet, indexering, eller vad en specifik kodsnutt faktiskt returnerar).
+
+Bygga träningsquiz och flervalsfrågor – Köra skarpa testfrågor med direkt feedback och förklaringar tills koncepten sitter i ryggmärgen.
+
+Skapa ett fullskaligt mock-prov – Sätta ihop ett realistiskt prov med blandade flervalsfrågor, kodspårning (läsa kod och förutsäga output) och korta teoriresonemang.
+
+Klistra in första delen när du är redo!
+
+Vill du ha en snabb översikt över typiska teorifrågor i Programmering 1 medan du tar fram materialet?
+
+Ja
+Jag kommer skicka mer det saknas lite.
+
+Lektion 1 till 8 samt schemat för slutproven är inlästa och analyserade.   
+PNG
++ 4
+
+Provschema att hålla koll på
+Måndag 19/10: Slutprov i teori på Exam.net, samt Extra lektion A och B som tar upp tupler, skillnaden mellan listor och tupler samt menyval.   
+PNG
+
+Onsdag 21/10: Slutprov med programmeringsfrågor (Python 1), samt Extra lektion C som behandlar close(), open() och vanliga misstag.   
+PNG
+
+Sammanfattning av kärnpunkter hittills (Lektion 1–8)
+Lektion 1: Datorns grunder & Python
+
+Maskinkod och lågnivåspråk: Datorns CPU förstår bara maskinkod som består av ettor och nollor. Assembleringsspråk är ett lågnivåspråk där man skriver enkla textinstruktioner (t.ex. LOAD A, ADD B) som sedan översätts till maskinkod.   
+PDF
++ 3
+
+Högnivåspråk: Anpassade för människor ("halvengelska") och måste översättas till maskinkod för att kunna köras.   
+PDF
+
+Kompilator vs. Interpretator: En kompilator översätter hela programmet på en gång till en körbar fil (används i t.ex. C, C++, C# och Java). En interpretator fungerar som en tolk som översätter och kör programmet rad för rad direkt (används i bl.a. Python, JavaScript och Ruby).   
+PDF
++ 3
+
+Felsökning & Miljö: Debugging är processen att felsöka och åtgärda fel (errors) i ett program. En IDE (t.ex. VS Code eller PyCharm) samlar alla funktioner för att skriva, köra och hitta fel i koden. Python skapades av Guido van Rossum 1991 och använder filändelsen .py.   
+PDF
++ 3
+
+Lektion 2 & 3: Variabler, Datatyper & Beräkningar
+
+Variabelregler: En variabel är en namngiven plats i minnet och behöver inte fördeklareras i Python. Variabelnamn är skiftlägeskänsliga (case sensitive, så enBok och EnBok är olika variabler). Namnet får bara innehålla bokstäver, siffror och understreck (_), får aldrig börja med en siffra och får inte innehålla mellanslag. Python stödjer å, ä och ö, och koden exekveras i sekvens uppifrån och ner.   
+PDF
++ 4
+
+Datatyper: int (heltal), float (decimaltal – måste skrivas med punkt . och aldrig kommatecken), str (textsträngar inom "" eller '') samt bool (True eller False). Funktionen type() visar datatypen för en variabel.   
+PDF
++ 3
+
+Booleska värden (bool()): Nästan alla värden med innehåll utvärderas till True. Undantagen som blir False är talet 0 samt tomma strängar, tomma listor, tomma tupler, tomma mängder och tomma ordböcker.   
+PDF
++ 1
+
+Aritmetik & Prioriteringsregler: Beräkningsordningen är: 1. Parenteser (), 2. Exponenter/potenser **, 3. Multiplikation * och division /, 4. Addition + och subtraktion -. Vid samma prioritet räknas uttrycket från vänster till höger.   
+PDF
++ 2
+
+Specialoperatorer: ** beräknar potenser (och **0.5 ger kvadratroten), medan // utför heltalsdivision som kapar decimalerna (t.ex. 9 // 2 blir 4).   
+PDF
++ 1
+
+Strängfällor & Formatering: Citattecken gör siffror till text: "1" + "1" ger "11" och 3 * "1" ger "111". I print() skapar kommatecken automatiskt mellanslag mellan delarna, medan + klistrar ihop strängar utan mellanslag. \n ger ny rad och \t ger tabb-indrag. # skapar en kommentar på en rad och """ omger dokumentationssträngar/ignorerade kodblock.   
+PDF
++ 4
+
+Lektion 4 & 5: Inmatning, for-loopar & Villkor (if)
+
+input() och typkonvertering: input() tolkar alltid inmatningen som en sträng (str). För att räkna med inmatade värden måste man konvertera dem med int() eller float(), annars upprepas bara texten vid multiplikation (t.ex. 5 * "8" blir "88888"). round(tal, decimaler) avrundar decimaltal.   
+PDF
++ 4
+
+for-loopen och range(): Används för att upprepa kod ett bestämt antal gånger. Raden avslutas alltid med kolon (:) och koden som ska upprepas måste vara indenterad.   
+PDF
++ 2
+
+range(5) ger talen 0, 1, 2, 3, 4 (startar från 0).   
+PDF
+
+range(1, 6) ger talen 1, 2, 3, 4, 5 (slutvärdet inkluderas aldrig).   
+PDF
+
+range(1, 17, 3) använder 3 som steglängd, och negativ steglängd som range(29, 24, -1) räknar baklänges från 29 ner till 25.   
+PDF
++ 1
+
+Villkorssatser (if, elif, else): Jämförelseoperatorerna är <, <=, == (lika med), >=, > och != (inte lika med). Klassiska fel på prov är att skriva ett enkelt = (tilldelning) istället för == (jämförelse), glömma kolon eller missa indenteringen.   
+PDF
++ 3
+
+Lektion 6, 7 & 8: while-loopar, Listor & math-modulen
+
+while vs. for: En while-loop upprepar kod så länge ett villkor är uppfyllt (True), medan for upprepar ett bestämt antal gånger. Variabeln i ett while-villkor måste ha fått ett startvärde innan loopen startar. while True: ger en oändlig loop.   
+PDF
++ 2
+
+break och continue: break avbryter hela loopen direkt och går vidare till koden utanför loopen. continue avbryter bara det pågående varvet (iterationen) och hoppar direkt upp till nästa varv i loopen.   
+PDF
++ 1
+
+Listor (Arrayer): Skapas med hakparenteser [] och indexeras från 0.   
+PDF
++ 1
+
+len(lista): Returnerar antalet element.   
+PDF
+
+append(värde): Lägger till ett element längst bak i listan.   
+PDF
+
+insert(index, värde): Infogar ett element på valt index och flyttar efterföljande element till höger.   
+PDF
+
+pop(index): Tar bort elementet på angivet index.   
+PDF
+
+remove(värde): Tar bort elementet genom att ange dess värde.   
+PDF
+
+clear(): Tömmer hela listan ([]).   
+PDF
+
+in: Kontrollerar om ett värde finns i listan (t.ex. if "Apple" in fruits:).   
+PDF
+
+Dellistor (Slicing): lista[i:] tar allt från index i till slutet. lista[:j] tar allt från början fram till j (index j inkluderas inte). lista[i:j] tar från i till j (index j inkluderas inte). Detta fungerar även på strängar, och lista[:] används för att skapa en kopia av en lista.   
+PDF
++ 4
+
+Matematikfunktioner & math: Inbyggda funktioner för listor/tal är min(), max(), sum() och pow(bas, exponent). Genom att skriva import math får man tillgång till bl.a. math.sqrt() (kvadratrot), konstanten math.pi och math.pow().   
+PDF
++ 4
+
+Skicka över resterande lektioner när du är redo, så bygger vi ihop hela träningsupplägget!
+
+och dessa två
+
+Lektion 9 (del 1 och del 2) om funktioner är nu också inläst.   
+PDF
++ 1
+
+Sammanfattning av Lektion 9: Funktioner (def)
+Grundkoncept och syntax: En funktion är ett kodblock som bara körs när det anropas. Man skapar en funktion med nyckelordet def (förkortning för definition), följt av funktionsnamnet, eventuella parametrar inom parentes och ett kolon i slutet av raden. All kod som är indenterad (inskjuten) under def-raden tillhör funktionen.   
+PDF
++ 4
+
+Parametrar (Inputs): Data som skickas in till en funktion kallas parametrar och separeras med kommatecken inom parenteserna. Man kan skicka in vilken datatyp som helst (t.ex. en sträng, ett tal eller en lista), och värdet behåller sin datatyp inuti funktionen.   
+PDF
++ 3
+
+Returvärden (return) vs print(): Kommandot return skickar tillbaka ett resultat (output-värde) från funktionen. När funktionen anropas i koden ersätts själva funktionsanropet av returvärdet, vilket gör att man kan spara det i en variabel, skriva ut det, eller addera flera funktionsanrop med varandra (t.ex. y = minBeräkning(5,1) + minBeräkning(3,1)). Man kan även lägga en print() direkt inuti funktionen istället för return om funktionen bara ska skriva ut något direkt på skärmen när den anropas.   
+PDF
++ 4
+
+Kombination med andra verktyg: Inuti funktioner kan man använda loopar (for), villkorssatser (if/else), inbyggda funktioner som len(), max(), sum() och pow(), eller importerade moduler som math.pi.   
+PDF
++ 4
+
+Se upp för fällan i presentationen: På sista sidan i del 1 står det Def högstaTal(...) med stort D. Eftersom Python är skiftlägeskänsligt (case sensitive) måste det alltid skrivas med små bokstäver (def), annars kraschar koden med ett SyntaxError. Det är en klassisk kuggfråga på teoriprov!   
+PDF
++ 2
+
+På dina schemabilder stod det även listat Extra lektion A, B och C (som tar upp Tuple, Skillnaden mellan listor och tupler, Menyval samt open(), close() och vanliga misstag). Har du PDF:er för dem också som du vill ladda upp, eller är detta alla filer du har så att vi ska dra igång direkt med teoriträningen?   
+PNG
++ 1
+
+Dom kommer nog inte på provet
+
+Då fokuserar vi till 100 % på Lektion 1 till 9 inför teoriprovet på Exam.net på måndag.   
+PNG
++ 2
+
+För att du ska sätta full pott börjar vi med en komprimerad fällkarta över de vanligaste kuggfrågorna från era slides, följt av Del 1 av vårt träningsprov där du får testa dig själv direkt.
+
+De 6 viktigaste fällorna att ha koll på inför provet
+Kompilator vs. Interpretator: Datorns CPU förstår bara maskinkod (ettor och nollor). En kompilator (används i t.ex. C++, C# och Java) översätter hela programmet på en gång till en körbar fil, medan en interpretator (används i Python och JavaScript) fungerar som en tolk som översätter och kör koden rad för rad direkt.   
+PDF
++ 3
+
+Strängfällan med input() och citattecken: Allt som matas in via input() blir automatiskt en textsträng (str) om du inte omvandlar det med int() eller float(). Om användaren skriver in 8 i tal = input() kommer print(5 * tal) att skriva ut 88888 istället för 40. På samma sätt blir "1" + "1" strängen "11".   
+PDF
++ 4
+
+Division (/) vs. Heltalsdivision (//): Vanlig division med / ger alltid ett decimaltal (float), så print(6 / 2) eller print(24 / 3 + 9) ger decimalpunkt på slutet (17.0), medan // kapar bort decimalerna helt så att 9 // 2 blir 4.   
+PDF
++ 3
+
+Sista talet i range() och Slicing räknas inte med:
+
+range(5) börjar på 0 och ger 0, 1, 2, 3, 4 (5 tal totalt, men siffran 5 är inte med).   
+PDF
+
+range(1, 6) ger 1, 2, 3, 4, 5.   
+PDF
+
+Vid dellistor (slicing) som lista[2:4] inkluderas startindex 2, men slutindex 4 inkluderas inte (du får bara index 2 och 3).   
+PDF
+
+Skillnaden mellan listmetoderna:
+
+Lägga till: append(värde) lägger till längst bak i listan, medan insert(index, värde) skjuter in värdet på en specifik plats.   
+PDF
+
+Ta bort: pop(index) tar bort ett element baserat på dess indexnummer, remove(värde) tar bort baserat på själva värdet, och clear() tömmer hela listan så att [] återstår.   
+PDF
++ 1
+
+break vs. continue i loopar: break avbryter hela loopen omedelbart och hoppar till koden utanför loopen. continue avbryter bara det nuvarande varvet (iterationen) och hoppar direkt upp för att köra nästa varv i loopen.   
+PDF
++ 1
+
+Träningsprov – Omgång 1: Teori, Datatyper, Villkor & Loopar
+Svara med fråolgenummer och ditt svar (t.ex. 1B, 2C, 3...) så rättar jag, förklarar eventuella klurigheter och ger dig Omgång 2 (som täcker listor, dellistor, math och funktioner)!
+
+Fråga 1 (Teori – Lektion 1 & 2)
+Vilket av följande påståenden om Python är HELT KORREKT enligt kursmaterialet?
+
+A) Python är ett lågnivåspråk (likt Assembleringsspråk) som lanserades 1991 av Guido van Rossum.   
+PDF
++ 1
+
+B) Python är skiftlägeskänsligt (case sensitive), behöver inga fördeklarationer av variabler och översätts rad för rad av en interpretator.   
+PDF
++ 3
+
+C) Variabelnamn i Python får innehålla bokstäver, siffror och mellanslag, men får aldrig innehålla å, ä eller ö.   
+PDF
++ 1
+
+D) Processen att översätta kod till maskinkod kallas för debugging.   
+PDF
++ 1
+
+Fråga 2 (Beräkning & Prioriteringsregler – Lektion 2 & 3)
+Vad skriver följande kod ut på skärmen när den körs?   
+PDF
++ 1
+
+Python
+x = 10 + 2 * (5 - 2) ** 2 - 7 // 2
+print(x)
+A) 24.5
+
+B) 25
+
+C) 104.5
+
+D) 21
+
+Fråga 3 (Datatyper & bool() – Lektion 2)
+Vad kommer dessa fyra rader att skriva ut?   
+PDF
++ 1
+
+Python
+print(bool("False"))
+print(bool(""))
+print(bool(0))
+print(bool(-5))
+A) False, False, False, False
+
+B) True, False, False, True
+
+C) False, False, False, True
+
+D) True, True, False, False
+
+Fråga 4 (Felsökning av if-sats – Lektion 5)
+En elev har skrivit koden nedan men får felmeddelanden. Exakt vilka tre syntaxfel finns i koden?   
+PDF
++ 1
+
+Python
+poäng = int(input("Ange dina poäng: "))
+if poäng = 100:
+    print("Full pott!")
+else
+    print(Bra kämpat!)
+Fråga 5 (Kodspårning med for och range – Lektion 4 & 5)
+Vilka tal kommer att skrivas ut av följande loop?   
+PDF
++ 1
+
+Python
+for n in range(10, 3, -3):
+    print(n)
+A) 10, 7, 4
+
+B) 10, 7, 4, 1
+
+C) 10, 9, 8, 7, 6, 5, 4
+
+D) 10, 7, 4, 3
+
+Fråga 6 (Kodspårning med while, continue och break – Lektion 6 & 7)
+Vad skriver det här programmet ut när det körs?   
+PDF
++ 1
+
+Python
+i = 0
+while i < 5:
+    i = i + 1
+    if i == 2:
+        continue
+    if i == 4:
+        break
+    print(i)
+print("Slut")
+Skriv dina svar på fråga 1–6 så tar vi reda på hur det sitter!
+
+Ge mig en ledtråd på Fråga 2 och Fråga 6
+
+Ja
+Kan vi göra ett quiz som jag kan lägga upp på github på allt detta?
+
+Dina quiz-filer (HTML och PY) är klara
+
+Ikon för HTML
+index
+ HTML 
+Ikon för PY
+quiz
+ PY 
+Här har du två färdiga versioner av quizet som du kan ladda upp direkt till ditt GitHub-repository inför provet på Exam.net:   
+PNG
+
+1. index.html – Interaktiv webbapp (perfekt för GitHub Pages)
+En komplett, fristående hemsida med mörkt tema som fungerar direkt i webbläsaren på både dator och mobil utan externa bibliotek:
+
+40 skräddarsydda frågor som täcker samtliga mål från Lektion 1 till 9.   
+PDF
++ 4
+
+Modulfilter & Slutprovsläge: Du kan välja att öva specifikt på enskilda lektioner (t.ex. bara Lektion 6–7: While & Listor eller Lektion 9: Funktioner) eller starta Slutprovsläge som slumpar fram 20 frågor från hela kursen.   
+PDF
++ 2
+
+Kodspårning & Kuggfrågor: Innehåller exakt den typ av kodexempel och felsökning som finns i era lektions-PDF:er, inklusive prioriteringsregler, input()-strängfällan, bool()-utvärdering, range() med negativ steglängd, break vs continue, listmetoderna append(), insert(), pop(), remove() och clear(), dellistor (slicing), math-modulen samt funktioner med def och return.   
+PDF
++ 4
+
+Direkt förklaring & "Öva på dina fel": Efter varje svar får du en förklaring till varför svaret är rätt, och när du är i mål kan du klicka på "Öva på dina fel" för att bara köra om de frågor du missade.
+
+2. quiz.py – Terminalversion i ren Python
+Ett körbart Python-skript som du kan köra direkt i VS Code eller terminalen (python quiz.py). Koden är dessutom uppbyggd med listor, for-loopar, if/else-villkor och funktioner från kursen.   
+PDF
++ 4
+
+Så här lägger du upp webbquizet som en riktig sida på GitHub (GitHub Pages)
+Skapa ett nytt repository på GitHub (t.ex. python-teoriquiz).
+
+Ladda upp index.html (och quiz.py) till repot och klicka på Commit changes.
+
+Gå in på Settings i ditt repo -> klicka på Pages i vänstermenyn.
+
+Under Build and deployment -> Branch, välj main (eller master) och klicka på Save.
+
+Efter cirka en minut får du en publik länk ([https://ditt-användarnamn.github.io/python-teoriquiz/](https://ditt-användarnamn.github.io/python-teoriquiz/)) som du kan öppna själv eller dela med klasskamraterna!
+
+Skapa en README.md med sammanfattad lathund till GitHub-repot
+
+Ja
+Lägg till fler svåra kodspårningsfrågor i quizet
+
+Ja
+
+
+
+
+Gemini är AI och den kan göra misstag, inklusive om personer. Din integritet och GeminiÖppnas i ett nytt fönster
+
+Reviewing Final Response Protocol
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmering 1 (Python) – Teoriprov & Quiz | JENSEN Education</title>
+    <style>
+        :root {
+            --bg-main: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #21262d;
+            --border-color: #30363d;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-blue-hover: #388bfd;
+            --success-green: #2ea043;
+            --success-bg: rgba(46, 160, 67, 0.15);
+            --danger-red: #f85149;
+            --danger-bg: rgba(248, 81, 73, 0.15);
+            --warning-yellow: #d29922;
+            --code-bg: #010409;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 28px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            color: var(--accent-blue);
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .controls-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .filter-btn {
+            background: var(--bg-elevated);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.88rem;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-blue);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-blue);
+            color: #fff;
+            border-color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background: var(--bg-elevated);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-blue);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .quiz-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--bg-elevated);
+            color: var(--accent-blue);
+            border: 1px solid var(--border-color);
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        pre {
+            background: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.92rem;
+            color: #f0f6fc;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-btn {
+            text-align: left;
+            background: var(--bg-elevated);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 14px 18px;
+            border-radius: 8px;
+            font-size: 0.98rem;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            border-color: var(--accent-blue);
+            background: #282e36;
+        }
+
+        .option-btn:disabled {
+            cursor: default;
+        }
+
+        .option-letter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .option-btn.correct {
+            background: var(--success-bg);
+            border-color: var(--success-green);
+            color: #fff;
+        }
+
+        .option-btn.correct .option-letter {
+            background: var(--success-green);
+            border-color: var(--success-green);
+            color: #fff;
+        }
+
+        .option-btn.wrong {
+            background: var(--danger-bg);
+            border-color: var(--danger-red);
+            color: #fff;
+        }
+
+        .option-btn.wrong .option-letter {
+            background: var(--danger-red);
+            border-color: var(--danger-red);
+            color: #fff;
+        }
+
+        .feedback-box {
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-elevated);
+            display: none;
+        }
+
+        .feedback-box.show {
+            display: block;
+        }
+
+        .feedback-title {
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .feedback-title.correct {
+            color: #3fb950;
+        }
+
+        .feedback-title.wrong {
+            color: #ff7b72;
+        }
+
+        .nav-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 24px;
+            gap: 12px;
+        }
+
+        .primary-btn {
+            background: var(--accent-blue);
+            color: #fff;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 0.98rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .primary-btn:hover {
+            background: var(--accent-blue-hover);
+        }
+
+        .secondary-btn {
+            background: var(--bg-elevated);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .secondary-btn:hover {
+            border-color: var(--accent-blue);
+        }
+
+        .results-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            display: none;
+        }
+
+        .score-circle {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            margin: 16px 0;
+        }
+
+        .result-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Programmering 1 (Python) – Teoriquiz</h1>
+        <p>Komplett träningsprov baserat på Lektion 1–9 (JENSEN Education)</p>
+    </header>
+
+    <div class="controls-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <strong>Välj modul att öva på:</strong>
+            <button class="secondary-btn" style="padding:6px 12px; font-size:0.85rem;" onclick="shuffleCurrentQuiz()">🔀 Blanda frågor</button>
+        </div>
+        <div class="filter-group" id="category-filters">
+            <button class="filter-btn active" onclick="selectCategory('ALL', this)">Alla lektioner (40)</button>
+            <button class="filter-btn" onclick="selectCategory('EXAM', this)">⚡ Slutprovsläge (20 slumpade)</button>
+            <button class="filter-btn" onclick="selectCategory('L1', this)">Lektion 1: Grunder</button>
+            <button class="filter-btn" onclick="selectCategory('L2_3', this)">Lektion 2–3: Variabler & Matte</button>
+            <button class="filter-btn" onclick="selectCategory('L4_5', this)">Lektion 4–5: Input, For & If</button>
+            <button class="filter-btn" onclick="selectCategory('L6_7', this)">Lektion 6–7: While & Listor</button>
+            <button class="filter-btn" onclick="selectCategory('L8', this)">Lektion 8: Dellistor & Math</button>
+            <button class="filter-btn" onclick="selectCategory('L9', this)">Lektion 9: Funktioner</button>
+        </div>
+    </div>
+
+    <div id="quiz-view">
+        <div class="status-bar">
+            <span id="question-counter">Fråga 1 av 40</span>
+            <span id="score-tracker">Poäng: 0 rätt</span>
+        </div>
+        <div class="progress-container">
+            <div class="progress-fill" id="progress-bar"></div>
+        </div>
+
+        <div class="quiz-card">
+            <span class="badge" id="lesson-badge">Lektion 1</span>
+            <div class="question-text" id="question-text"></div>
+            <pre id="code-block" style="display:none;"></pre>
+            <div class="options-list" id="options-container"></div>
+
+            <div class="feedback-box" id="feedback-box">
+                <div class="feedback-title" id="feedback-title"></div>
+                <div id="feedback-explanation"></div>
+            </div>
+
+            <div class="nav-actions">
+                <button class="secondary-btn" onclick="restartQuiz()">Börja om</button>
+                <button class="primary-btn" id="next-btn" onclick="nextQuestion()" style="display:none;">Nästa fråga →</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="results-card" id="results-view">
+        <h2>Resultat på delprovet</h2>
+        <div class="score-circle" id="final-score">0 / 0</div>
+        <p id="final-message" style="color:var(--text-muted); margin-bottom:16px;"></p>
+        <div class="result-actions">
+            <button class="primary-btn" onclick="restartQuiz()">Kör igen</button>
+            <button class="secondary-btn" id="retry-wrong-btn" onclick="retryWrongQuestions()" style="display:none;">Öva bara på dina fel</button>
+        </div>
+    </div>
+</div>
+
+<script>
+const allQuestions = [
+    // LEKTION 1
+    {
+        cat: "L1",
+        lesson: "Lektion 1 – Programspråk & Grunder",
+        q: "Vad kallas datorns grundspråk som består av ettor och nollor och som datorns CPU direkt kan tolka?",
+        code: "",
+        options: ["Assembleringsspråk", "Maskinkod", "Högnivåspråk", "Källkod"],
+        answer: 1,
+        explanation: "Datorers grundspråk kallas maskinkod och består av ettor och nollor (bitar) som hårdvaran/CPU:n direkt kan förstå och köra."
+    },
+    {
+        cat: "L1",
+        lesson: "Lektion 1 – Programspråk & Grunder",
+        q: "Vad är ett assembleringsspråk (Assembly language)?",
+        code: "LOAD A\nADD B\nMOV C",
+        options: [
+            "Ett högnivåspråk anpassat för webbutveckling",
+            "En enkel typ av lågnivåspråk (Low-level language) där instruktioner skrivs som kort text",
+            "Ett program som felsöker Python-kod",
+            "Datorns direkta ettor och nollor utan översättning"
+        ],
+        answer: 1,
+        explanation: "Assembleringsspråk är ett lågnivåspråk där man skriver instruktioner som vanlig text (t.ex. LOAD A, ADD B) som sedan måste översättas till maskinkod."
+    },
+    {
+        cat: "L1",
+        lesson: "Lektion 1 – Programspråk & Grunder",
+        q: "Vad är den huvudsakliga skillnaden mellan en interpretator och en kompilator?",
+        code: "",
+        options: [
+            "En interpretator översätter och kör koden rad för rad, medan en kompilator översätter hela programmet till en körbar fil (t.ex. .exe)",
+            "En kompilator används bara i Python, medan interpretatorer används i C++ och Java",
+            "En interpretator skapar en .exe-fil, medan en kompilator kör koden rad för rad",
+            "Det finns ingen skillnad, orden betyder exakt samma sak"
+        ],
+        answer: 0,
+        explanation: "En interpretator fungerar som en tolk som översätter rad för rad när programmet körs (t.ex. Python). En kompilator översätter hela programmet på en gång till en körbar fil."
+    },
+    {
+        cat: "L1",
+        lesson: "Lektion 1 – Programspråk & Grunder",
+        q: "Vilka av följande språk är typiska exempel på språk som interpreteras (tolkas rad för rad)?",
+        code: "",
+        options: [
+            "C, C++ och C#",
+            "Python, JavaScript och Ruby",
+            "Endast maskinkod och Assembly",
+            "Java, C++ och Pascal"
+        ],
+        answer: 1,
+        explanation: "Python, JavaScript, Ruby och kommandotolkar i operativsystem är typiska exempel på interpreterade språk."
+    },
+    {
+        cat: "L1",
+        lesson: "Lektion 1 – Programspråk & Grunder",
+        q: "Vad kallas processen att felsöka och åtgärda fel (errors) i ett datorprogram?",
+        code: "",
+        options: ["Kompilering", "Indentering", "Debugging", "Deklarering"],
+        answer: 2,
+        explanation: "Debugging är processen att felsöka och åtgärda fel (errors) i ett datorprogram."
+    },
+    {
+        cat: "L1",
+        lesson: "Lektion 1 – Programspråk & Grunder",
+        q: "Vem lanserade Python år 1991 och vilken filändelse har Python-filer?",
+        code: "",
+        options: [
+            "Guido van Rossum, filändelse .py",
+            "Jan Skansholm, filändelse .python",
+            "Linus Torvalds, filändelse .pyt",
+            "Bill Gates, filändelse .exe"
+        ],
+        answer: 0,
+        explanation: "Python lanserades av Guido van Rossum år 1991 och filerna har filändelsen .py."
+    },
+    {
+        cat: "L1",
+        lesson: "Lektion 1 – Programspråk & Grunder",
+        q: "Vad står förkortningen IDE för (exempelvis PyCharm eller Visual Studio Code)?",
+        code: "",
+        options: [
+            "Internal Data Execution",
+            "Integrated Development Environment (Integrerat programutvecklingsverktyg)",
+            "Interactive Debugging Engine",
+            "Internet Document Editor"
+        ],
+        answer: 1,
+        explanation: "IDE står för Integrated Development Environment – ett program som innehåller alla funktioner som behövs för att skriva, köra och hitta fel i program."
+    },
+
+    // LEKTION 2 & 3
+    {
+        cat: "L2_3",
+        lesson: "Lektion 2 – Variabler & Datatyper",
+        q: "Vilket av följande variabelnamn är TILLÅTET i Python?",
+        code: "",
+        options: ["1_variabel", "min variabel", "min_variabel_1", "min-variabel!"],
+        answer: 2,
+        explanation: "Ett variabelnamn får endast innehålla bokstäver, siffror och understreck (_), och får aldrig börja med en siffra eller innehålla mellanslag."
+    },
+    {
+        cat: "L2_3",
+        lesson: "Lektion 2 – Variabler & Datatyper",
+        q: "Vilka datatyper får variablerna a, b, c och d i koden nedan?",
+        code: "a = 5\nb = 2.6\nc = '123'\nd = True",
+        options: [
+            "a: int, b: float, c: int, d: bool",
+            "a: int, b: float, c: str, d: bool",
+            "a: float, b: int, c: str, d: str",
+            "a: int, b: double, c: char, d: bool"
+        ],
+        answer: 1,
+        explanation: "5 är ett heltal (int), 2.6 har decimalpunkt (float), '123' omges av citattecken och är därför en textsträng (str), och True är ett booleskt värde (bool)."
+    },
+    {
+        cat: "L2_3",
+        lesson: "Lektion 2 – Prioriteringsregler",
+        q: "Vad skriver följande program ut på skärmen?",
+        code: "print(8 * 2 * (5 - 3) + 16 / 4 - 1)",
+        options: ["35.0", "11.0", "39.0", "24.0"],
+        answer: 0,
+        explanation: "Först parentesen: (5-3) = 2. Sedan multiplikation/division från vänster till höger: 8*2*2 = 32 och 16/4 = 4.0. Sist addition/subtraktion: 32 + 4.0 - 1 = 35.0."
+    },
+    {
+        cat: "L2_3",
+        lesson: "Lektion 2 – Utskrift & Escape-tecken",
+        q: "Vilka specialtecken används inuti en sträng för att lägga till en tabb-indentering respektive en ny rad?",
+        code: "print(\"Languages:\\nPython\\tJava\")",
+        options: [
+            "\\t för tabb och \\n för ny rad",
+            "\\tab för tabb och \\enter för ny rad",
+            "#t för tabb och #n för ny rad",
+            "/t för tabb och /n för ny rad"
+        ],
+        answer: 0,
+        explanation: "\\t lägger till en indentering (tabb) och \\n hoppar ner till nästa rad (ny rad)."
+    },
+    {
+        cat: "L2_3",
+        lesson: "Lektion 2 – Strängar vs Numeriska uttryck",
+        q: "Vad blir utskriften av dessa två rader?",
+        code: "print(\"1\" + \"1\")\nprint(3 * \"1\")",
+        options: [
+            "2 och 3",
+            "11 och 111",
+            "11 och 3",
+            "SyntaxError på båda raderna"
+        ],
+        answer: 1,
+        explanation: "Eftersom '1' står inom citattecken tolkas det som en textsträng. '+' klistrar ihop strängarna till '11', och 3 * '1' upprepar strängen tre gånger till '111'."
+    },
+    {
+        cat: "L2_3",
+        lesson: "Lektion 2 – Boolean (bool)",
+        q: "Vilket av följande uttryck utvärderas till False i Python?",
+        code: "",
+        options: [
+            "bool(\"False\")",
+            "bool(-15)",
+            "bool(0)",
+            "bool(\"0\")"
+        ],
+        answer: 2,
+        explanation: "Alla tal utom 0 är True, och alla strängar med innehåll (även 'False' och '0') är True. Endast talet 0 och tomma strängar/listor/tupler/mängder/ordböcker blir False."
+    },
+    {
+        cat: "L2_3",
+        lesson: "Lektion 2 – Datatyper",
+        q: "Vilken inbyggd funktion används för att ta reda på vilken datatyp en variabel har?",
+        code: "x = 14\nprint(____(x))",
+        options: ["datatype()", "typeof()", "type()", "check()"],
+        answer: 2,
+        explanation: "Funktionen type() returnerar datatypen för en variabel, t.ex. <class 'int'>."
+    },
+    {
+        cat: "L2_3",
+        lesson: "Lektion 3 – Aritmetiska operatorer",
+        q: "Vad skriver följande kod ut?",
+        code: "print(9 / 2, \"och\", 9 // 2)\nprint(49 ** 0.5)",
+        options: [
+            "4.5 och 4 samt 7.0",
+            "4 och 4.5 samt 24.5",
+            "4.5 och 5 samt 7",
+            "4.0 och 4 samt 7.0"
+        ],
+        answer: 0,
+        explanation: "Operatorn / ger vanlig division med decimaler (4.5), medan // ger heltalsdelen vid division (4). Att upphöja till 0.5 (** 0.5) är samma sak som kvadratroten (7.0)."
+    },
+    {
+        cat: "L2_3",
+        lesson: "Lektion 3 – Variabler & Sekvens",
+        q: "Vad blir utskriften när koden nedan körs?",
+        code: "a = 5\nb = 10\nc = 2 * a - 3 * b\nprint(c)",
+        options: ["-20", "20", "-5", "-25"],
+        answer: 0,
+        explanation: "2 * 5 blir 10 och 3 * 10 blir 30. 10 - 30 = -20."
+    },
+
+    // LEKTION 4 & 5
+    {
+        cat: "L4_5",
+        lesson: "Lektion 4 – Input & Typkonvertering",
+        q: "Användaren matar in siffran 8 när programmet nedan körs. Vad skrivs ut på skärmen?",
+        code: "tal = input(\"Skriv ett heltal: \")\nprint(5 * tal)",
+        options: ["40", "88888", "58", "TypeError"],
+        answer: 1,
+        explanation: "input() returnerar alltid en sträng (str) om man inte konverterar med int() eller float(). Därför multipliceras textsträngen '8' fem gånger: '88888'."
+    },
+    {
+        cat: "L4_5",
+        lesson: "Lektion 4 – Avrundning",
+        q: "Vad skriver följande två rader ut?",
+        code: "print(round(188.987123, 2))\nprint(round(663.991245))",
+        options: [
+            "188.99 och 664",
+            "188.98 och 663",
+            "189.0 och 663.99",
+            "188.99 och 663.0"
+        ],
+        answer: 0,
+        explanation: "round(tal, 2) avrundar till 2 decimaler (188.99). Utan andra argument avrundar round() till närmaste heltal (664)."
+    },
+    {
+        cat: "L4_5",
+        lesson: "Lektion 4 – For-loop & range()",
+        q: "Vilka tal kommer att skrivas ut av denna for-loop?",
+        code: "for x in range(1, 6):\n    print(x)",
+        options: [
+            "0, 1, 2, 3, 4, 5",
+            "1, 2, 3, 4, 5",
+            "1, 2, 3, 4, 5, 6",
+            "0, 1, 2, 3, 4, 5, 6"
+        ],
+        answer: 1,
+        explanation: "I range(start, stop) ingår startvärdet (1), men slutvärdet (6) inkluderas INTE. Därför skrivs 1, 2, 3, 4, 5 ut."
+    },
+    {
+        cat: "L4_5",
+        lesson: "Lektion 4 – For-loop med steglängd",
+        q: "Vad skriver följande två loopar ut?",
+        code: "# Loop A:\nfor n in range(29, 24, -1):\n    print(n)\n\n# Loop B:\nfor n in range(1, 10, 3):\n    print(n)",
+        options: [
+            "Loop A: 29, 28, 27, 26, 25 | Loop B: 1, 4, 7",
+            "Loop A: 29, 28, 27, 26, 25, 24 | Loop B: 1, 4, 7, 10",
+            "Loop A: 28, 27, 26, 25, 24 | Loop B: 3, 6, 9",
+            "Loop A: 29, 24 | Loop B: 1, 3, 10"
+        ],
+        answer: 0,
+        explanation: "Tredje talet i range() är steglängden. -1 räknar ner från 29 till 25 (24 ingår ej). Steglängd 3 från 1 upp till 10 ger 1, 4, 7 (10 ingår ej)."
+    },
+    {
+        cat: "L4_5",
+        lesson: "Lektion 5 – Kommentarer & Dokumentationssträngar",
+        q: "Hur kommenterar eller ignorerar man ett helt kodblock över flera rader i Python enligt lektionsmaterialet?",
+        code: "",
+        options: [
+            "Genom att omge kodblocket med tre citattecken (\"\"\" eller ''') i början och i slutet",
+            "Genom att skriva /* i början och */ i slutet",
+            "Genom att skriva // på första raden",
+            "Genom att omge koden med klamrar { }"
+        ],
+        answer: 0,
+        explanation: "Tolken hoppar över kodblock som omges av tre citattecken (\"\"\" eller ''') i början och slutet (används främst för dokumentationssträngar eller för att ignorera kod)."
+    },
+    {
+        cat: "L4_5",
+        lesson: "Lektion 5 – Felsökning av for-loop",
+        q: "Anton vill skriva ut jämna tal men får SyntaxError. Vilka TVÅ fel har Anton gjort i koden nedan?",
+        code: "for n in range(0, 51)\n    print(2n)",
+        options: [
+            "Han har glömt kolon (:) efter range(0, 51) och skrivit 2n istället för 2 * n",
+            "range() får inte börja på 0 och print måste skrivas med stort P",
+            "Han måste använda while istället för for och citattecken runt 2n",
+            "51 måste vara 50 och n måste deklareras innan loopen"
+        ],
+        answer: 0,
+        explanation: "En for-sats måste alltid avslutas med kolon (:), och i Python måste multiplikationstecknet alltid skrivas ut (2 * n)."
+    },
+    {
+        cat: "L4_5",
+        lesson: "Lektion 5 – Villkorssatser (if / elif / else)",
+        q: "Vilka två syntaxfel finns i Marko och Samirs program?",
+        code: "svar = float(input(\"Vad är produkten av 12 och 13?\"))\nif svar = 156:\n    print(\"Rätt.\")\nelse\n    print(\"Fel.\")",
+        options: [
+            "Det står '=' istället för '==' i if-villkoret, och det saknas kolon (:) efter else",
+            "float() kan inte jämföras med 156, och print saknar indentering",
+            "else måste ligga före if, och 156 måste stå inom citattecken",
+            "Man får inte använda å, ä, ö i strängar och svar måste vara int"
+        ],
+        answer: 0,
+        explanation: "Vid jämförelse i ett villkor måste man använda två likhetstecken (==), och nyckelorden if, elif och else måste alltid avslutas med kolon (:)."
+    },
+    {
+        cat: "L4_5",
+        lesson: "Lektion 5 – Jämförelseoperatorer",
+        q: "Hur skriver man operatorn för 'Inte lika med' respektive 'Mindre än eller lika med' i Python?",
+        code: "",
+        options: [
+            "!= och <=",
+            "<> och =<",
+            "==! och <=",
+            "/= och <"
+        ],
+        answer: 0,
+        explanation: "'Inte lika med' skrivs != och 'Mindre än eller lika med' skrivs <=."
+    },
+
+    // LEKTION 6 & 7
+    {
+        cat: "L6_7",
+        lesson: "Lektion 6 – For vs While",
+        q: "Vad är den huvudsakliga skillnaden mellan en for-loop och en while-loop?",
+        code: "",
+        options: [
+            "En while-sats upprepar kod så länge ett villkor är uppfyllt, medan en for-slinga upprepar koden ett bestämt antal gånger",
+            "En for-loop kan bara räkna baklänges, medan while-loopen räknar framlänges",
+            "Man kan inte ha if-satser inuti en while-loop",
+            "En while-loop behöver ingen indentering"
+        ],
+        answer: 0,
+        explanation: "while upprepar koden så länge ett villkor är sant (True), medan for upprepar koden ett bestämt antal gånger (eller över elementen i en sekvens)."
+    },
+    {
+        cat: "L6_7",
+        lesson: "Lektion 6 – Oändlig loop & Case Sensitivity",
+        q: "Varför fungerar inte följande kod för att skapa en oändlig loop?",
+        code: "while true:\n    print(\"Python är bäst!\")",
+        options: [
+            "Ordet True måste stavas med stort T (while True:)",
+            "Det går inte att använda print() inuti en while-loop",
+            "Man måste skriva while 1 == 2:",
+            "Det saknas semikolon efter print-raden"
+        ],
+        answer: 0,
+        explanation: "Python är skiftlägeskänsligt (case sensitive). Det booleska värdet heter True med stor begynnelsebokstav, inte true."
+    },
+    {
+        cat: "L6_7",
+        lesson: "Lektion 6 – Kodspårning med while",
+        q: "Vad är det SISTA som skrivs ut när denna kod körs?",
+        code: "count = 0\nwhile count < 3:\n    print(count, \"is less than 3\")\n    count = count + 1\nprint(count, \"is not less than 3\")",
+        options: [
+            "2 is not less than 3",
+            "3 is not less than 3",
+            "3 is less than 3",
+            "0 is not less than 3"
+        ],
+        answer: 1,
+        explanation: "När count ökar från 2 till 3 blir villkoret count < 3 falskt. Loopen avslutas och raden utanför loopen skriver ut '3 is not less than 3'."
+    },
+    {
+        cat: "L6_7",
+        lesson: "Lektion 7 – Break i loopar",
+        q: "Vad skriver följande program ut?",
+        code: "for bokstav in \"jensen\":\n    if bokstav == \"s\":\n        break\n    print(bokstav)\nprint(\"The end\")",
+        options: [
+            "j, e, n, The end",
+            "j, e, n, s, e, n, The end",
+            "j, e, n, e, n, The end",
+            "s, The end"
+        ],
+        answer: 0,
+        explanation: "När loopen når bokstaven 's' körs break, vilket avbryter hela slingan direkt och hoppar till print('The end') utanför slingan."
+    },
+    {
+        cat: "L6_7",
+        lesson: "Lektion 7 – Continue i loopar",
+        q: "Vad skriver följande program ut?",
+        code: "for val in \"Jensen\":\n    if val == \"e\":\n        continue\n    print(val)\nprint(\"The end\")",
+        options: [
+            "J, n, s, n, The end",
+            "J, The end",
+            "J, e, n, s, e, n, The end",
+            "e, e, The end"
+        ],
+        answer: 0,
+        explanation: "continue avbryter bara det pågående varvet (iterationen) när bokstaven är 'e' och hoppar direkt till nästa bokstav. Därför skrivs alla bokstäver utom 'e' ut."
+    },
+    {
+        cat: "L6_7",
+        lesson: "Lektion 7 – Listor & Indexering",
+        q: "Vilket värde skrivs ut av koden nedan?",
+        code: "my_list = [5, 2, \"bok\", 3, \"penna\"]\nprint(my_list[2])",
+        options: ["2", "bok", "3", "5"],
+        answer: 1,
+        explanation: "Indexeringen i en lista börjar alltid på 0. Index 0 är 5, index 1 är 2, och index 2 är 'bok'."
+    },
+    {
+        cat: "L6_7",
+        lesson: "Lektion 7 – Listmetoder (append vs insert)",
+        q: "Hur ser listan cars ut efter att koden nedan har körts?",
+        code: "cars = [\"Ford\", \"Volvo\", \"BMW\"]\ncars.append(\"Honda\")\ncars.insert(1, \"Volkswagen\")\nprint(cars)",
+        options: [
+            "['Ford', 'Volkswagen', 'Volvo', 'BMW', 'Honda']",
+            "['Volkswagen', 'Ford', 'Volvo', 'BMW', 'Honda']",
+            "['Ford', 'Volvo', 'Volkswagen', 'BMW', 'Honda']",
+            "['Honda', 'Volkswagen', 'Ford', 'Volvo', 'BMW']"
+        ],
+        answer: 0,
+        explanation: "append('Honda') lägger till 'Honda' sist. insert(1, 'Volkswagen') skjuter in 'Volkswagen' på index 1 (andra platsen) och flyttar efterföljande element till höger."
+    },
+    {
+        cat: "L6_7",
+        lesson: "Lektion 7 – Listmetoder (pop, remove, clear)",
+        q: "Vad är skillnaden mellan metoderna pop(), remove() och clear() på en lista?",
+        code: "",
+        options: [
+            "pop() tar bort via indexnummer, remove() tar bort via elementets värde, och clear() tömmer hela listan",
+            "pop() tar bort via värde, remove() tar bort via indexnummer, och clear() raderar variabeln",
+            "pop() lägger till ett element först, medan remove() och clear() gör exakt samma sak",
+            "Alla tre tar bort det första elementet i listan"
+        ],
+        answer: 0,
+        explanation: "I pop(index) anger man indexnumret (t.ex. cars.pop(1)), i remove(värde) anger man elementets värde (t.ex. cars.remove('Volvo')), och clear() tar bort alla element så att [] återstår."
+    },
+    {
+        cat: "L6_7",
+        lesson: "Lektion 7 – Söka i en lista",
+        q: "Vilket nyckelord används för att kontrollera om 'Apple' finns i listan fruits samt vilken funktion ger antalet element?",
+        code: "fruits = [\"Orange\", \"Apple\", \"Banana\"]",
+        options: [
+            "Nyckelordet 'in' (if \"Apple\" in fruits:) och funktionen len(fruits)",
+            "Nyckelordet 'has' (if fruits has \"Apple\":) och funktionen count(fruits)",
+            "Nyckelordet 'find' och funktionen size(fruits)",
+            "Nyckelordet 'exist' och funktionen length(fruits)"
+        ],
+        answer: 0,
+        explanation: "Med 'in' kollar man om ett element finns i en lista, och len() returnerar antalet element i listan."
+    },
+
+    // LEKTION 8
+    {
+        cat: "L8",
+        lesson: "Lektion 8 – Dellistor (Slicing)",
+        q: "Vad skriver följande tre print-satser ut?",
+        code: "lista = [1, 4, 9, 16, 25, 90]\nprint(lista[3:])\nprint(lista[:3])\nprint(lista[2:4])",
+        options: [
+            "[16, 25, 90], [1, 4, 9] och [9, 16]",
+            "[9, 16, 25, 90], [1, 4, 9, 16] och [9, 16, 25]",
+            "[16, 25, 90], [1, 4] och [4, 9]",
+            "[25, 90], [1, 4, 9] och [9, 16, 25]"
+        ],
+        answer: 0,
+        explanation: "lista[3:] tar från index 3 till slutet ([16, 25, 90]). lista[:3] tar från början fram till index 3, där index 3 ej inkluderas ([1, 4, 9]). lista[2:4] tar index 2 och 3, men index 4 inkluderas ej ([9, 16])."
+    },
+    {
+        cat: "L8",
+        lesson: "Lektion 8 – Slicing på strängar",
+        q: "Vad skriver koden nedan ut?",
+        code: "land = \"Sverige\"\nprint(land[:2])\nprint(land[3:6])\nprint(land[5:])",
+        options: [
+            "Sv, rig och ge",
+            "Sve, rige och e",
+            "Sv, eri och ige",
+            "S, rig och ge"
+        ],
+        answer: 0,
+        explanation: "S(0) v(1) e(2) r(3) i(4) g(5) e(6). land[:2] ger index 0–1 ('Sv'), land[3:6] ger index 3–5 ('rig'), och land[5:] ger från index 5 till slutet ('ge')."
+    },
+    {
+        cat: "L8",
+        lesson: "Lektion 8 – Inbyggda matematiska funktioner",
+        q: "Vad blir utskriften av följande kod?",
+        code: "numbers = [1, 2, 3, 4, 5]\nprint(min(numbers), max(numbers), sum(numbers))\nprint(pow(2, 4))",
+        options: [
+            "1 5 15 och på nästa rad 16",
+            "1 5 10 och på nästa rad 8",
+            "0 5 15 och på nästa rad 16",
+            "1 4 15 och på nästa rad 6"
+        ],
+        answer: 0,
+        explanation: "min() ger 1, max() ger 5, sum() summerar 1+2+3+4+5 = 15, och pow(2, 4) beräknar 2 upphöjt till 4 (2*2*2*2 = 16)."
+    },
+    {
+        cat: "L8",
+        lesson: "Lektion 8 – Matematikmodulen (math)",
+        q: "Hur importerar och använder man Pythons matematikmodul för att beräkna kvadratroten ur 64 och hämta konstanten pi?",
+        code: "",
+        options: [
+            "import math -> math.sqrt(64) och math.pi",
+            "include math -> math.root(64) och math.PI()",
+            "using math -> sqrt(64) och pi()",
+            "import mathematics -> mathematics.square(64) och mathematics.pi"
+        ],
+        answer: 0,
+        explanation: "Modulen importeras med 'import math'. Kvadratroten beräknas med math.sqrt(64) (som ger 8.0) och pi hämtas med konstanten math.pi."
+    },
+
+    // LEKTION 9
+    {
+        cat: "L9",
+        lesson: "Lektion 9 – Funktioner (Grundsyntax)",
+        q: "Vilket nyckelord används för att skapa (definiera) en egen funktion i Python, och vad kallas värdena som skickas in mellan parenteserna?",
+        code: "def minBeräkning(tal1, tal2):\n    svar = tal1 * tal2 + tal1\n    return svar",
+        options: [
+            "Nyckelordet 'def', och inmatningsvärdena kallas parametrar",
+            "Nyckelordet 'function', och inmatningsvärdena kallas variabler",
+            "Nyckelordet 'Def' (med stort D), och inmatningsvärdena kallas returer",
+            "Nyckelordet 'void', och inmatningsvärdena kallas moduler"
+        ],
+        answer: 0,
+        explanation: "Man börjar med 'def' (definition), följt av funktionsnamnet och parametrarna inom parentes, avslutat med kolon (:)."
+    },
+    {
+        cat: "L9",
+        lesson: "Lektion 9 – Returvärden från funktioner",
+        q: "Vad skriver följande program ut på skärmen?",
+        code: "def minBeräkning(tal1, tal2):\n    svar = tal1 * tal2 + tal1\n    return svar\n\ny = minBeräkning(5, 1) + minBeräkning(3, 1)\nprint(y)",
+        options: ["16", "8", "15", "10"],
+        answer: 0,
+        explanation: "minBeräkning(5, 1) returnerar 5*1 + 5 = 10. minBeräkning(3, 1) returnerar 3*1 + 3 = 6. Summan y blir 10 + 6 = 16."
+    },
+    {
+        cat: "L9",
+        lesson: "Lektion 9 – Datatyper som parametrar i funktioner",
+        q: "Vad händer om man skickar in en lista som parameter till en funktion, som i koden nedan?",
+        code: "def AdderaHundra(lista):\n    summa = sum(lista)\n    slutsumma = summa + 100\n    return slutsumma\n\nprint(AdderaHundra([100, 300, 400, 3]))",
+        options: [
+            "Den behåller sin datatyp (lista) inuti funktionen och programmet skriver ut 903",
+            "Listan omvandlas automatiskt till en sträng och ger TypeError",
+            "Man kan bara skicka in int och float som parametrar till en funktion",
+            "Programmet skriver ut [100, 300, 400, 3, 100]"
+        ],
+        answer: 0,
+        explanation: "Man kan skicka valfri datatyp (sträng, nummer, lista m.m.) som parameter till en funktion och den behandlas som samma datatyp inuti funktionen. 803 + 100 = 903."
+    }
+];
+
+let currentQuestions = [];
+let currentIndex = 0;
+let score = 0;
+let wrongQuestions = [];
+let currentCategory = 'ALL';
+
+function shuffleArray(arr) {
+    const copy = [...arr];
+    for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+}
+
+function selectCategory(cat, btnEl) {
+    currentCategory = cat;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    if (btnEl) btnEl.classList.add('active');
+
+    if (cat === 'ALL') {
+        currentQuestions = [...allQuestions];
+    } else if (cat === 'EXAM') {
+        currentQuestions = shuffleArray(allQuestions).slice(0, 20);
+    } else {
+        currentQuestions = allQuestions.filter(q => q.cat === cat);
+    }
+    startQuizSession();
+}
+
+function shuffleCurrentQuiz() {
+    currentQuestions = shuffleArray(currentQuestions);
+    startQuizSession();
+}
+
+function startQuizSession() {
+    currentIndex = 0;
+    score = 0;
+    wrongQuestions = [];
+    document.getElementById('results-view').style.display = 'none';
+    document.getElementById('quiz-view').style.display = 'block';
+    renderQuestion();
+}
+
+function renderQuestion() {
+    const qObj = currentQuestions[currentIndex];
+    document.getElementById('question-counter').textContent = `Fråga ${currentIndex + 1} av ${currentQuestions.length}`;
+    document.getElementById('score-tracker').textContent = `Poäng: ${score} rätt`;
+    const progressPercent = ((currentIndex) / currentQuestions.length) * 100;
+    document.getElementById('progress-bar').style.width = `${progressPercent}%`;
+
+    document.getElementById('lesson-badge').textContent = qObj.lesson;
+    document.getElementById('question-text').textContent = qObj.q;
+
+    const codeBlock = document.getElementById('code-block');
+    if (qObj.code && qObj.code.trim() !== "") {
+        codeBlock.style.display = 'block';
+        codeBlock.textContent = qObj.code;
+    } else {
+        codeBlock.style.display = 'none';
+        codeBlock.textContent = '';
+    }
+
+    const optionsContainer = document.getElementById('options-container');
+    optionsContainer.innerHTML = '';
+    const letters = ['A', 'B', 'C', 'D'];
+
+    qObj.options.forEach((optText, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerHTML = `<span class="option-letter">${letters[idx]}</span><span>${optText}</span>`;
+        btn.onclick = () => handleAnswer(idx, btn);
+        optionsContainer.appendChild(btn);
+    });
+
+    document.getElementById('feedback-box').className = 'feedback-box';
+    document.getElementById('next-btn').style.display = 'none';
+}
+
+function handleAnswer(selectedIndex, clickedBtn) {
+    const qObj = currentQuestions[currentIndex];
+    const buttons = document.querySelectorAll('.option-btn');
+    buttons.forEach(b => b.disabled = true);
+
+    const feedbackBox = document.getElementById('feedback-box');
+    const feedbackTitle = document.getElementById('feedback-title');
+    const feedbackExp = document.getElementById('feedback-explanation');
+
+    if (selectedIndex === qObj.answer) {
+        clickedBtn.classList.add('correct');
+        score++;
+        feedbackTitle.textContent = "✓ Rätt svar!";
+        feedbackTitle.className = "feedback-title correct";
+    } else {
+        clickedBtn.classList.add('wrong');
+        buttons[qObj.answer].classList.add('correct');
+        wrongQuestions.push(qObj);
+        feedbackTitle.textContent = "✗ Fel svar";
+        feedbackTitle.className = "feedback-title wrong";
+    }
+
+    document.getElementById('score-tracker').textContent = `Poäng: ${score} rätt`;
+    feedbackExp.textContent = qObj.explanation;
+    feedbackBox.className = 'feedback-box show';
+
+    const nextBtn = document.getElementById('next-btn');
+    nextBtn.textContent = (currentIndex + 1 < currentQuestions.length) ? "Nästa fråga →" : "Visa slutresultat →";
+    nextBtn.style.display = 'inline-block';
+}
+
+function nextQuestion() {
+    currentIndex++;
+    if (currentIndex < currentQuestions.length) {
+        renderQuestion();
+    } else {
+        showResults();
+    }
+}
+
+function showResults() {
+    document.getElementById('quiz-view').style.display = 'none';
+    const resView = document.getElementById('results-view');
+    resView.style.display = 'block';
+
+    const total = currentQuestions.length;
+    const pct = Math.round((score / total) * 100);
+    document.getElementById('final-score').textContent = `${score} / ${total} (${pct}%)`;
+
+    let msg = "";
+    if (pct >= 90) msg = "Grymt jobbat! Du har stenkoll inför teoriprovet på Exam.net!";
+    else if (pct >= 75) msg = "Bra jobbat! Du har god kontroll på materialet. Kör gärna ett varv på de frågor du missade.";
+    else if (pct >= 50) msg = "Godkänt resultat, men repetera gärna fällorna kring loopar, listmetoder och slicing.";
+    else msg = "Kör igenom förklaringarna och testa att öva på dina felsvar nedan tills allt sitter!";
+
+    document.getElementById('final-message').textContent = msg;
+
+    const retryBtn = document.getElementById('retry-wrong-btn');
+    if (wrongQuestions.length > 0) {
+        retryBtn.style.display = 'inline-block';
+        retryBtn.textContent = `Öva på dina fel (${wrongQuestions.length} st)`;
+    } else {
+        retryBtn.style.display = 'none';
+    }
+}
+
+function restartQuiz() {
+    selectCategory(currentCategory, document.querySelector('.filter-btn.active'));
+}
+
+function retryWrongQuestions() {
+    currentQuestions = [...wrongQuestions];
+    startQuizSession();
+}
+
+// Starta vid laddning
+selectCategory('ALL', document.querySelector('.filter-btn'));
+</script>
+
+</body>
+</html>
+index.html
+Visar index.html.
