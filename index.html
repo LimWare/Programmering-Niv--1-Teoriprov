@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programmering 1 (Python) – Teoriprov & Kodlabb | JENSEN Education</title>
+    
+    <!-- Skulpt för att köra Python direkt i webbläsaren -->
+    <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js"></script>
+
     <style>
         :root {
             --bg-main: #0d1117;
@@ -180,20 +185,69 @@
         .option-btn.wrong { background: var(--danger-bg); border-color: var(--danger-red); color: #fff; }
         .option-btn.wrong .option-letter { background: var(--danger-red); border-color: var(--danger-red); color: #fff; }
         
-        .code-input-area {
+        /* Code Editor med syntaxfärgning */
+        .code-editor-wrapper {
+            position: relative;
             width: 100%;
             height: 120px;
             background: var(--code-bg);
-            color: #f0f6fc;
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 12px;
+            margin-bottom: 10px;
             font-family: Consolas, monospace;
             font-size: 0.95rem;
-            resize: vertical;
-            margin-bottom: 14px;
         }
-        .code-input-area:focus { outline: none; border-color: var(--accent-blue); }
+        .code-editor-wrapper textarea,
+        .code-editor-wrapper pre {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 12px;
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border: none;
+            background: transparent;
+        }
+        .code-editor-wrapper textarea {
+            color: transparent;
+            caret-color: #f0f6fc;
+            resize: none;
+            outline: none;
+            z-index: 2;
+        }
+        .code-editor-wrapper pre {
+            pointer-events: none;
+            color: #f0f6fc;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .py-keyword { color: #ff7b72; font-weight: bold; }
+        .py-string { color: #a5d6ff; }
+        .py-builtin { color: #d2a8ff; }
+
+        /* Output / Konsolruta för testkörning */
+        .output-box {
+            background: #000;
+            color: #3fb950;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-family: Consolas, monospace;
+            font-size: 0.88rem;
+            min-height: 50px;
+            max-height: 120px;
+            overflow-y: auto;
+            margin-bottom: 14px;
+            white-space: pre-wrap;
+            display: none;
+        }
+        .output-box.show { display: block; }
 
         .feedback-box {
             margin-top: 16px;
@@ -251,7 +305,7 @@
 <div class="container">
     <header>
         <h1>Programmering 1 (Python) – Teoriquiz & Kodlabb</h1>
-        <p>JENSEN Education – Träna både flerval och egen kodskrivning</p>
+        <p>JENSEN Education – Träna flerval, skriv kod och testkör direkt i webbläsaren!</p>
     </header>
 
     <div class="controls-card">
@@ -261,7 +315,7 @@
         </div>
         <div class="filter-group">
             <button class="filter-btn active" onclick="selectCategory('ALL', this)">Alla teoretiska</button>
-            <button class="filter-btn" onclick="selectCategory('CODE', this)">✍️ Kodlabb: Skriv koden själv</button>
+            <button class="filter-btn" onclick="selectCategory('CODE', this)">✍️ Kodlabb & Testkörning</button>
             <button class="filter-btn" onclick="selectCategory('EXAM', this)">⚡ Slutprovsläge (20 slumpade)</button>
             <button class="filter-btn" onclick="selectCategory('L1', this)">Lektion 1</button>
             <button class="filter-btn" onclick="selectCategory('L2_3', this)">Lektion 2–3</button>
@@ -288,10 +342,19 @@
             
             <div class="options-list" id="options-container"></div>
 
+            <!-- Kodlabb med syntaxfärgning och kör-knapp -->
             <div id="code-lab-container" style="display:none;">
-                <textarea class="code-input-area" id="user-code-input" placeholder="Skriv din Python-kod här..."></textarea>
-                <br>
-                <button class="primary-btn" onclick="checkCodeAnswer()">Kontrollera kod svar →</button>
+                <div class="code-editor-wrapper">
+                    <pre aria-hidden="true"><code id="code-highlight"></code></pre>
+                    <textarea class="code-editor-wrapper textarea" id="user-code-input" placeholder="Skriv din Python-kod här... (t.ex. print('Hej'))" oninput="updateHighlight(this)" style="position:absolute; top:0; left:0; width:100%; height:100%; padding:12px; background:transparent; border:none; color:transparent; caret-color:#f0f6fc; resize:none; outline:none; font-family:Consolas,monospace; font-size:0.95rem; z-index:2;"></textarea>
+                </div>
+                
+                <div style="display:flex; gap:10px; margin-bottom:10px;">
+                    <button class="secondary-btn" onclick="runPythonCode()" style="background:#238636; color:#fff; border-color:#2ea043;">▶ Kör kod (Testa output)</button>
+                    <button class="primary-btn" onclick="checkCodeAnswer()">Kontrollera svar →</button>
+                </div>
+                
+                <div class="output-box" id="python-output">Output kommer här...</div>
             </div>
 
             <div class="feedback-box" id="feedback-box">
@@ -319,41 +382,27 @@
 
 <script>
 const allQuestions = [
-    // --- KODLABB (Skriv själv) ---
+    // --- KODLABB (Skriv själv & testkör) ---
     {
         cat: "CODE", lesson: "Kodlabb – Funktioner (Lektion 9)",
-        q: "Skriv en funktion som heter 'plus' som tar emot två parametrar (a och b), adderar dem och returnerar summan.",
-        code: "# Exempel på anrop:\n# print(plus(3, 4)) -> ska ge 7", type: "code",
+        q: "Skriv en funktion som heter 'plus' som tar emot två parametrar (a och b), adderar dem och returnerar summan. Testa gärna att anropa den med print(plus(3, 4))!",
+        code: "# Exempel:\ndef plus(a, b):\n    return a + b\nprint(plus(3, 4))", type: "code",
         keywords: ["def", "plus", "return", "+"],
         explanation: "Rätt syntax:\ndef plus(a, b):\n    return a + b"
     },
     {
         cat: "CODE", lesson: "Kodlabb – For-loop & Range (Lektion 4)",
-        q: "Skriv en for-loop som skriver ut alla tal från och med 1 till och med 5 (använd range).",
+        q: "Skriv en for-loop som skriver ut alla tal från och med 1 till och med 5 (använd range och print).",
         code: "", type: "code",
         keywords: ["for", "range(1, 6)", "print"],
         explanation: "Rätt syntax:\nfor x in range(1, 6):\n    print(x)"
     },
     {
-        cat: "CODE", lesson: "Kodlabb – Input & Konvertering (Lektion 4)",
-        q: "Skriv kod som frågar användaren efter sin ålder med input(), konverterar till heltal (int) och sparar i variabeln 'ålder'.",
+        cat: "CODE", lesson: "Kodlabb – Aritmetik & Utskrift (Lektion 2)",
+        q: "Skriv kod som beräknar produkten av 12 och 13 och skriver ut resultatet med print().",
         code: "", type: "code",
-        keywords: ["input", "int", "ålder"],
-        explanation: "Rätt syntax:\nålder = int(input(\"Hur gammal är du?\"))"
-    },
-    {
-        cat: "CODE", lesson: "Kodlabb – Villkor (Lektion 5)",
-        q: "Skriv en if-sats som kollar om 'poäng' är >= 50. Om det är sant, skriv ut 'Godkänt'.",
-        code: "", type: "code",
-        keywords: ["if", "poäng", ">=", "print", "Godkänt"],
-        explanation: "Rätt syntax:\nif poäng >= 50:\n    print(\"Godkänt\")"
-    },
-    {
-        cat: "CODE", lesson: "Kodlabb – Listor (Lektion 7)",
-        q: "Skriv kod som skapar en tom lista 'namn', och lägger till strängen 'Alice' med rätt listmetod.",
-        code: "", type: "code",
-        keywords: ["namn", "[]", "append", "Alice"],
-        explanation: "Rätt syntax:\nnamn = []\nnamn.append(\"Alice\")"
+        keywords: ["print", "12", "13", "*"],
+        explanation: "Rätt syntax:\nprint(12 * 13)"
     },
 
     // --- FLERVALSFRÅGOR (Lektion 1-9) ---
@@ -361,7 +410,7 @@ const allQuestions = [
         cat: "L1", lesson: "Lektion 1 – Grunder",
         q: "Vad kallas datorns grundspråk som består av ettor och nollor och som datorns CPU direkt kan tolka?",
         code: "", options: ["Assembleringsspråk", "Maskinkod", "Högnivåspråk", "Källkod"], answer: 1,
-        explanation: "Datorers grundspråk kallas maskinkod och består av ettor och nollor."
+        explanation: "Datorers grundspråk kallas maskinkod och består av ettor och nollor[cite: 11, 13]."
     },
     {
         cat: "L1", lesson: "Lektion 1 – Grunder",
@@ -373,118 +422,45 @@ const allQuestions = [
             "En interpretator skapar en .exe-fil, medan en kompilator kör koden rad för rad",
             "Det finns ingen skillnad, orden betyder exakt samma sak"
         ], answer: 0,
-        explanation: "En interpretator tolkar koden rad för rad under körning (Python), medan en kompilator översätter allt i förväg till en körbar fil."
-    },
-    {
-        cat: "L1", lesson: "Lektion 1 – Grunder",
-        q: "Vad kallas processen att felsöka och åtgärda fel (errors) i ett datorprogram?",
-        code: "", options: ["Kompilering", "Indentering", "Debugging", "Deklarering"], answer: 2,
-        explanation: "Debugging är processen att felsöka och åtgärda fel i ett program."
+        explanation: "En interpretator tolkar koden rad för rad under körning (Python), medan en kompilator översätter allt i förväg till en körbar fil[cite: 21, 22]."
     },
     {
         cat: "L2_3", lesson: "Lektion 2 – Variabler & Datatyper",
         q: "Vilket av följande variabelnamn är TILLÅTET i Python?",
         code: "", options: ["1_variabel", "min variabel", "min_variabel_1", "min-variabel!"], answer: 2,
-        explanation: "Variabelnamn får innehålla bokstäver, siffror och understreck (_), men ej börja med siffra eller ha mellanslag."
-    },
-    {
-        cat: "L2_3", lesson: "Lektion 2 – Datatyper",
-        q: "Vilka datatyper får variablerna a, b, c och d i koden nedan?",
-        code: "a = 5\nb = 2.6\nc = '123'\nd = True",
-        options: [
-            "a: int, b: float, c: int, d: bool",
-            "a: int, b: float, c: str, d: bool",
-            "a: float, b: int, c: str, d: str",
-            "a: int, b: double, c: char, d: bool"
-        ], answer: 1,
-        explanation: "5 är heltal (int), 2.6 har decimaler (float), '123' inom citattecken är text (str) och True är bool."
+        explanation: "Variabelnamn får innehålla bokstäver, siffror och understreck (_), men ej börja med siffra eller ha mellanslag[cite: 42]."
     },
     {
         cat: "L2_3", lesson: "Lektion 2 – Prioritet",
         q: "Vad skriver följande program ut på skärmen?",
         code: "print(8 * 2 * (5 - 3) + 16 / 4 - 1)",
         options: ["35.0", "11.0", "39.0", "24.0"], answer: 0,
-        explanation: "Parentes först, sedan multiplikation/division från vänster till höger, och sist addition/subtraktion = 35.0."
-    },
-    {
-        cat: "L2_3", lesson: "Lektion 3 – Operatorer",
-        q: "Vad skriver följande kod ut?",
-        code: "print(9 / 2, \"och\", 9 // 2)\nprint(49 ** 0.5)",
-        options: [
-            "4.5 och 4 samt 7.0",
-            "4 och 4.5 samt 24.5",
-            "4.5 och 5 samt 7",
-            "4.0 och 4 samt 7.0"
-        ], answer: 0,
-        explanation: "/ ger vanlig division (4.5), // ger heltalsdivision (4), och ** 0.5 beräknar kvadratroten (7.0)."
+        explanation: "Parentes först, sedan multiplikation/division från vänster till höger, och sist addition/subtraktion = 35.0[cite: 50, 51]."
     },
     {
         cat: "L4_5", lesson: "Lektion 4 – Input",
         q: "Användaren matar in 8 när programmet körs. Vad skrivs ut?",
         code: "tal = input(\"Skriv ett heltal: \")\nprint(5 * tal)",
         options: ["40", "88888", "58", "TypeError"], answer: 1,
-        explanation: "input() returnerar alltid en sträng (str). 5 * '8' upprepar strängen fem gånger till '88888'."
-    },
-    {
-        cat: "L4_5", lesson: "Lektion 4 – Range",
-        q: "Vilka tal genererar range(1, 6)?",
-        code: "", options: ["1, 2, 3, 4, 5, 6", "0, 1, 2, 3, 4, 5", "1, 2, 3, 4, 5", "2, 3, 4, 5"], answer: 2,
-        explanation: "Startvärdet 1 ingår, men slutvärdet (6) inkluderas ej."
-    },
-    {
-        cat: "L4_5", lesson: "Lektion 5 – Villkor",
-        q: "Vad är fel i koden: if x = 10:",
-        code: "",
-        options: ["Man måste använda dubbla likhetstecken (==) vid jämförelse", "Man får inte ha siffror efter x", "if saknar semikolon", "Koden är korrekt"], answer: 0,
-        explanation: "Enkelt = är tilldelning. Vid jämförelse i villkor krävs ==."
-    },
-    {
-        cat: "L6_7", lesson: "Lektion 6 – While",
-        q: "Vad skiljer en while-loop från en for-loop?",
-        code: "",
-        options: [
-            "While upprepar kod så länge ett villkor är True; for upprepar ett bestämt antal gånger",
-            "For-loopar kan inte avbrytas",
-            "While används bara för matte",
-            "Ingen skillnad"
-        ], answer: 0,
-        explanation: "While styrs av ett villkor, for styrs av en sekvens eller ett bestämt antal varv."
+        explanation: "input() returnerar alltid en sträng (str). 5 * '8' upprepar strängen fem gånger till '88888'[cite: 93, 95]."
     },
     {
         cat: "L6_7", lesson: "Lektion 7 – Break / Continue",
         q: "Vad gör nyckelordet break i en loop?",
         code: "", options: ["Avbryter hela loopen omedelbart", "Hoppar över nuvarande varv", "Pausar programmet", "Startar om loopen"], answer: 0,
-        explanation: "break avbryter hela loopen direkt och hoppar till koden efter loopen."
-    },
-    {
-        cat: "L6_7", lesson: "Lektion 7 – Listor",
-        q: "Vilken listmetod lägger till ett element sist i listan?",
-        code: "", options: ["add()", "insert()", "append()", "push()"], answer: 2,
-        explanation: "append() lägger till ett element längst bak i listan."
-    },
-    {
-        cat: "L6_7", lesson: "Lektion 7 – Listmetoder",
-        q: "Hur tar man bort ett element baserat på dess INDEX?",
-        code: "", options: ["lista.remove(index)", "lista.pop(index)", "lista.delete(index)", "lista.clear(index)"], answer: 1,
-        explanation: "pop(index) tar bort via index, medan remove(värde) tar bort via värde."
+        explanation: "break avbryter hela loopen direkt och hoppar till koden efter loopen[cite: 167]."
     },
     {
         cat: "L8", lesson: "Lektion 8 – Slicing",
         q: "Om lista = [1, 4, 9, 16, 25], vad ger print(lista[1:3])?",
         code: "", options: ["[4, 9]", "[4, 9, 16]", "[1, 4, 9]", "[9, 16]"], answer: 0,
-        explanation: "Index 1 är 4, index 2 är 9. Index 3 (16) inkluderas ej. Svar: [4, 9]."
-    },
-    {
-        cat: "L8", lesson: "Lektion 8 – Math",
-        q: "Hur beräknar man kvadratroten av ett tal efter 'import math'?",
-        code: "", options: ["math.root(x)", "math.sqrt(x)", "math.pow(x)", "sqrt.math(x)"], answer: 1,
-        explanation: "math.sqrt(x) beräknar kvadratroten."
+        explanation: "Index 1 är 4, index 2 är 9. Index 3 (16) inkluderas ej. Svar: [4, 9][cite: 201]."
     },
     {
         cat: "L9", lesson: "Lektion 9 – Funktioner",
         q: "Vilket nyckelord används för att skicka tillbaka ett värde från en funktion?",
         code: "", options: ["send", "output", "return", "give"], answer: 2,
-        explanation: "return skickar tillbaka resultatet från funktionen."
+        explanation: "return skickar tillbaka resultatet från funktionen[cite: 216, 221]."
     }
 ];
 
@@ -501,6 +477,60 @@ function shuffleArray(arr) {
         [copy[i], copy[j]] = [copy[j], copy[i]];
     }
     return copy;
+}
+
+function updateHighlight(textarea) {
+    const code = textarea.value;
+    const codeEl = document.getElementById('code-highlight');
+    
+    let escaped = code
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+        
+    const keywords = /\b(def|return|for|in|if|else|elif|while|import|from|not|and|or|True|False)\b/g;
+    const builtins = /\b(print|range|int|float|str|bool|sum|min|max|round|pow|len|type)\b/g;
+    const strings = /(['"])(?:(?!\1)[^\\]|\\.)*\1/g;
+
+    escaped = escaped
+        .replace(strings, '<span class="py-string">$&</span>')
+        .replace(keywords, '<span class="py-keyword">$&</span>')
+        .replace(builtins, '<span class="py-builtin">$&</span>');
+        
+    codeEl.innerHTML = escaped + '\n';
+}
+
+function runPythonCode() {
+    const code = document.getElementById('user-code-input').value;
+    const outputBox = document.getElementById('python-output');
+    outputBox.classList.add('show');
+    outputBox.textContent = "Kör kod...\n";
+
+    let capturedOutput = "";
+    
+    // Konfigurera Skulpt för att fånga upp print()
+    Sk.pre = "python-output";
+    Sk.configure({
+        output: function(text) {
+            capturedOutput += text;
+            outputBox.textContent = capturedOutput;
+        },
+        read: function(x) {
+            if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+                throw "Fil ej hittad: " + x;
+            return Sk.builtinFiles["files"][x];
+        }
+    });
+
+    Sk.misceval.asyncToPromise(function() {
+        return Sk.importMainWithBody("<stdin>", false, code, true);
+    }).then(function(mod) {
+        if (!capturedOutput) {
+            outputBox.textContent = "Koden kördes utan fel (inga print-utskrifter).";
+        }
+    }, function(err) {
+        outputBox.textContent = "Felmeddelande:\n" + err.toString();
+    });
 }
 
 function selectCategory(cat, btnEl) {
@@ -556,11 +586,13 @@ function renderQuestion() {
 
     const optionsContainer = document.getElementById('options-container');
     const codeLabContainer = document.getElementById('code-lab-container');
+    document.getElementById('python-output').classList.remove('show');
 
     if (qObj.type === 'code') {
         optionsContainer.style.display = 'none';
         codeLabContainer.style.display = 'block';
         document.getElementById('user-code-input').value = '';
+        updateHighlight(document.getElementById('user-code-input'));
     } else {
         codeLabContainer.style.display = 'none';
         optionsContainer.style.display = 'flex';
