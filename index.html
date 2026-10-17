@@ -1040,7 +1040,7 @@ function showResults() {
     const resView = document.getElementById('results-view');
     resView.style.display = 'block';
 
-    The total = currentQuestions.length;
+    const total = currentQuestions.length;
     const pct = Math.round((score / total) * 100);
     document.getElementById('final-score').textContent = `${score} / totalt ${total} (${pct}%)`;
 
