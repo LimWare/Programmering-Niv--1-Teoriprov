@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programmering 1 (Python) – Teoriprov & Kodlabb | JENSEN Education</title>
+    <title>Programmering 1 (Python) – Teoriprov & Lektionskodlabb | JENSEN Education</title>
     
     <!-- Skulpt för att köra Python direkt i webbläsaren -->
     <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"></script>
@@ -303,12 +303,12 @@
 <div class="container">
     <header>
         <h1>Programmering 1 (Python) – Teoriprov & Lektionskodlabb</h1>
-        <p>JENSEN Education – Teori och flera kodövningar för varje lektion (1–9) + Blandade övningar!</p>
+        <p>JENSEN Education – Flera teorifrågor och flera skriv-själv-kodövningar per lektion (1–9)!</p>
     </header>
 
     <div class="controls-card">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-            <strong>Välj lektion eller träningsläge:</strong>
+            <strong>Välj lektion eller läge:</strong>
             <button class="secondary-btn" style="padding:5px 10px; font-size:0.8rem;" onclick="shuffleCurrentQuiz()">🔀 Blanda frågor</button>
         </div>
         <div class="filter-group">
@@ -385,10 +385,16 @@
 const allQuestions = [
     // --- LEKTION 1 ---
     {
-        cat: "L1", lesson: "Lektion 1 – Teori",
+        cat: "L1", lesson: "Lektion 1 – Teori 1",
         q: "Vad kallas datorns grundspråk som består av ettor och nollor och som CPU:n direkt kan tolka?",
         code: "", options: ["Assembleringsspråk", "Maskinkod", "Högnivåspråk", "Källkod"], answer: 1,
         explanation: "Maskinkod består av ettor och nollor som hårdvaran direkt förstår."
+    },
+    {
+        cat: "L1", lesson: "Lektion 1 – Teori 2",
+        q: "Vad är skillnaden mellan en interpretator och en kompilator?",
+        code: "", options: ["En interpretator tolkar koden rad för rad under körning, medan en kompilator översätter hela programmet i förväg", "En kompilator används bara i Python", "En interpretator skapar alltid en .exe-fil", "Det betyder samma sak"], answer: 0,
+        explanation: "Python är ett tolkande (interpreterat) språk."
     },
     {
         cat: "L1", lesson: "Lektion 1 – Kodlabb 1",
@@ -398,17 +404,23 @@ const allQuestions = [
     },
     {
         cat: "L1", lesson: "Lektion 1 – Kodlabb 2",
-        q: "Skriv kod som skriver ut ditt namn med hjälp av print().",
+        q: "Skriv kod som skriver ut ditt eget namn med hjälp av print().",
         code: "", type: "code", keywords: ["print"],
         explanation: "Rätt syntax:\nprint(\"Ditt Namn\")"
     },
 
     // --- LEKTION 2 ---
     {
-        cat: "L2", lesson: "Lektion 2 – Teori",
+        cat: "L2", lesson: "Lektion 2 – Teori 1",
         q: "Vilket av följande variabelnamn är TILLÅTET i Python?",
         code: "", options: ["1_variabel", "min variabel", "min_variabel_1", "min-variabel!"], answer: 2,
         explanation: "Variabelnamn får innehålla understreck (_) och siffror, men inte börja med en siffra eller innehålla mellanslag."
+    },
+    {
+        cat: "L2", lesson: "Lektion 2 – Teori 2",
+        q: "Vilken datatyp får variabeln x i koden: x = 13.5",
+        code: "", options: ["int", "float", "str", "bool"], answer: 1,
+        explanation: "Tal med decimalpunkt är av datatypen float."
     },
     {
         cat: "L2", lesson: "Lektion 2 – Kodlabb 1",
@@ -425,10 +437,16 @@ const allQuestions = [
 
     // --- LEKTION 3 ---
     {
-        cat: "L3", lesson: "Lektion 3 – Teori",
+        cat: "L3", lesson: "Lektion 3 – Teori 1",
         q: "Vad skriver koden ut: print(9 // 2)",
         code: "", options: ["4.5", "4", "5", "4.0"], answer: 1,
         explanation: "Operatorn // utför heltalsdivision och kastar bort eventuella decimaler."
+    },
+    {
+        cat: "L3", lesson: "Lektion 3 – Teori 2",
+        q: "Vad beräknar uttrycket 2 ** 3 i Python?",
+        code: "", options: ["2 gånger 3", "2 upphöjt till 3 (8)", "2 dividerat med 3", "Resten av 2 / 3"], answer: 1,
+        explanation: "** är potensoperatorn (2 * 2 * 2 = 8)."
     },
     {
         cat: "L3", lesson: "Lektion 3 – Kodlabb 1",
@@ -445,10 +463,16 @@ const allQuestions = [
 
     // --- LEKTION 4 ---
     {
-        cat: "L4", lesson: "Lektion 4 – Teori",
+        cat: "L4", lesson: "Lektion 4 – Teori 1",
         q: "Vad returnerar alltid funktionen input() i Python?",
         code: "", options: ["Ett heltal (int)", "En sträng (str)", "Ett flyttal (float)", "Ett booleskt värde"], answer: 1,
         explanation: "input() ger alltid en sträng, varför man ofta behöver konvertera med int() eller float()."
+    },
+    {
+        cat: "L4", lesson: "Lektion 4 – Teori 2",
+        q: "Vilka tal genererar funktionen range(1, 6)?",
+        code: "", options: ["1, 2, 3, 4, 5, 6", "0, 1, 2, 3, 4, 5", "1, 2, 3, 4, 5", "2, 3, 4, 5"], answer: 2,
+        explanation: "Startvärdet 1 ingår, men slutvärdet (6) inkluderas ej."
     },
     {
         cat: "L4", lesson: "Lektion 4 – Kodlabb 1",
@@ -465,10 +489,16 @@ const allQuestions = [
 
     // --- LEKTION 5 ---
     {
-        cat: "L5", lesson: "Lektion 5 – Teori",
+        cat: "L5", lesson: "Lektion 5 – Teori 1",
         q: "Vilket tecken används för att kontrollera likhet i en if-sats?",
         code: "", options: ["=", "==", "===", "!="], answer: 1,
         explanation: "== används för jämförelse, medan enkelt = används för tilldelning."
+    },
+    {
+        cat: "L5", lesson: "Lektion 5 – Teori 2",
+        q: "Vilket nyckelord används för flera alternativa villkor efter en if?",
+        code: "", options: ["else if", "elif", "case", "elseif"], answer: 1,
+        explanation: "I Python förkortas else if till elif."
     },
     {
         cat: "L5", lesson: "Lektion 5 – Kodlabb 1",
@@ -485,10 +515,16 @@ const allQuestions = [
 
     // --- LEKTION 6 ---
     {
-        cat: "L6", lesson: "Lektion 6 – Teori",
+        cat: "L6", lesson: "Lektion 6 – Teori 1",
         q: "När avbryts en while-loop automatiskt?",
         code: "", options: ["När dess villkor blir False", "Efter 10 varv", "Vid mellanslag", "Aldrig"], answer: 0,
         explanation: "En while-loop fortsätter så länge villkoret är True."
+    },
+    {
+        cat: "L6", lesson: "Lektion 6 – Teori 2",
+        q: "Varför uppstår en oändlig loop om räknaren inte uppdateras?",
+        code: "", options: ["Villkoret förblir True för evigt", "Python kraschar direkt", "Print saknas", "Ingen anledning"], answer: 0,
+        explanation: "Om villkoret aldrig ändras till False körs loopen i oändlighet."
     },
     {
         cat: "L6", lesson: "Lektion 6 – Kodlabb 1",
@@ -505,10 +541,16 @@ const allQuestions = [
 
     // --- LEKTION 7 ---
     {
-        cat: "L7", lesson: "Lektion 7 – Teori",
+        cat: "L7", lesson: "Lektion 7 – Teori 1",
         q: "Vilken listmetod lägger till ett element sist i en lista?",
         code: "", options: ["add()", "append()", "insert()", "push()"], answer: 1,
         explanation: "append() lägger till elementet längst bak i listan."
+    },
+    {
+        cat: "L7", lesson: "Lektion 7 – Teori 2",
+        q: "Hur tar man bort ett element baserat på dess INDEX?",
+        code: "", options: ["pop(index)", "remove(index)", "clear(index)", "delete(index)"], answer: 0,
+        explanation: "pop(index) tar bort via indexnummer."
     },
     {
         cat: "L7", lesson: "Lektion 7 – Kodlabb 1",
@@ -525,10 +567,16 @@ const allQuestions = [
 
     // --- LEKTION 8 ---
     {
-        cat: "L8", lesson: "Lektion 8 – Teori",
+        cat: "L8", lesson: "Lektion 8 – Teori 1",
         q: "Om lista = [10, 20, 30, 40, 50], vad ger print(lista[1:4])?",
         code: "", options: ["[20, 30, 40]", "[10, 20, 30]", "[20, 30, 40, 50]", "[30, 40]"], answer: 0,
         explanation: "Slicing [1:4] tar index 1, 2 och 3 (index 4 inkluderas ej)."
+    },
+    {
+        cat: "L8", lesson: "Lektion 8 – Teori 2",
+        q: "Hur beräknar man kvadratroten ur 64 efter 'import math'?",
+        code: "", options: ["math.sqrt(64)", "math.root(64)", "math.pow(64)", "sqrt(64)"], answer: 0,
+        explanation: "math.sqrt() beräknar kvadratroten."
     },
     {
         cat: "L8", lesson: "Lektion 8 – Kodlabb 1",
@@ -545,10 +593,16 @@ const allQuestions = [
 
     // --- LEKTION 9 ---
     {
-        cat: "L9", lesson: "Lektion 9 – Teori",
+        cat: "L9", lesson: "Lektion 9 – Teori 1",
         q: "Vilket nyckelord används för att definiera en egen funktion i Python?",
         code: "", options: ["function", "def", "fun", "define"], answer: 1,
         explanation: "Funktioner definieras med nyckelordet def."
+    },
+    {
+        cat: "L9", lesson: "Lektion 9 – Teori 2",
+        q: "Vad händer om en funktion saknar en return-sats?",
+        code: "", options: ["Den kraschar", "Den returnerar automatiskt None", "Den returnerar 0", "Den körs inte"], answer: 1,
+        explanation: "Funktioner som saknar return returnerar värdet None."
     },
     {
         cat: "L9", lesson: "Lektion 9 – Kodlabb 1",
