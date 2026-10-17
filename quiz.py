@@ -167,7 +167,6 @@ def kor_quiz():
             print("-" * 40)
             svar = input("Skriv ditt lösningsförslag här:\n> ").strip()
             
-            # Validera att nyckelorden finns med
             godkand = all(kw.lower() in svar.lower() for kw in u['nyckelord'])
             if godkand:
                 print("✅ Snyggt! Din kod innehåller rätt nyckelord.")
@@ -175,7 +174,6 @@ def kor_quiz():
                 print("❌ Din kod saknade några viktiga delar.")
         return
 
-    # Standard flervalsquiz
     aktuella_fragor = flervalsfragor[:]
     random.shuffle(aktuella_fragor)
     poang = 0
