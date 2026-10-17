@@ -6,8 +6,11 @@ Körs direkt i terminalen eller VS Code: python quiz.py
 
 import random
 
+# Rikligt med teorifrågor och skriv-själv-kodövningar per lektion (1-9)
 alla_fragor = [
+    # ==========================================
     # --- LEKTION 1 ---
+    # ==========================================
     {
         "lektion": "Lektion 1",
         "typ": "teori",
@@ -62,7 +65,9 @@ alla_fragor = [
         "nyckelord": ["print", "2026"]
     },
 
+    # ==========================================
     # --- LEKTION 2 ---
+    # ==========================================
     {
         "lektion": "Lektion 2",
         "typ": "teori",
@@ -117,7 +122,9 @@ alla_fragor = [
         "nyckelord": ["pris", "moms", "*", "print"]
     },
 
+    # ==========================================
     # --- LEKTION 3 ---
+    # ==========================================
     {
         "lektion": "Lektion 3",
         "typ": "teori",
@@ -172,7 +179,9 @@ alla_fragor = [
         "nyckelord": ["print", "3", "**", "4"]
     },
 
+    # ==========================================
     # --- LEKTION 4 ---
+    # ==========================================
     {
         "lektion": "Lektion 4",
         "typ": "teori",
@@ -227,7 +236,9 @@ alla_fragor = [
         "nyckelord": ["for", "range(1, 6)", "print"]
     },
 
+    # ==========================================
     # --- LEKTION 5 ---
+    # ==========================================
     {
         "lektion": "Lektion 5",
         "typ": "teori",
@@ -282,7 +293,9 @@ alla_fragor = [
         "nyckelord": ["if", "elif", "else", "print"]
     },
 
+    # ==========================================
     # --- LEKTION 6 ---
+    # ==========================================
     {
         "lektion": "Lektion 6",
         "typ": "teori",
@@ -337,7 +350,9 @@ alla_fragor = [
         "nyckelord": ["while", "print", "Klar!"]
     },
 
+    # ==========================================
     # --- LEKTION 7 ---
+    # ==========================================
     {
         "lektion": "Lektion 7",
         "typ": "teori",
@@ -392,7 +407,9 @@ alla_fragor = [
         "nyckelord": ["print", "[0]"]
     },
 
+    # ==========================================
     # --- LEKTION 8 ---
+    # ==========================================
     {
         "lektion": "Lektion 8",
         "typ": "teori",
@@ -447,7 +464,9 @@ alla_fragor = [
         "nyckelord": ["print", "sum", "5", "10", "15"]
     },
 
+    # ==========================================
     # --- LEKTION 9 ---
+    # ==========================================
     {
         "lektion": "Lektion 9",
         "typ": "teori",
