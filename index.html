@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programmering 1 (Python) – Teoriprov & Lektionskodlabb | JENSEN Education</title>
+    <title>Programmering 1 (Python) – Teoriprov & Kodlabb | JENSEN Education</title>
     
     <!-- Skulpt för att köra Python direkt i webbläsaren -->
     <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"></script>
@@ -303,7 +303,7 @@
 <div class="container">
     <header>
         <h1>Programmering 1 (Python) – Teoriprov & Lektionskodlabb</h1>
-        <p>JENSEN Education – Rikligt med teorifrågor och skriv-själv-kodövningar för varje lektion (1–9)!</p>
+        <p>JENSEN Education – Fullmatat med både teori och flera skriv-själv-kodövningar per lektion (1–9)!</p>
     </header>
 
     <div class="controls-card">
@@ -312,7 +312,7 @@
             <button class="secondary-btn" style="padding:5px 10px; font-size:0.8rem;" onclick="shuffleCurrentQuiz()">🔀 Blanda frågor</button>
         </div>
         <div class="filter-group">
-            <button class="filter-btn active" onclick="selectCategory('ALL', this)">Alla (1–9)</button>
+            <button class="filter-btn active" onclick="selectCategory('ALL', this)">Alla lektioner</button>
             <button class="filter-btn" onclick="selectCategory('EXAM', this)">⚡ Slutprovsläge (20 slumpade)</button>
             <button class="filter-btn" onclick="selectCategory('L1', this)">Lektion 1</button>
             <button class="filter-btn" onclick="selectCategory('L2', this)">Lektion 2</button>
@@ -1040,7 +1040,7 @@ function showResults() {
     const resView = document.getElementById('results-view');
     resView.style.display = 'block';
 
-    const total = currentQuestions.length;
+    The total = currentQuestions.length;
     const pct = Math.round((score / total) * 100);
     document.getElementById('final-score').textContent = `${score} / totalt ${total} (${pct}%)`;
 
