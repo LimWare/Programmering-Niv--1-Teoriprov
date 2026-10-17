@@ -185,11 +185,10 @@
         .option-btn.wrong { background: var(--danger-bg); border-color: var(--danger-red); color: #fff; }
         .option-btn.wrong .option-letter { background: var(--danger-red); border-color: var(--danger-red); color: #fff; }
         
-        /* Code Editor med syntaxfärgning */
         .code-editor-wrapper {
             position: relative;
             width: 100%;
-            height: 120px;
+            height: 130px;
             background: var(--code-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
@@ -231,7 +230,6 @@
         .py-string { color: #a5d6ff; }
         .py-builtin { color: #d2a8ff; }
 
-        /* Output / Konsolruta för testkörning */
         .output-box {
             background: #000;
             color: #3fb950;
@@ -315,7 +313,7 @@
         </div>
         <div class="filter-group">
             <button class="filter-btn active" onclick="selectCategory('ALL', this)">Alla teoretiska</button>
-            <button class="filter-btn" onclick="selectCategory('CODE', this)">✍️ Kodlabb & Testkörning</button>
+            <button class="filter-btn" onclick="selectCategory('CODE', this)">✍️ Kodlabb & Testkörning (Blandat)</button>
             <button class="filter-btn" onclick="selectCategory('EXAM', this)">⚡ Slutprovsläge (20 slumpade)</button>
             <button class="filter-btn" onclick="selectCategory('L1', this)">Lektion 1</button>
             <button class="filter-btn" onclick="selectCategory('L2_3', this)">Lektion 2–3</button>
@@ -346,7 +344,7 @@
             <div id="code-lab-container" style="display:none;">
                 <div class="code-editor-wrapper">
                     <pre aria-hidden="true"><code id="code-highlight"></code></pre>
-                    <textarea class="code-editor-wrapper textarea" id="user-code-input" placeholder="Skriv din Python-kod här... (t.ex. print('Hej'))" oninput="updateHighlight(this)" style="position:absolute; top:0; left:0; width:100%; height:100%; padding:12px; background:transparent; border:none; color:transparent; caret-color:#f0f6fc; resize:none; outline:none; font-family:Consolas,monospace; font-size:0.95rem; z-index:2;"></textarea>
+                    <textarea class="code-editor-wrapper textarea" id="user-code-input" placeholder="Skriv din Python-kod här..." oninput="updateHighlight(this)" style="position:absolute; top:0; left:0; width:100%; height:100%; padding:12px; background:transparent; border:none; color:transparent; caret-color:#f0f6fc; resize:none; outline:none; font-family:Consolas,monospace; font-size:0.95rem; z-index:2;"></textarea>
                 </div>
                 
                 <div style="display:flex; gap:10px; margin-bottom:10px;">
@@ -382,27 +380,62 @@
 
 <script>
 const allQuestions = [
-    // --- KODLABB (Skriv själv & testkör) ---
+    // --- KODLABB (Blandade utmaningar: Lätta till svåra) ---
     {
-        cat: "CODE", lesson: "Kodlabb – Funktioner (Lektion 9)",
-        q: "Skriv en funktion som heter 'plus' som tar emot två parametrar (a och b), adderar dem och returnerar summan. Testa gärna att anropa den med print(plus(3, 4))!",
-        code: "# Exempel:\ndef plus(a, b):\n    return a + b\nprint(plus(3, 4))", type: "code",
-        keywords: ["def", "plus", "return", "+"],
-        explanation: "Rätt syntax:\ndef plus(a, b):\n    return a + b"
+        cat: "CODE", lesson: "Kodlabb (Lätt) – Utskrift",
+        q: "Skriv kod som skriver ut texten 'Hej Jensen!' på skärmen med print().",
+        code: "", type: "code",
+        keywords: ["print", "Hej Jensen!"],
+        explanation: "Rätt syntax:\nprint(\"Hej Jensen!\")"
     },
     {
-        cat: "CODE", lesson: "Kodlabb – For-loop & Range (Lektion 4)",
+        cat: "CODE", lesson: "Kodlabb (Lätt) – Aritmetik",
+        q: "Skriv kod som beräknar produkten av 12 och 13 och skriver ut resultatet med print().",
+        code: "", type: "code",
+        keywords: ["print", "12", "13", "*"],
+        explanation: "Rätt syntax:\nprint(12 * 13)"
+    },
+    {
+        cat: "CODE", lesson: "Kodlabb (Medel) – For-loop & Range",
         q: "Skriv en for-loop som skriver ut alla tal från och med 1 till och med 5 (använd range och print).",
         code: "", type: "code",
         keywords: ["for", "range(1, 6)", "print"],
         explanation: "Rätt syntax:\nfor x in range(1, 6):\n    print(x)"
     },
     {
-        cat: "CODE", lesson: "Kodlabb – Aritmetik & Utskrift (Lektion 2)",
-        q: "Skriv kod som beräknar produkten av 12 och 13 och skriver ut resultatet med print().",
+        cat: "CODE", lesson: "Kodlabb (Medel) – Input & Konvertering",
+        q: "Skriv kod som frågar användaren efter ålder med input(), konverterar till heltal (int) och sparar i variabeln 'ålder'.",
         code: "", type: "code",
-        keywords: ["print", "12", "13", "*"],
-        explanation: "Rätt syntax:\nprint(12 * 13)"
+        keywords: ["input", "int", "ålder"],
+        explanation: "Rätt syntax:\nålder = int(input(\"Hur gammal är du?\"))"
+    },
+    {
+        cat: "CODE", lesson: "Kodlabb (Medel) – Villkorssats",
+        q: "Skriv en if-sats som kollar om variabeln 'poäng' är >= 50. Om det är sant, skriv ut 'Godkänt'.",
+        code: "", type: "code",
+        keywords: ["if", "poäng", ">=", "print", "Godkänt"],
+        explanation: "Rätt syntax:\nif poäng >= 50:\n    print(\"Godkänt\")"
+    },
+    {
+        cat: "CODE", lesson: "Kodlabb (Medel) – Listor & Append",
+        q: "Skriv kod som skapar en tom lista som heter 'namn', och lägger till strängen 'Alice' med rätt listmetod.",
+        code: "", type: "code",
+        keywords: ["namn", "[]", "append", "Alice"],
+        explanation: "Rätt syntax:\nnamn = []\nnamn.append(\"Alice\")"
+    },
+    {
+        cat: "CODE", lesson: "Kodlabb (Svår) – Egen Funktion",
+        q: "Skriv en funktion som heter 'plus' som tar emot två parametrar (a och b), adderar dem och returnerar summan med return.",
+        code: "# Exempel på anrop:\n# print(plus(3, 4)) -> ska ge 7", type: "code",
+        keywords: ["def", "plus", "return", "+"],
+        explanation: "Rätt syntax:\ndef plus(a, b):\n    return a + b"
+    },
+    {
+        cat: "CODE", lesson: "Kodlabb (Svår) – Funktion med villkor",
+        q: "Skriv en funktion som heter 'kolla_tal' som tar in ett tal x. Om x är större än 10 ska den returnera 'Stort', annars 'Litet'.",
+        code: "", type: "code",
+        keywords: ["def", "kolla_tal", "if", "return", "Stort", "Litet"],
+        explanation: "Rätt syntax:\ndef kolla_tal(x):\n    if x > 10:\n        return \"Stort\"\n    else:\n        return \"Litet\""
     },
 
     // --- FLERVALSFRÅGOR (Lektion 1-9) ---
@@ -508,7 +541,6 @@ function runPythonCode() {
 
     let capturedOutput = "";
     
-    // Konfigurera Skulpt för att fånga upp print()
     Sk.pre = "python-output";
     Sk.configure({
         output: function(text) {
