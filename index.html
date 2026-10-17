@@ -18,6 +18,7 @@
             --success-bg: rgba(46, 160, 67, 0.15);
             --danger-red: #f85149;
             --danger-bg: rgba(248, 81, 73, 0.15);
+            --warning-yellow: #d29922;
             --code-bg: #010409;
         }
 
@@ -780,4 +781,212 @@ const allQuestions = [
             "0 5 15 och på nästa rad 16",
             "1 4 15 och på nästa rad 6"
         ], answer: 0,
-        explanation: "min() ger 1, max() ger 5, sum() summerar 1+2+3+4+5 = 15, och pow(2, 4) beräknar 2 upphöjt
+        explanation: "min() ger 1, max() ger 5, sum() summerar 1+2+3+4+5 = 15, och pow(2, 4) beräknar 2 upphöjt till 4 (2*2*2*2 = 16)."
+    },
+    {
+        cat: "L8", lesson: "Lektion 8 – Matematikmodulen (math)",
+        q: "Hur importerar och använder man Pythons matematikmodul för att beräkna kvadratroten ur 64 och hämta konstanten pi?",
+        code: "",
+        options: [
+            "import math -> math.sqrt(64) och math.pi",
+            "include math -> math.root(64) och math.PI()",
+            "using math -> sqrt(64) och pi()",
+            "import mathematics -> mathematics.square(64) och mathematics.pi"
+        ], answer: 0,
+        explanation: "Modulen importeras med 'import math'. Kvadratroten beräknas med math.sqrt(64) (som ger 8.0) och pi hämtas med konstanten math.pi."
+    },
+
+    // LEKTION 9
+    {
+        cat: "L9", lesson: "Lektion 9 – Funktioner (Grundsyntax)",
+        q: "Vilket nyckelord används för att skapa (definiera) en egen funktion i Python, och vad kallas värdena som skickas in mellan parenteserna?",
+        code: "def minBeräkning(tal1, tal2):\n    svar = tal1 * tal2 + tal1\n    return svar",
+        options: [
+            "Nyckelordet 'def', och inmatningsvärdena kallas parametrar",
+            "Nyckelordet 'function', och inmatningsvärdena kallas variabler",
+            "Nyckelordet 'Def' (med stort D), och inmatningsvärdena kallas returer",
+            "Nyckelordet 'void', och inmatningsvärdena kallas moduler"
+        ], answer: 0,
+        explanation: "Man börjar med 'def' (definition), följt av funktionsnamnet och parametrarna inom parentes, avslutat med kolon (:)."
+    },
+    {
+        cat: "L9", lesson: "Lektion 9 – Returvärden från funktioner",
+        q: "Vad skriver följande program ut på skärmen?",
+        code: "def minBeräkning(tal1, tal2):\n    svar = tal1 * tal2 + tal1\n    return svar\n\ny = minBeräkning(5, 1) + minBeräkning(3, 1)\nprint(y)",
+        options: ["16", "8", "15", "10"], answer: 0,
+        explanation: "minBeräkning(5, 1) returnerar 5*1 + 5 = 10. minBeräkning(3, 1) returnerar 3*1 + 3 = 6. Summan y blir 10 + 6 = 16."
+    },
+    {
+        cat: "L9", lesson: "Lektion 9 – Datatyper som parametrar i funktioner",
+        q: "Vad händer om man skickar in en lista som parameter till en funktion, som i koden nedan?",
+        code: "def AdderaHundra(lista):\n    summa = sum(lista)\n    slutsumma = summa + 100\n    return slutsumma\n\nprint(AdderaHundra([100, 300, 400, 3]))",
+        options: [
+            "Den behåller sin datatyp (lista) inuti funktionen och programmet skriver ut 903",
+            "Listan omvandlas automatiskt till en sträng och ger TypeError",
+            "Man kan bara skicka in int och float som parametrar till en funktion",
+            "Programmet skriver ut [100, 300, 400, 3, 100]"
+        ], answer: 0,
+        explanation: "Man kan skicka valfri datatyp (sträng, nummer, lista m.m.) som parameter till en funktion och den behandlas som samma datatyp inuti funktionen. 803 + 100 = 903."
+    }
+];
+
+let currentQuestions = [];
+let currentIndex = 0;
+let score = 0;
+let wrongQuestions = [];
+let currentCategory = 'ALL';
+
+function shuffleArray(arr) {
+    const copy = [...arr];
+    for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+}
+
+function selectCategory(cat, btnEl) {
+    currentCategory = cat;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    if (btnEl) btnEl.classList.add('active');
+
+    if (cat === 'ALL') {
+        currentQuestions = [...allQuestions];
+    } else if (cat === 'EXAM') {
+        currentQuestions = shuffleArray(allQuestions).slice(0, 20);
+    } else {
+        currentQuestions = allQuestions.filter(q => q.cat === cat);
+    }
+    startQuizSession();
+}
+
+function shuffleCurrentQuiz() {
+    currentQuestions = shuffleArray(currentQuestions);
+    startQuizSession();
+}
+
+function startQuizSession() {
+    currentIndex = 0;
+    score = 0;
+    wrongQuestions = [];
+    document.getElementById('results-view').style.display = 'none';
+    document.getElementById('quiz-view').style.display = 'block';
+    renderQuestion();
+}
+
+function renderQuestion() {
+    const qObj = currentQuestions[currentIndex];
+    document.getElementById('question-counter').textContent = `Fråga ${currentIndex + 1} av ${currentQuestions.length}`;
+    document.getElementById('score-tracker').textContent = `Poäng: ${score} rätt`;
+    const progressPercent = ((currentIndex) / currentQuestions.length) * 100;
+    document.getElementById('progress-bar').style.width = `${progressPercent}%`;
+
+    document.getElementById('lesson-badge').textContent = qObj.lesson;
+    document.getElementById('question-text').textContent = qObj.q;
+
+    const codeBlock = document.getElementById('code-block');
+    if (qObj.code && qObj.code.trim() !== "") {
+        codeBlock.style.display = 'block';
+        codeBlock.textContent = qObj.code;
+    } else {
+        codeBlock.style.display = 'none';
+        codeBlock.textContent = '';
+    }
+
+    const optionsContainer = document.getElementById('options-container');
+    optionsContainer.innerHTML = '';
+    const letters = ['A', 'B', 'C', 'D'];
+
+    qObj.options.forEach((optText, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerHTML = `<span class="option-letter">${letters[idx]}</span><span>${optText}</span>`;
+        btn.onclick = () => handleAnswer(idx, btn);
+        optionsContainer.appendChild(btn);
+    });
+
+    document.getElementById('feedback-box').className = 'feedback-box';
+    document.getElementById('next-btn').style.display = 'none';
+}
+
+function handleAnswer(selectedIndex, clickedBtn) {
+    const qObj = currentQuestions[currentIndex];
+    const buttons = document.querySelectorAll('.option-btn');
+    buttons.forEach(b => b.disabled = true);
+
+    const feedbackBox = document.getElementById('feedback-box');
+    const feedbackTitle = document.getElementById('feedback-title');
+    const feedbackExp = document.getElementById('feedback-explanation');
+
+    if (selectedIndex === qObj.answer) {
+        clickedBtn.classList.add('correct');
+        score++;
+        feedbackTitle.textContent = "✓ Rätt svar!";
+        feedbackTitle.className = "feedback-title correct";
+    } else {
+        clickedBtn.classList.add('wrong');
+        buttons[qObj.answer].classList.add('correct');
+        wrongQuestions.push(qObj);
+        feedbackTitle.textContent = "✗ Fel svar";
+        feedbackTitle.className = "feedback-title wrong";
+    }
+
+    document.getElementById('score-tracker').textContent = `Poäng: ${score} rätt`;
+    feedbackExp.textContent = qObj.explanation;
+    feedbackBox.className = 'feedback-box show';
+
+    const nextBtn = document.getElementById('next-btn');
+    nextBtn.textContent = (currentIndex + 1 < currentQuestions.length) ? "Nästa fråga →" : "Visa slutresultat →";
+    nextBtn.style.display = 'inline-block';
+}
+
+function nextQuestion() {
+    currentIndex++;
+    if (currentIndex < currentQuestions.length) {
+        renderQuestion();
+    } else {
+        showResults();
+    }
+}
+
+function showResults() {
+    document.getElementById('quiz-view').style.display = 'none';
+    const resView = document.getElementById('results-view');
+    resView.style.display = 'block';
+
+    const total = currentQuestions.length;
+    const pct = Math.round((score / total) * 100);
+    document.getElementById('final-score').textContent = `${score} / ${total} (${pct}%)`;
+
+    let msg = "";
+    if (pct >= 90) msg = "Grymt jobbat! Du har stenkoll inför teoriprovet på Exam.net!";
+    else if (pct >= 75) msg = "Bra jobbat! Du har god kontroll på materialet. Kör gärna ett varv på de frågor du missade.";
+    else if (pct >= 50) msg = "Godkänt resultat, men repetera gärna fällorna kring loopar, listmetoder och slicing.";
+    else msg = "Kör igenom förklaringarna och testa att öva på dina felsvar nedan tills allt sitter!";
+
+    document.getElementById('final-message').textContent = msg;
+
+    const retryBtn = document.getElementById('retry-wrong-btn');
+    if (wrongQuestions.length > 0) {
+        retryBtn.style.display = 'inline-block';
+        retryBtn.textContent = `Öva bara på dina fel (${wrongQuestions.length} st)`;
+    } else {
+        retryBtn.style.display = 'none';
+    }
+}
+
+function restartQuiz() {
+    selectCategory(currentCategory, document.querySelector('.filter-btn.active'));
+}
+
+function retryWrongQuestions() {
+    currentQuestions = [...wrongQuestions];
+    startQuizSession();
+}
+
+// Starta vid laddning
+selectCategory('ALL', document.querySelector('.filter-btn'));
+</script>
+
+</body>
+</html>
