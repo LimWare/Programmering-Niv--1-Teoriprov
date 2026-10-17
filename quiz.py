@@ -8,129 +8,236 @@ import random
 
 # Flervalsfrågor (Teori & Kodspårning)
 flervalsfragor = [
+    # LEKTION 1
+    {
+        "lektion": "Lektion 1",
+        "fraga": "Vad kallas datorns grundspråk som består av ettor och nollor och som CPU:n direkt kan tolka?",
+        "alternativ": [
+            "A) Assembleringsspråk",
+            "B) Maskinkod",
+            "C) Högnivåspråk",
+            "D) Källkod"
+        ],
+        "ratt": "B",
+        "forklaring": "Maskinkod består av ettor och nollor som hårdvaran direkt förstår."
+    },
     {
         "lektion": "Lektion 1",
         "fraga": "Vad är skillnaden mellan en interpretator och en kompilator?",
         "alternativ": [
-            "A) Interpretatorn översätter rad för rad under körning; kompilatorn översätter hela programmet till en körbar fil",
-            "B) Kompilatorn översätter rad för rad; interpretatorn skapar en .exe-fil",
-            "C) Python använder enbart kompilator precis som C++",
-            "D) Det är två ord för exakt samma sak"
+            "A) En interpretator tolkar koden rad för rad under körning, medan en kompilator översätter hela programmet i förväg",
+            "B) En kompilator används bara i Python",
+            "C) En interpretator skapar alltid en .exe-fil",
+            "D) Det betyder samma sak"
         ],
         "ratt": "A",
-        "forklaring": "Python är ett interpreterat språk där tolken översätter koden rad för rad när programmet körs."
+        "forklaring": "Python är ett tolkande (interpreterat) språk."
     },
     {
-        "lektion": "Lektion 2",
-        "fraga": "Vad skriver print(8 * 2 * (5 - 3) + 16 / 4 - 1) ut?",
+        "lektion": "Lektion 1",
+        "fraga": "Vad kallas processen att hitta och åtgärda fel i ett program?",
         "alternativ": [
-            "A) 11.0",
-            "B) 35.0",
-            "C) 39.0",
-            "D) 24.0"
+            "A) Kompilering",
+            "B) Debugging",
+            "C) Indentering",
+            "D) Syntaxering"
         ],
         "ratt": "B",
-        "forklaring": "Parentesen (5-3)=2 beräknas först. Sedan 8*2*2=32 och 16/4=4.0. Slutligen 32 + 4.0 - 1 = 35.0."
+        "forklaring": "Debugging är felsökning av kod."
+    },
+
+    # LEKTION 2 & 3
+    {
+        "lektion": "Lektion 2",
+        "fraga": "Vilket av följande variabelnamn är TILLÅTET i Python?",
+        "alternativ": [
+            "A) 1_variabel",
+            "B) min variabel",
+            "C) min_variabel_1",
+            "D) min-variabel!"
+        ],
+        "ratt": "C",
+        "forklaring": "Variabelnamn får innehålla understreck (_) och siffror, men får inte börja med en siffra eller innehålla mellanslag/bindestreck."
     },
     {
         "lektion": "Lektion 2",
-        "fraga": "Vilket av följande värden ger False när man kör bool(värde)?",
+        "fraga": "Vilken datatyp får variabeln x i koden: x = 13.5",
         "alternativ": [
-            "A) bool('False')",
-            "B) bool(-1)",
-            "C) bool(0)",
-            "D) bool('0')"
+            "A) int",
+            "B) float",
+            "C) str",
+            "D) bool"
         ],
-        "ratt": "C",
-        "forklaring": "Alla tal utom 0 är True, och alla strängar som inte är tomma ('') är True."
+        "ratt": "B",
+        "forklaring": "Tal med decimalpunkt är av datatypen float."
     },
     {
         "lektion": "Lektion 3",
-        "fraga": "Vad skriver print(9 / 2, 'och', 9 // 2) ut?",
+        "fraga": "Vad skriver koden ut: print(9 // 2)",
         "alternativ": [
-            "A) 4 och 4.5",
-            "B) 4.5 och 4",
-            "C) 4.5 och 5",
-            "D) 4.0 och 4"
+            "A) 4.5",
+            "B) 4",
+            "C) 5",
+            "D) 4.0"
         ],
         "ratt": "B",
-        "forklaring": "/ utför vanlig division (4.5) medan // utför heltalsdivision och kapar decimalerna (4)."
+        "forklaring": "Operatorn // utför heltalsdivision och kastar bort eventuella decimaler."
+    },
+    {
+        "lektion": "Lektion 3",
+        "fraga": "Vad beräknar uttrycket 2 ** 3 i Python?",
+        "alternativ": [
+            "A) 2 gånger 3",
+            "B) 2 upphöjt till 3 (8)",
+            "C) 2 dividerat med 3",
+            "D) Resten av 2 / 3"
+        ],
+        "ratt": "B",
+        "forklaring": "** är potensoperatorn (2 * 2 * 2 = 8)."
+    },
+
+    # LEKTION 4 & 5
+    {
+        "lektion": "Lektion 4",
+        "fraga": "Vad returnerar alltid funktionen input() i Python?",
+        "alternativ": [
+            "A) Ett heltal (int)",
+            "B) En sträng (str)",
+            "C) Ett flyttal (float)",
+            "D) Ett booleskt värde"
+        ],
+        "ratt": "B",
+        "forklaring": "input() ger alltid en sträng, varför man ofta behöver konvertera med int() eller float()."
     },
     {
         "lektion": "Lektion 4",
-        "fraga": "Om användaren matar in 8 i: tal = input('Tal: ') och vi kör print(5 * tal), vad skrivs ut?",
+        "fraga": "Vilka tal genererar funktionen range(1, 6)?",
         "alternativ": [
-            "A) 40",
-            "B) 88888",
-            "C) 58",
-            "D) TypeError"
+            "A) 1, 2, 3, 4, 5, 6",
+            "B) 0, 1, 2, 3, 4, 5",
+            "C) 1, 2, 3, 4, 5",
+            "D) 2, 3, 4, 5"
         ],
-        "ratt": "B",
-        "forklaring": "input() ger alltid en sträng (str) om man inte omvandlar med int() eller float(). 5 * '8' blir '88888'."
+        "ratt": "C",
+        "forklaring": "Startvärdet 1 ingår, men slutvärdet (6) inkluderas ej."
     },
     {
-        "lektion": "Lektion 4 & 5",
-        "fraga": "Vilka tal skrivs ut av: for n in range(1, 10, 3): print(n) ?",
+        "lektion": "Lektion 5",
+        "fraga": "Vilket tecken används för att kontrollera likhet i en if-sats?",
         "alternativ": [
-            "A) 1, 4, 7, 10",
-            "B) 1, 4, 7",
-            "C) 1, 3, 6, 9",
-            "D) 0, 3, 6, 9"
+            "A) =",
+            "B) ==",
+            "C) ===",
+            "D) !="
         ],
         "ratt": "B",
-        "forklaring": "Startvärdet är 1, steglängden är 3 (1, 4, 7) och slutvärdet 10 inkluderas inte."
+        "forklaring": "== används för jämförelse, medan enkelt = används för variabeltilldelning."
     },
     {
-        "lektion": "Lektion 7",
-        "fraga": "Vad är skillnaden mellan break och continue i en loop?",
+        "lektion": "Lektion 5",
+        "fraga": "Vilket nyckelord används för flera alternativa villkor efter en if-sats?",
         "alternativ": [
-            "A) break avslutar hela loopen direkt; continue hoppar bara över resten av nuvarande varv och går till nästa",
-            "B) continue avslutar hela programmet; break hoppar till nästa varv",
-            "C) break fungerar bara i for-loopar och continue bara i while-loopar",
-            "D) De gör exakt samma sak"
+            "A) else if",
+            "B) elif",
+            "C) case",
+            "D) elseif"
+        ],
+        "ratt": "B",
+        "forklaring": "I Python förkortas else if till elif."
+    },
+
+    # LEKTION 6 & 7
+    {
+        "lektion": "Lektion 6",
+        "fraga": "När avbryts en while-loop automatiskt?",
+        "alternativ": [
+            "A) När dess villkor blir False",
+            "B) Efter 10 varv",
+            "C) Vid mellanslag",
+            "D) Aldrig"
         ],
         "ratt": "A",
-        "forklaring": "break bryter ut ur hela slingan, medan continue stoppar nuvarande iteration och fortsätter med nästa."
+        "forklaring": "En while-loop fortsätter så länge villkoret är True."
     },
     {
         "lektion": "Lektion 7",
-        "fraga": "Vilken listmetod tar bort ett element baserat på dess INDEX respektive dess VÄRDE?",
+        "fraga": "Vad gör nyckelordet break i en loop?",
         "alternativ": [
-            "A) remove(index) och pop(värde)",
-            "B) pop(index) och remove(värde)",
-            "C) clear(index) och delete(värde)",
-            "D) insert(index) och append(värde)"
+            "A) Avbryter hela loopen omedelbart",
+            "B) Hoppar över nuvarande varv",
+            "C) Pausar programmet",
+            "D) Startar om loopen"
+        ],
+        "ratt": "A",
+        "forklaring": "break avbryter loopen helt och hållet."
+    },
+    {
+        "lektion": "Lektion 7",
+        "fraga": "Vilken listmetod lägger till ett element sist i en lista?",
+        "alternativ": [
+            "A) add()",
+            "B) append()",
+            "C) insert()",
+            "D) push()"
         ],
         "ratt": "B",
-        "forklaring": "I pop() anger man indexnumret (t.ex. cars.pop(0)), och i remove() anger man värdet (t.ex. cars.remove('Volvo'))."
+        "forklaring": "append() lägger till elementet längst bak i listan."
+    },
+
+    # LEKTION 8
+    {
+        "lektion": "Lektion 8",
+        "fraga": "Om lista = [10, 20, 30, 40, 50], vad ger print(lista[1:4])?",
+        "alternativ": [
+            "A) [20, 30, 40]",
+            "B) [10, 20, 30]",
+            "C) [20, 30, 40, 50]",
+            "D) [30, 40]"
+        ],
+        "ratt": "A",
+        "forklaring": "Slicing [1:4] tar index 1, 2 och 3 (index 4 inkluderas ej)."
     },
     {
         "lektion": "Lektion 8",
-        "fraga": "Om lista = [1, 4, 9, 16, 25, 90], vad ger print(lista[2:4]) ?",
+        "fraga": "Hur importerar man matematikmodulen i Python?",
         "alternativ": [
-            "A) [4, 9, 16]",
-            "B) [9, 16]",
-            "C) [9, 16, 25]",
-            "D) [1, 4]"
+            "A) include math",
+            "B) import math",
+            "C) using math",
+            "D) math.load()"
         ],
         "ratt": "B",
-        "forklaring": "lista[2:4] tar elementen från och med index 2 fram till index 4 (index 4 inkluderas inte)."
+        "forklaring": "Moduler importeras med nyckelordet import."
+    },
+
+    # LEKTION 9
+    {
+        "lektion": "Lektion 9",
+        "fraga": "Vilket nyckelord används för att definiera en egen funktion i Python?",
+        "alternativ": [
+            "A) function",
+            "B) def",
+            "C) fun",
+            "D) define"
+        ],
+        "ratt": "B",
+        "forklaring": "Funktioner definieras med nyckelordet def."
     },
     {
         "lektion": "Lektion 9",
-        "fraga": "Vad skriver koden ut?\ndef calc(a, b):\n    return a * b + a\nprint(calc(4, 5))",
+        "fraga": "Vad händer om en funktion saknar en return-sats?",
         "alternativ": [
-            "A) 20",
-            "B) 24",
-            "C) 25",
-            "D) 9"
+            "A) Den kraschar",
+            "B) Den returnerar automatiskt None",
+            "C) Den returnerar 0",
+            "D) Den körs inte"
         ],
         "ratt": "B",
-        "forklaring": "Funktionen beräknar 4 * 5 + 4 = 24 och returnerar värdet."
+        "forklaring": "Funktioner som saknar return returnerar värdet None."
     }
 ]
 
-# Kodlabb-utmaningar (blandade: lätta till svåra)
+# Kodlabb-utmaningar
 kodutmaningar = [
     {
         "lektion": "Kodlabb (Lätt) – Utskrift",
@@ -139,46 +246,16 @@ kodutmaningar = [
         "nyckelord": ["print", "Hej Jensen!"]
     },
     {
-        "lektion": "Kodlabb (Lätt) – Aritmetik",
-        "uppgift": "Skriv kod som beräknar produkten av 12 och 13 och skriver ut resultatet med print().",
-        "tips": "Använd print(12 * 13)",
-        "nyckelord": ["print", "12", "13", "*"]
-    },
-    {
         "lektion": "Kodlabb (Medel) – For-loop & Range",
         "uppgift": "Skriv en for-loop som skriver ut alla tal från 1 till 5 (använd range och print).",
         "tips": "Använd for, range(1, 6) och print",
         "nyckelord": ["for", "range", "print"]
     },
     {
-        "lektion": "Kodlabb (Medel) – Input & Konvertering",
-        "uppgift": "Skriv kod som frågar efter ålder med input(), konverterar till int och sparar i variabeln 'ålder'.",
-        "tips": "Använd input(), int() och ålder =",
-        "nyckelord": ["input", "int", "ålder"]
-    },
-    {
-        "lektion": "Kodlabb (Medel) – Villkorssats",
-        "uppgift": "Skriv en if-sats som kollar om 'poäng' är >= 50. Om det är sant, skriv ut 'Godkänt'.",
-        "tips": "Använd if, poäng, >= och print",
-        "nyckelord": ["if", "poäng", ">=", "print", "Godkänt"]
-    },
-    {
-        "lektion": "Kodlabb (Medel) – Listor & Append",
-        "uppgift": "Skriv kod som skapar en tom lista 'namn', och lägger till strängen 'Alice' med rätt listmetod.",
-        "tips": "Använd [] och append",
-        "nyckelord": ["namn", "[]", "append", "Alice"]
-    },
-    {
         "lektion": "Kodlabb (Svår) – Egen Funktion",
         "uppgift": "Skriv en funktion som heter 'plus' som tar emot två parametrar (a och b), adderar dem och returnerar summan.",
         "tips": "Använd nyckelorden def, plus, return och +",
         "nyckelord": ["def", "plus", "return", "+"]
-    },
-    {
-        "lektion": "Kodlabb (Svår) – Funktion med villkor",
-        "uppgift": "Skriv en funktion 'kolla_tal' som tar in x. Om x > 10 returnera 'Stort', annars 'Litet'.",
-        "tips": "Använd def, kolla_tal, if, return",
-        "nyckelord": ["def", "kolla_tal", "if", "return", "Stort", "Litet"]
     }
 ]
 
