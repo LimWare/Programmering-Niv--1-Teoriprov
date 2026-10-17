@@ -303,7 +303,7 @@
 <div class="container">
     <header>
         <h1>Programmering 1 (Python) – Teoriprov & Lektionskodlabb</h1>
-        <p>JENSEN Education – Flera teorifrågor och flera skriv-själv-kodövningar per lektion (1–9)!</p>
+        <p>JENSEN Education – Rikligt med teorifrågor och skriv-själv-kodövningar för varje lektion (1–9)!</p>
     </header>
 
     <div class="controls-card">
@@ -383,7 +383,9 @@
 
 <script>
 const allQuestions = [
+    // ==========================================
     // --- LEKTION 1 ---
+    // ==========================================
     {
         cat: "L1", lesson: "Lektion 1 – Teori 1",
         q: "Vad kallas datorns grundspråk som består av ettor och nollor och som CPU:n direkt kan tolka?",
@@ -397,6 +399,18 @@ const allQuestions = [
         explanation: "Python är ett tolkande (interpreterat) språk."
     },
     {
+        cat: "L1", lesson: "Lektion 1 – Teori 3",
+        q: "Vad kallas processen att hitta och åtgärda fel i ett program?",
+        code: "", options: ["Kompilering", "Debugging", "Indentering", "Syntaxering"], answer: 1,
+        explanation: "Debugging är processen att spåra och åtgärda buggar/fel i kod."
+    },
+    {
+        cat: "L1", lesson: "Lektion 1 – Teori 4",
+        q: "Vad står förkortningen IDE för?",
+        code: "", options: ["Internal Data Execution", "Integrated Development Environment", "Interactive Debugging Engine", "Internet Document Editor"], answer: 1,
+        explanation: "IDE står för Integrated Development Environment (t.ex. VS Code)."
+    },
+    {
         cat: "L1", lesson: "Lektion 1 – Kodlabb 1",
         q: "Skriv kod som skriver ut texten 'Hej Jensen!' på skärmen med print().",
         code: "", type: "code", keywords: ["print", "Hej Jensen!"],
@@ -408,8 +422,16 @@ const allQuestions = [
         code: "", type: "code", keywords: ["print"],
         explanation: "Rätt syntax:\nprint(\"Ditt Namn\")"
     },
+    {
+        cat: "L1", lesson: "Lektion 1 – Kodlabb 3",
+        q: "Skriv en print-sats som skriver ut talet 2026 på skärmen.",
+        code: "", type: "code", keywords: ["print", "2026"],
+        explanation: "Rätt syntax:\nprint(2026)"
+    },
 
+    // ==========================================
     // --- LEKTION 2 ---
+    // ==========================================
     {
         cat: "L2", lesson: "Lektion 2 – Teori 1",
         q: "Vilket av följande variabelnamn är TILLÅTET i Python?",
@@ -423,6 +445,18 @@ const allQuestions = [
         explanation: "Tal med decimalpunkt är av datatypen float."
     },
     {
+        cat: "L2", lesson: "Lektion 2 – Teori 3",
+        q: "Vad blir datatypen för x i koden: x = 'True'",
+        code: "", options: ["bool", "int", "str", "float"], answer: 2,
+        explanation: "Eftersom värdet omges av citattecken ('True') är det en textsträng (str)."
+    },
+    {
+        cat: "L2", lesson: "Lektion 2 – Teori 4",
+        q: "Vilket specialtecken skapar en ny rad inuti en print-sträng?",
+        code: "", options: ["\\t", "\\n", "\\r", "\\\\"], answer: 1,
+        explanation: "\\n står för ny rad (newline)."
+    },
+    {
         cat: "L2", lesson: "Lektion 2 – Kodlabb 1",
         q: "Skapa en variabel som heter 'kurs' och tilldela den strängen 'Programmering 1', skriv sedan ut den.",
         code: "", type: "code", keywords: ["kurs", "=", "print"],
@@ -434,8 +468,16 @@ const allQuestions = [
         code: "", type: "code", keywords: ["tal1", "tal2", "+", "print"],
         explanation: "Rätt syntax:\ntal1 = 10\ntal2 = 5\nprint(tal1 + tal2)"
     },
+    {
+        cat: "L2", lesson: "Lektion 2 – Kodlabb 3",
+        q: "Skapa en variabel 'pris' med värdet 199.9 och en variabel 'moms' med värdet 1.25, multiplicera dem och skriv ut.",
+        code: "", type: "code", keywords: ["pris", "moms", "*", "print"],
+        explanation: "Rätt syntax:\npris = 199.9\nmoms = 1.25\nprint(pris * moms)"
+    },
 
+    // ==========================================
     // --- LEKTION 3 ---
+    // ==========================================
     {
         cat: "L3", lesson: "Lektion 3 – Teori 1",
         q: "Vad skriver koden ut: print(9 // 2)",
@@ -449,6 +491,18 @@ const allQuestions = [
         explanation: "** är potensoperatorn (2 * 2 * 2 = 8)."
     },
     {
+        cat: "L3", lesson: "Lektion 3 – Teori 3",
+        q: "Vad beräknar modulo-operatorn (%) i Python?",
+        code: "", options: ["Vanlig division", "Resten vid division", "Procent", "Multiplikation"], answer: 1,
+        explanation: "Modulo (%) returnerar resten av en division (t.ex. 5 % 2 = 1)."
+    },
+    {
+        cat: "L3", lesson: "Lektion 3 – Teori 4",
+        q: "Vilket av följande uttryck ger False i Python?",
+        code: "", options: ["bool(-5)", "bool('Hej')", "bool(0)", "bool('0')"], answer: 2,
+        explanation: "Endast talet 0 (samt tomma strängar/listor) ger False."
+    },
+    {
         cat: "L3", lesson: "Lektion 3 – Kodlabb 1",
         q: "Skriv kod som beräknar produkten av 12 och 13 och skriver ut resultatet med print().",
         code: "", type: "code", keywords: ["print", "12", "13", "*"],
@@ -460,8 +514,16 @@ const allQuestions = [
         code: "", type: "code", keywords: ["print", "17", "%", "4"],
         explanation: "Rätt syntax:\nprint(17 % 4)"
     },
+    {
+        cat: "L3", lesson: "Lektion 3 – Kodlabb 3",
+        q: "Skriv kod som beräknar 3 upphöjt till 4 med potensoperatorn (**).",
+        code: "", type: "code", keywords: ["print", "3", "**", "4"],
+        explanation: "Rätt syntax:\nprint(3 ** 4)"
+    },
 
+    // ==========================================
     // --- LEKTION 4 ---
+    // ==========================================
     {
         cat: "L4", lesson: "Lektion 4 – Teori 1",
         q: "Vad returnerar alltid funktionen input() i Python?",
@@ -475,6 +537,18 @@ const allQuestions = [
         explanation: "Startvärdet 1 ingår, men slutvärdet (6) inkluderas ej."
     },
     {
+        cat: "L4", lesson: "Lektion 4 – Teori 3",
+        q: "Vilka tal skrivs ut av: for i in range(1, 10, 3): print(i)",
+        code: "", options: ["1, 4, 7, 10", "1, 4, 7", "1, 3, 6, 9", "0, 3, 6, 9"], answer: 1,
+        explanation: "Start 1, steg 3 upp till 10 ger 1, 4, 7 (10 ingår ej)."
+    },
+    {
+        cat: "L4", lesson: "Lektion 4 – Teori 4",
+        q: "Vad gör funktionen round(3.789, 1)?",
+        code: "", options: ["Avrundar till 1 decimal (3.8)", "Avrundar till heltal (4)", "Ger ett felmeddelande", "Tar bort decimaler"], answer: 0,
+        explanation: "round(tal, 1) avrundar till angivet antal decimaler."
+    },
+    {
         cat: "L4", lesson: "Lektion 4 – Kodlabb 1",
         q: "Skriv kod som frågar användaren efter namn med input() och sparar i variabeln 'namn'.",
         code: "", type: "code", keywords: ["namn", "input"],
@@ -486,8 +560,16 @@ const allQuestions = [
         code: "", type: "code", keywords: ["input", "int", "ålder"],
         explanation: "Rätt syntax:\nålder = int(input(\"Ålder: \"))"
     },
+    {
+        cat: "L4", lesson: "Lektion 4 – Kodlabb 3",
+        q: "Skriv en for-loop som skriver ut alla tal från 1 till 5 med range().",
+        code: "", type: "code", keywords: ["for", "range(1, 6)", "print"],
+        explanation: "Rätt syntax:\nfor i in range(1, 6):\n    print(i)"
+    },
 
+    // ==========================================
     // --- LEKTION 5 ---
+    // ==========================================
     {
         cat: "L5", lesson: "Lektion 5 – Teori 1",
         q: "Vilket tecken används för att kontrollera likhet i en if-sats?",
@@ -501,6 +583,18 @@ const allQuestions = [
         explanation: "I Python förkortas else if till elif."
     },
     {
+        cat: "L5", lesson: "Lektion 5 – Teori 3",
+        q: "Hur skriver man 'inte lika med' i Python?",
+        code: "", options: ["<>", "!=", "=/=", "NOT"], answer: 1,
+        explanation: "'Inte lika med' skrivs med !=."
+    },
+    {
+        cat: "L5", lesson: "Lektion 5 – Teori 4",
+        q: "Vad saknas i koden: if x > 5 print('Stort')",
+        code: "", options: ["Kolon (:) efter villkoret", "Parenteser", "Else-block", "Inget fel"], answer: 0,
+        explanation: "if-satser måste alltid avslutas med kolon (:)."
+    },
+    {
         cat: "L5", lesson: "Lektion 5 – Kodlabb 1",
         q: "Skriv en if-sats som kollar om 'poäng' är >= 50. Om sant, skriv ut 'Godkänt'.",
         code: "", type: "code", keywords: ["if", "poäng", ">=", "print", "Godkänt"],
@@ -512,8 +606,16 @@ const allQuestions = [
         code: "", type: "code", keywords: ["if", "else", "print"],
         explanation: "Rätt syntax:\nif svar == \"ja\":\n    print(\"Rätt\")\nelse:\n    print(\"Fel\")"
     },
+    {
+        cat: "L5", lesson: "Lektion 5 – Kodlabb 3",
+        q: "Skriv en if/elif/else-sats som kollar om 'tal > 0' (skriv 'Positivt'), 'tal == 0' (skriv 'Noll'), annars 'Negativt'.",
+        code: "", type: "code", keywords: ["if", "elif", "else", "print"],
+        explanation: "Rätt syntax:\nif tal > 0:\n    print(\"Positivt\")\nelif tal == 0:\n    print(\"Noll\")\nelse:\n    print(\"Negativt\")"
+    },
 
+    // ==========================================
     // --- LEKTION 6 ---
+    // ==========================================
     {
         cat: "L6", lesson: "Lektion 6 – Teori 1",
         q: "När avbryts en while-loop automatiskt?",
@@ -527,6 +629,18 @@ const allQuestions = [
         explanation: "Om villkoret aldrig ändras till False körs loopen i oändlighet."
     },
     {
+        cat: "L6", lesson: "Lektion 6 – Teori 3",
+        q: "Vad gör nyckelordet break i en loop?",
+        code: "", options: ["Avbryter hela loopen omedelbart", "Hoppar över nuvarande varv", "Pausar", "Startar om"], answer: 0,
+        explanation: "break avbryter loopen helt och hållet."
+    },
+    {
+        cat: "L6", lesson: "Lektion 6 – Teori 4",
+        q: "Vad gör nyckelordet continue i en loop?",
+        code: "", options: ["Avbryter hela loopen", "Hoppar över resten av nuvarande varv och går till nästa", "Startar om programmet", "Gör ingenting"], answer: 1,
+        explanation: "continue hoppar över resten av den aktuella iterationen och fortsätter med nästa varv."
+    },
+    {
         cat: "L6", lesson: "Lektion 6 – Kodlabb 1",
         q: "Skriv en while-loop som körs så länge 'x < 3' och skriver ut x.",
         code: "", type: "code", keywords: ["while", "x < 3", "print"],
@@ -538,8 +652,16 @@ const allQuestions = [
         code: "", type: "code", keywords: ["for", "range(1, 6)", "print"],
         explanation: "Rätt syntax:\nfor i in range(1, 6):\n    print(i)"
     },
+    {
+        cat: "L6", lesson: "Lektion 6 – Kodlabb 3",
+        q: "Skriv en while-loop med en räknare som räknar ner från 3 till 1 och sedan skriver ut 'Klar!'.",
+        code: "", type: "code", keywords: ["while", "print", "Klar!"],
+        explanation: "Rätt syntax:\ni = 3\nwhile i > 0:\n    print(i)\n    i -= 1\nprint(\"Klar!\")"
+    },
 
+    // ==========================================
     // --- LEKTION 7 ---
+    // ==========================================
     {
         cat: "L7", lesson: "Lektion 7 – Teori 1",
         q: "Vilken listmetod lägger till ett element sist i en lista?",
@@ -548,9 +670,21 @@ const allQuestions = [
     },
     {
         cat: "L7", lesson: "Lektion 7 – Teori 2",
+        q: "Vilket index har det första elementet i en lista i Python?",
+        code: "", options: ["1", "0", "-1", "Inget index"], answer: 1,
+        explanation: "Python är nollindexerat (första elementet är index 0)."
+    },
+    {
+        cat: "L7", lesson: "Lektion 7 – Teori 3",
         q: "Hur tar man bort ett element baserat på dess INDEX?",
         code: "", options: ["pop(index)", "remove(index)", "clear(index)", "delete(index)"], answer: 0,
         explanation: "pop(index) tar bort via indexnummer."
+    },
+    {
+        cat: "L7", lesson: "Lektion 7 – Teori 4",
+        q: "Vilken funktion ger antalet element i en lista?",
+        code: "", options: ["size()", "length()", "len()", "count()"], answer: 2,
+        explanation: "len() returnerar hur många element som finns i en lista eller sträng."
     },
     {
         cat: "L7", lesson: "Lektion 7 – Kodlabb 1",
@@ -564,8 +698,16 @@ const allQuestions = [
         code: "bilar = ['Volvo', 'Saab', 'BMW']", type: "code", keywords: ["bilar", "pop", "0"],
         explanation: "Rätt syntax:\nbilar.pop(0)"
     },
+    {
+        cat: "L7", lesson: "Lektion 7 – Kodlabb 3",
+        q: "Skriv kod som skapar en lista med tre namn och skriver ut det första namnet via dess index [0].",
+        code: "", type: "code", keywords: ["print", "[0]"],
+        explanation: "Rätt syntax:\nnamn = [\"Anna\", \"Björn\", \"Cecilia\"]\nprint(namn[0])"
+    },
 
+    // ==========================================
     // --- LEKTION 8 ---
+    // ==========================================
     {
         cat: "L8", lesson: "Lektion 8 – Teori 1",
         q: "Om lista = [10, 20, 30, 40, 50], vad ger print(lista[1:4])?",
@@ -574,9 +716,21 @@ const allQuestions = [
     },
     {
         cat: "L8", lesson: "Lektion 8 – Teori 2",
+        q: "Om land = 'Sverige', vad ger land[:2]?",
+        code: "", options: ["Sv", "Sve", "S", "verige"], answer: 0,
+        explanation: "Tar allt från början fram till index 2 (ej inklusive index 2), dvs 'Sv'."
+    },
+    {
+        cat: "L8", lesson: "Lektion 8 – Teori 3",
         q: "Hur beräknar man kvadratroten ur 64 efter 'import math'?",
         code: "", options: ["math.sqrt(64)", "math.root(64)", "math.pow(64)", "sqrt(64)"], answer: 0,
         explanation: "math.sqrt() beräknar kvadratroten."
+    },
+    {
+        cat: "L8", lesson: "Lektion 8 – Teori 4",
+        q: "Vilken funktion ger summan av alla tal i en numerisk lista?",
+        code: "", options: ["total()", "add()", "sum()", "count()"], answer: 2,
+        explanation: "sum() summerar alla element i en numerisk lista."
     },
     {
         cat: "L8", lesson: "Lektion 8 – Kodlabb 1",
@@ -590,8 +744,16 @@ const allQuestions = [
         code: "", type: "code", keywords: ["import", "math", "sqrt", "64"],
         explanation: "Rätt syntax:\nimport math\nprint(math.sqrt(64))"
     },
+    {
+        cat: "L8", lesson: "Lektion 8 – Kodlabb 3",
+        q: "Skriv kod som summerar alla tal i listan [5, 10, 15] med sum()-funktionen.",
+        code: "", type: "code", keywords: ["print", "sum", "5", "10", "15"],
+        explanation: "Rätt syntax:\nprint(sum([5, 10, 15]))"
+    },
 
+    // ==========================================
     // --- LEKTION 9 ---
+    // ==========================================
     {
         cat: "L9", lesson: "Lektion 9 – Teori 1",
         q: "Vilket nyckelord används för att definiera en egen funktion i Python?",
@@ -605,6 +767,18 @@ const allQuestions = [
         explanation: "Funktioner som saknar return returnerar värdet None."
     },
     {
+        cat: "L9", lesson: "Lektion 9 – Teori 3",
+        q: "Vad kallas variablerna inom parenteserna när man skapar en funktion?",
+        code: "", options: ["Parametrar (eller argument)", "Globala variabler", "Konstanter", "Returvärden"], answer: 0,
+        explanation: "Parametrar tar emot inmatningsvärden när funktionen anropas."
+    },
+    {
+        cat: "L9", lesson: "Lektion 9 – Teori 4",
+        q: "Vad är skillnaden mellan lokala och globala variabler?",
+        code: "", options: ["Lokala variabler skapas inuti en funktion och nås bara där; globala variabler skapas utanför funktioner och nås i hela programmet", "Det är exakt samma sak", "Globala variabler kan bara användas i for-loopar", "Lokala variabler sparas alltid på hårddisken"], answer: 0,
+        explanation: "Lokala variabler existerar endast inne i sin funktion."
+    },
+    {
         cat: "L9", lesson: "Lektion 9 – Kodlabb 1",
         q: "Skriv en funktion som heter 'plus' som tar emot två parametrar (a och b) och returnerar summan.",
         code: "# Exempel på anrop:\n# print(plus(3, 4)) -> ska ge 7", type: "code", keywords: ["def", "plus", "return", "+"],
@@ -616,8 +790,16 @@ const allQuestions = [
         code: "", type: "code", keywords: ["def", "kolla_tal", "if", "return", "Stort", "Litet"],
         explanation: "Rätt syntax:\ndef kolla_tal(x):\n    if x > 10:\n        return \"Stort\"\n    else:\n        return \"Litet\""
     },
+    {
+        cat: "L9", lesson: "Lektion 9 – Kodlabb 3",
+        q: "Skriv en funktion 'multiplicera' som tar in a och b, multiplicerar dem och returnerar resultatet.",
+        code: "", type: "code", keywords: ["def", "multiplicera", "return", "*"],
+        explanation: "Rätt syntax:\ndef multiplicera(a, b):\n    return a * b"
+    },
 
+    // ==========================================
     // --- BLANDADE KODÖVNINGAR ---
+    // ==========================================
     {
         cat: "BLANDAT", lesson: "Blandad kodövning 1",
         q: "Skriv en for-loop som skriver ut alla jämna tal från 0 till 10 (använd range med steg 2).",
