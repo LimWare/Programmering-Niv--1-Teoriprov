@@ -140,6 +140,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            width: 100%;
         }
         .option-btn:hover:not(:disabled) { border-color: var(--accent-blue); background: #282e36; }
         .option-letter {
@@ -240,18 +241,18 @@
             <button class="secondary-btn" style="padding:5px 10px; font-size:0.8rem;" onclick="shuffleCurrentQuiz()">🔀 Blanda frågor</button>
         </div>
         <div class="filter-group">
-            <button class="filter-btn active" onclick="selectCategory('ALL', this)">Alla teoretiska (37)</button>
-            <button class="filter-btn" onclick="selectCategory('CODE', this)">✍️ Kodlabb: Skriv koden själv (5)</button>
+            <button class="filter-btn active" onclick="selectCategory('ALL', this)">Alla teoretiska</button>
+            <button class="filter-btn" onclick="selectCategory('CODE', this)">✍️ Kodlabb: Skriv koden själv</button>
             <button class="filter-btn" onclick="selectCategory('EXAM', this)">⚡ Slutprovsläge (20 slumpade)</button>
             <button class="filter-btn" onclick="selectCategory('L1_3', this)">Lektion 1–3</button>
-            <button class="filter-btn" onclick="selectCategory('L4_7', this)">Lektion 4–7: Input, For, While</button>
-            <button class="filter-btn" onclick="selectCategory('L8_9', this)">Lektion 8–9: Slicing & Funktioner</button>
+            <button class="filter-btn" onclick="selectCategory('L4_7', this)">Lektion 4–7</button>
+            <button class="filter-btn" onclick="selectCategory('L8_9', this)">Lektion 8–9</button>
         </div>
     </div>
 
     <div id="quiz-view">
         <div class="status-bar">
-            <span id="question-counter">Fråga 1 av 37</span>
+            <span id="question-counter">Fråga 1 av 1</span>
             <span id="score-tracker">Poäng: 0 rätt</span>
         </div>
         <div class="progress-container">
@@ -260,7 +261,7 @@
 
         <div class="quiz-card">
             <span class="badge" id="lesson-badge">Lektion 1</span>
-            <div class="question-text" id="question-text"></div>
+            <div class="question-text" id="question-text">Laddar frågor...</div>
             <pre id="code-block" style="display:none;"></pre>
             
             <div class="options-list" id="options-container"></div>
@@ -398,51 +399,4 @@ const allQuestions = [
         explanation: "break avslutar hela loopen direkt."
     },
     {
-        cat: "L4_7", lesson: "Lektion 7 – Listor", q: "Vilken listmetod lägger till ett element sist i listan?", code: "", type: "mc",
-        options: ["add()", "insert()", "append()", "push()"], answer: 2,
-        explanation: "append() lägger till elementet sist."
-    },
-    {
-        cat: "L4_7", lesson: "Lektion 7 – Listmetoder", q: "Hur tar man bort ett element baserat på dess INDEX?", code: "", type: "mc",
-        options: ["lista.remove(index)", "lista.pop(index)", "lista.delete(index)", "lista.clear(index)"], answer: 1,
-        explanation: "pop(index) tar bort via index, remove(värde) via värde."
-    },
-    {
-        cat: "L8_9", lesson: "Lektion 8 – Slicing", q: "Om lista = [1, 4, 9, 16, 25], vad ger print(lista[1:3])?", code: "", type: "mc",
-        options: ["[4, 9]", "[4, 9, 16]", "[1, 4, 9]", "[9, 16]"], answer: 0,
-        explanation: "Index 1 är 4, index 2 är 9. Index 3 (16) ingår ej. Svar: [4, 9]."
-    },
-    {
-        cat: "L8_9", lesson: "Lektion 8 – Math", q: "Hur beräknar man kvadratroten efter 'import math'?", code: "", type: "mc",
-        options: ["math.root(x)", "math.sqrt(x)", "math.pow(x)", "sqrt.math(x)"], answer: 1,
-        explanation: "math.sqrt(x) beräknar kvadratroten."
-    },
-    {
-        cat: "L8_9", lesson: "Lektion 9 – Funktioner", q: "Vilket nyckelord används för att skicka tillbaka ett värde från en funktion?", code: "", type: "mc",
-        options: ["send", "output", "return", "give"], answer: 2,
-        explanation: "return skickar tillbaka resultatet."
-    }
-];
-
-let currentQuestions = [];
-let currentIndex = 0;
-let score = 0;
-let wrongQuestions = [];
-let currentCategory = 'ALL';
-
-function shuffleArray(arr) {
-    const copy = [...arr];
-    for (let i = copy.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [copy[i], copy[j]] = [copy[j], copy[i]];
-    }
-    return copy;
-}
-
-function selectCategory(cat, btnEl) {
-    currentCategory = cat;
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    if (btnEl) btnEl.classList.add('active');
-
-    if (cat === 'ALL') {
-        currentQuestions = allQuestions.
+        cat: "L4_7", lesson: "Lektion 7 – Listor", q: "Vilken listmetod lägger till ett element
