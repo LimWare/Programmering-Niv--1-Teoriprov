@@ -6,9 +6,11 @@ Körs direkt i terminalen eller VS Code: python quiz.py
 
 import random
 
-# Frågor och flera kodövningar uppdelade per lektion (1-9)
+# Rikligt med teorifrågor och skriv-själv-kodövningar per lektion (1-9)
 alla_fragor = [
+    # ==========================================
     # --- LEKTION 1 ---
+    # ==========================================
     {
         "lektion": "Lektion 1",
         "typ": "teori",
@@ -27,6 +29,22 @@ alla_fragor = [
     },
     {
         "lektion": "Lektion 1",
+        "typ": "teori",
+        "fraga": "Vad kallas processen att hitta och åtgärda fel i ett program?",
+        "alternativ": ["A) Kompilering", "B) Debugging", "C) Indentering", "D) Syntaxering"],
+        "ratt": "B",
+        "forklaring": "Debugging är processen att spåra och åtgärda buggar/fel i kod."
+    },
+    {
+        "lektion": "Lektion 1",
+        "typ": "teori",
+        "fraga": "Vad står förkortningen IDE för?",
+        "alternativ": ["A) Internal Data Execution", "B) Integrated Development Environment", "C) Interactive Debugging Engine", "D) Internet Document Editor"],
+        "ratt": "B",
+        "forklaring": "IDE står för Integrated Development Environment (t.ex. VS Code)."
+    },
+    {
+        "lektion": "Lektion 1",
         "typ": "kod",
         "fraga": "Skriv kod som skriver ut texten 'Hej Jensen!' på skärmen med print().",
         "tips": "Använd print(\"...\")",
@@ -39,8 +57,17 @@ alla_fragor = [
         "tips": "Använd print(\"Ditt Namn\")",
         "nyckelord": ["print"]
     },
+    {
+        "lektion": "Lektion 1",
+        "typ": "kod",
+        "fraga": "Skriv en print-sats som skriver ut talet 2026 på skärmen.",
+        "tips": "Använd print(2026)",
+        "nyckelord": ["print", "2026"]
+    },
 
+    # ==========================================
     # --- LEKTION 2 ---
+    # ==========================================
     {
         "lektion": "Lektion 2",
         "typ": "teori",
@@ -59,6 +86,22 @@ alla_fragor = [
     },
     {
         "lektion": "Lektion 2",
+        "typ": "teori",
+        "fraga": "Vad blir datatypen för x i koden: x = 'True'",
+        "alternativ": ["A) bool", "B) int", "C) str", "D) float"],
+        "ratt": "C",
+        "forklaring": "Eftersom värdet omges av citattecken ('True') är det en textsträng (str)."
+    },
+    {
+        "lektion": "Lektion 2",
+        "typ": "teori",
+        "fraga": "Vilket specialtecken skapar en ny rad inuti en print-sträng?",
+        "alternativ": ["A) \\t", "B) \\n", "C) \\r", "D) \\\\"],
+        "ratt": "B",
+        "forklaring": "\\n står för ny rad (newline)."
+    },
+    {
+        "lektion": "Lektion 2",
         "typ": "kod",
         "fraga": "Skapa en variabel som heter 'kurs' och tilldela den strängen 'Programmering 1', skriv sedan ut den.",
         "tips": "kurs = \"...\" och print(kurs)",
@@ -71,8 +114,17 @@ alla_fragor = [
         "tips": "tal1 = 10, tal2 = 5, print(tal1 + tal2)",
         "nyckelord": ["tal1", "tal2", "+", "print"]
     },
+    {
+        "lektion": "Lektion 2",
+        "typ": "kod",
+        "fraga": "Skapa en variabel 'pris' med värdet 199.9 och en variabel 'moms' med värdet 1.25, multiplicera dem och skriv ut.",
+        "tips": "pris = 199.9, moms = 1.25, print(pris * moms)",
+        "nyckelord": ["pris", "moms", "*", "print"]
+    },
 
+    # ==========================================
     # --- LEKTION 3 ---
+    # ==========================================
     {
         "lektion": "Lektion 3",
         "typ": "teori",
@@ -91,6 +143,22 @@ alla_fragor = [
     },
     {
         "lektion": "Lektion 3",
+        "typ": "teori",
+        "fraga": "Vad beräknar modulo-operatorn (%) i Python?",
+        "alternativ": ["A) Vanlig division", "B) Resten vid division", "C) Procent", "D) Multiplikation"],
+        "ratt": "B",
+        "forklaring": "Modulo (%) returnerar resten av en division (t.ex. 5 % 2 = 1)."
+    },
+    {
+        "lektion": "Lektion 3",
+        "typ": "teori",
+        "fraga": "Vilket av följande uttryck ger False i Python?",
+        "alternativ": ["A) bool(-5)", "B) bool('Hej')", "C) bool(0)", "D) bool('0')"],
+        "ratt": "C",
+        "forklaring": "Endast talet 0 (samt tomma strängar/listor) ger False."
+    },
+    {
+        "lektion": "Lektion 3",
         "typ": "kod",
         "fraga": "Skriv kod som beräknar produkten av 12 och 13 och skriver ut resultatet med print().",
         "tips": "print(12 * 13)",
@@ -103,8 +171,17 @@ alla_fragor = [
         "tips": "print(17 % 4)",
         "nyckelord": ["print", "17", "%", "4"]
     },
+    {
+        "lektion": "Lektion 3",
+        "typ": "kod",
+        "fraga": "Skriv kod som beräknar 3 upphöjt till 4 med potensoperatorn (**).",
+        "tips": "print(3 ** 4)",
+        "nyckelord": ["print", "3", "**", "4"]
+    },
 
+    # ==========================================
     # --- LEKTION 4 ---
+    # ==========================================
     {
         "lektion": "Lektion 4",
         "typ": "teori",
@@ -123,6 +200,22 @@ alla_fragor = [
     },
     {
         "lektion": "Lektion 4",
+        "typ": "teori",
+        "fraga": "Vilka tal skrivs ut av: for i in range(1, 10, 3): print(i)",
+        "alternativ": ["A) 1, 4, 7, 10", "B) 1, 4, 7", "C) 1, 3, 6, 9", "D) 0, 3, 6, 9"],
+        "ratt": "B",
+        "forklaring": "Start 1, steg 3 upp till 10 ger 1, 4, 7 (10 ingår ej)."
+    },
+    {
+        "lektion": "Lektion 4",
+        "typ": "teori",
+        "fraga": "Vad gör funktionen round(3.789, 1)?",
+        "alternativ": ["A) Avrundar till 1 decimal (3.8)", "B) Avrundar till heltal (4)", "C) Ger ett felmeddelande", "D) Tar bort decimaler"],
+        "ratt": "A",
+        "forklaring": "round(tal, 1) avrundar till angivet antal decimaler."
+    },
+    {
+        "lektion": "Lektion 4",
         "typ": "kod",
         "fraga": "Skriv kod som frågar användaren efter namn med input() och sparar i variabeln 'namn'.",
         "tips": "namn = input(\"Vad heter du? \")",
@@ -135,8 +228,17 @@ alla_fragor = [
         "tips": "ålder = int(input(\"Ålder: \"))",
         "nyckelord": ["input", "int", "ålder"]
     },
+    {
+        "lektion": "Lektion 4",
+        "typ": "kod",
+        "fraga": "Skriv en for-loop som skriver ut alla tal från 1 till 5 med range().",
+        "tips": "for i in range(1, 6): print(i)",
+        "nyckelord": ["for", "range(1, 6)", "print"]
+    },
 
+    # ==========================================
     # --- LEKTION 5 ---
+    # ==========================================
     {
         "lektion": "Lektion 5",
         "typ": "teori",
@@ -155,6 +257,22 @@ alla_fragor = [
     },
     {
         "lektion": "Lektion 5",
+        "typ": "teori",
+        "fraga": "Hur skriver man 'inte lika med' i Python?",
+        "alternativ": ["A) <>", "B) !=", "C) =/=", "D) NOT"],
+        "ratt": "B",
+        "forklaring": "'Inte lika med' skrivs med !=."
+    },
+    {
+        "lektion": "Lektion 5",
+        "typ": "teori",
+        "fraga": "Vad saknas i koden: if x > 5 print('Stort')",
+        "alternativ": ["A) Kolon (:) efter villkoret", "B) Parenteser", "C) Else-block", "D) Inget fel"],
+        "ratt": "A",
+        "forklaring": "if-satser måste alltid avslutas med kolon (:)."
+    },
+    {
+        "lektion": "Lektion 5",
         "typ": "kod",
         "fraga": "Skriv en if-sats som kollar om 'poäng' är >= 50. Om sant, skriv ut 'Godkänt'.",
         "tips": "if poäng >= 50: print('Godkänt')",
@@ -167,8 +285,17 @@ alla_fragor = [
         "tips": "if svar == \"ja\": print('Rätt') else: print('Fel')",
         "nyckelord": ["if", "else", "print"]
     },
+    {
+        "lektion": "Lektion 5",
+        "typ": "kod",
+        "fraga": "Skriv en if/elif/else-sats som kollar om 'tal > 0' (skriv 'Positivt'), 'tal == 0' (skriv 'Noll'), annars 'Negativt'.",
+        "tips": "if tal > 0: print('Positivt') elif tal == 0: print('Noll') else: print('Negativt')",
+        "nyckelord": ["if", "elif", "else", "print"]
+    },
 
+    # ==========================================
     # --- LEKTION 6 ---
+    # ==========================================
     {
         "lektion": "Lektion 6",
         "typ": "teori",
@@ -187,6 +314,22 @@ alla_fragor = [
     },
     {
         "lektion": "Lektion 6",
+        "typ": "teori",
+        "fraga": "Vad gör nyckelordet break i en loop?",
+        "alternativ": ["A) Avbryter hela loopen omedelbart", "B) Hoppar över nuvarande varv", "C) Pausar", "D) Startar om"],
+        "ratt": "A",
+        "forklaring": "break avbryter loopen helt och hållet."
+    },
+    {
+        "lektion": "Lektion 6",
+        "typ": "teori",
+        "fraga": "Vad gör nyckelordet continue i en loop?",
+        "alternativ": ["A) Avbryter hela loopen", "B) Hoppar över resten av nuvarande varv och går till nästa", "C) Startar om programmet", "D) Gör ingenting"],
+        "ratt": "B",
+        "forklaring": "continue hoppar över resten av den aktuella iterationen och fortsätter med nästa varv."
+    },
+    {
+        "lektion": "Lektion 6",
         "typ": "kod",
         "fraga": "Skriv en while-loop som körs så länge 'x < 3' och skriver ut x.",
         "tips": "while x < 3: print(x)",
@@ -199,8 +342,17 @@ alla_fragor = [
         "tips": "for i in range(1, 6): print(i)",
         "nyckelord": ["for", "range(1, 6)", "print"]
     },
+    {
+        "lektion": "Lektion 6",
+        "typ": "kod",
+        "fraga": "Skriv en while-loop med en räknare som räknar ner från 3 till 1 och sedan skriver ut 'Klar!'.",
+        "tips": "i = 3 while i > 0: print(i) i -= 1 print('Klar!')",
+        "nyckelord": ["while", "print", "Klar!"]
+    },
 
+    # ==========================================
     # --- LEKTION 7 ---
+    # ==========================================
     {
         "lektion": "Lektion 7",
         "typ": "teori",
@@ -212,10 +364,26 @@ alla_fragor = [
     {
         "lektion": "Lektion 7",
         "typ": "teori",
+        "fraga": "Vilket index har det första elementet i en lista i Python?",
+        "alternativ": ["A) 1", "B) 0", "C) -1", "D) Inget index"],
+        "ratt": "B",
+        "forklaring": "Python är nollindexerat (första elementet är index 0)."
+    },
+    {
+        "lektion": "Lektion 7",
+        "typ": "teori",
         "fraga": "Hur tar man bort ett element baserat på dess INDEX?",
         "alternativ": ["A) pop(index)", "B) remove(index)", "C) clear(index)", "D) delete(index)"],
         "ratt": "A",
         "forklaring": "pop(index) tar bort via indexnummer."
+    },
+    {
+        "lektion": "Lektion 7",
+        "typ": "teori",
+        "fraga": "Vilken funktion ger antalet element i en lista?",
+        "alternativ": ["A) size()", "B) length()", "C) len()", "D) count()"],
+        "ratt": "C",
+        "forklaring": "len() returnerar hur många element som finns i en lista eller sträng."
     },
     {
         "lektion": "Lektion 7",
@@ -231,8 +399,17 @@ alla_fragor = [
         "tips": "bilar.pop(0)",
         "nyckelord": ["bilar", "pop", "0"]
     },
+    {
+        "lektion": "Lektion 7",
+        "typ": "kod",
+        "fraga": "Skriv kod som skapar en lista med tre namn och skriver ut det första namnet via dess index [0].",
+        "tips": "namn = ['Anna', 'Björn', 'Cecilia'] print(namn[0])",
+        "nyckelord": ["print", "[0]"]
+    },
 
+    # ==========================================
     # --- LEKTION 8 ---
+    # ==========================================
     {
         "lektion": "Lektion 8",
         "typ": "teori",
@@ -244,10 +421,26 @@ alla_fragor = [
     {
         "lektion": "Lektion 8",
         "typ": "teori",
+        "fraga": "Om land = 'Sverige', vad ger land[:2]?",
+        "alternativ": ["A) Sv", "B) Sve", "C) S", "D) verige"],
+        "ratt": "A",
+        "forklaring": "Tar allt från början fram till index 2 (ej inklusive index 2), dvs 'Sv'."
+    },
+    {
+        "lektion": "Lektion 8",
+        "typ": "teori",
         "fraga": "Hur beräknar man kvadratroten ur 64 efter 'import math'?",
         "alternativ": ["A) math.sqrt(64)", "B) math.root(64)", "C) math.pow(64)", "D) sqrt(64)"],
         "ratt": "A",
         "forklaring": "math.sqrt() beräknar kvadratroten."
+    },
+    {
+        "lektion": "Lektion 8",
+        "typ": "teori",
+        "fraga": "Vilken funktion ger summan av alla tal i en numerisk lista?",
+        "alternativ": ["A) total()", "B) add()", "C) sum()", "D) count()"],
+        "ratt": "C",
+        "forklaring": "sum() summerar alla element i en numerisk lista."
     },
     {
         "lektion": "Lektion 8",
@@ -263,8 +456,17 @@ alla_fragor = [
         "tips": "import math och math.sqrt(64)",
         "nyckelord": ["import", "math", "sqrt", "64"]
     },
+    {
+        "lektion": "Lektion 8",
+        "typ": "kod",
+        "fraga": "Skriv kod som summerar alla tal i listan [5, 10, 15] med sum()-funktionen.",
+        "tips": "print(sum([5, 10, 15]))",
+        "nyckelord": ["print", "sum", "5", "10", "15"]
+    },
 
+    # ==========================================
     # --- LEKTION 9 ---
+    # ==========================================
     {
         "lektion": "Lektion 9",
         "typ": "teori",
@@ -283,6 +485,22 @@ alla_fragor = [
     },
     {
         "lektion": "Lektion 9",
+        "typ": "teori",
+        "fraga": "Vad kallas variablerna inom parenteserna när man skapar en funktion?",
+        "alternativ": ["A) Parametrar (eller argument)", "B) Globala variabler", "C) Konstanter", "D) Returvärden"],
+        "ratt": "A",
+        "forklaring": "Parametrar tar emot inmatningsvärden när funktionen anropas."
+    },
+    {
+        "lektion": "Lektion 9",
+        "typ": "teori",
+        "fraga": "Vad är skillnaden mellan lokala och globala variabler?",
+        "alternativ": ["A) Lokala variabler skapas inuti en funktion och nås bara där; globala variabler skapas utanför funktioner och nås i hela programmet", "B) Det är exakt samma sak", "C) Globala variabler kan bara användas i for-loopar", "D) Lokala variabler sparas alltid på hårddisken"],
+        "ratt": "A",
+        "forklaring": "Lokala variabler existerar endast inne i sin funktion."
+    },
+    {
+        "lektion": "Lektion 9",
         "typ": "kod",
         "fraga": "Skriv en funktion som heter 'plus' som tar emot två parametrar (a och b) och returnerar summan.",
         "tips": "def plus(a, b): return a + b",
@@ -294,6 +512,13 @@ alla_fragor = [
         "fraga": "Skriv en funktion 'kolla_tal' som tar in x. Om x > 10 ska den returnera 'Stort', annars 'Litet'.",
         "tips": "def kolla_tal(x): if x > 10: return 'Stort' else: return 'Litet'",
         "nyckelord": ["def", "kolla_tal", "if", "return", "Stort", "Litet"]
+    },
+    {
+        "lektion": "Lektion 9",
+        "typ": "kod",
+        "fraga": "Skriv en funktion 'multiplicera' som tar in a och b, multiplicerar dem och returnerar resultatet.",
+        "tips": "def multiplicera(a, b): return a * b",
+        "nyckelord": ["def", "multiplicera", "return", "*"]
     }
 ]
 
