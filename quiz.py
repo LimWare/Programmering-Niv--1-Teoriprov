@@ -130,31 +130,55 @@ flervalsfragor = [
     }
 ]
 
-# Kodlabb-utmaningar (skriv själv)
+# Kodlabb-utmaningar (blandade: lätta till svåra)
 kodutmaningar = [
     {
-        "lektion": "Kodlabb (Lektion 9)",
-        "uppgift": "Skriv en funktion som heter 'plus' som tar emot två parametrar (a och b), adderar dem och returnerar summan.",
-        "tips": "Använd nyckelorden def, plus, return och +",
-        "nyckelord": ["def", "plus", "return", "+"]
+        "lektion": "Kodlabb (Lätt) – Utskrift",
+        "uppgift": "Skriv kod som skriver ut texten 'Hej Jensen!' på skärmen med print().",
+        "tips": "Använd print(\"...\")",
+        "nyckelord": ["print", "Hej Jensen!"]
     },
     {
-        "lektion": "Kodlabb (Lektion 4)",
-        "uppgift": "Skriv en for-loop som skriver ut alla tal från 1 till 5 med range().",
+        "lektion": "Kodlabb (Lätt) – Aritmetik",
+        "uppgift": "Skriv kod som beräknar produkten av 12 och 13 och skriver ut resultatet med print().",
+        "tips": "Använd print(12 * 13)",
+        "nyckelord": ["print", "12", "13", "*"]
+    },
+    {
+        "lektion": "Kodlabb (Medel) – For-loop & Range",
+        "uppgift": "Skriv en for-loop som skriver ut alla tal från 1 till 5 (använd range och print).",
         "tips": "Använd for, range(1, 6) och print",
         "nyckelord": ["for", "range", "print"]
     },
     {
-        "lektion": "Kodlabb (Lektion 4)",
+        "lektion": "Kodlabb (Medel) – Input & Konvertering",
         "uppgift": "Skriv kod som frågar efter ålder med input(), konverterar till int och sparar i variabeln 'ålder'.",
         "tips": "Använd input(), int() och ålder =",
         "nyckelord": ["input", "int", "ålder"]
     },
     {
-        "lektion": "Kodlabb (Lektion 7)",
+        "lektion": "Kodlabb (Medel) – Villkorssats",
+        "uppgift": "Skriv en if-sats som kollar om 'poäng' är >= 50. Om det är sant, skriv ut 'Godkänt'.",
+        "tips": "Använd if, poäng, >= och print",
+        "nyckelord": ["if", "poäng", ">=", "print", "Godkänt"]
+    },
+    {
+        "lektion": "Kodlabb (Medel) – Listor & Append",
         "uppgift": "Skriv kod som skapar en tom lista 'namn', och lägger till strängen 'Alice' med rätt listmetod.",
         "tips": "Använd [] och append",
         "nyckelord": ["namn", "[]", "append", "Alice"]
+    },
+    {
+        "lektion": "Kodlabb (Svår) – Egen Funktion",
+        "uppgift": "Skriv en funktion som heter 'plus' som tar emot två parametrar (a och b), adderar dem och returnerar summan.",
+        "tips": "Använd nyckelorden def, plus, return och +",
+        "nyckelord": ["def", "plus", "return", "+"]
+    },
+    {
+        "lektion": "Kodlabb (Svår) – Funktion med villkor",
+        "uppgift": "Skriv en funktion 'kolla_tal' som tar in x. Om x > 10 returnera 'Stort', annars 'Litet'.",
+        "tips": "Använd def, kolla_tal, if, return",
+        "nyckelord": ["def", "kolla_tal", "if", "return", "Stort", "Litet"]
     }
 ]
 
