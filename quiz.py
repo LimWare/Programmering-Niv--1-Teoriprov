@@ -6,7 +6,7 @@ Körs direkt i terminalen eller VS Code: python quiz.py
 
 import random
 
-# Frågor uppdelade per lektion (både teori och kodlabb)
+# Frågor och flera kodövningar uppdelade per lektion (1-9)
 alla_fragor = [
     # --- LEKTION 1 ---
     {
@@ -23,6 +23,13 @@ alla_fragor = [
         "fraga": "Skriv kod som skriver ut texten 'Hej Jensen!' på skärmen med print().",
         "tips": "Använd print(\"...\")",
         "nyckelord": ["print", "Hej Jensen!"]
+    },
+    {
+        "lektion": "Lektion 1",
+        "typ": "kod",
+        "fraga": "Skriv kod som skriver ut ditt eget namn med hjälp av print().",
+        "tips": "Använd print(\"Ditt Namn\")",
+        "nyckelord": ["print"]
     },
 
     # --- LEKTION 2 ---
@@ -41,6 +48,13 @@ alla_fragor = [
         "tips": "kurs = \"...\" och print(kurs)",
         "nyckelord": ["kurs", "=", "print"]
     },
+    {
+        "lektion": "Lektion 2",
+        "typ": "kod",
+        "fraga": "Skapa två variabler, 'tal1' med värdet 10 och 'tal2' med värdet 5, och skriv ut deras summa.",
+        "tips": "tal1 = 10, tal2 = 5, print(tal1 + tal2)",
+        "nyckelord": ["tal1", "tal2", "+", "print"]
+    },
 
     # --- LEKTION 3 ---
     {
@@ -50,6 +64,13 @@ alla_fragor = [
         "alternativ": ["A) 4.5", "B) 4", "C) 5", "D) 4.0"],
         "ratt": "B",
         "forklaring": "Operatorn // utför heltalsdivision och kastar bort eventuella decimaler."
+    },
+    {
+        "lektion": "Lektion 3",
+        "typ": "kod",
+        "fraga": "Skriv kod som beräknar produkten av 12 och 13 och skriver ut resultatet med print().",
+        "tips": "print(12 * 13)",
+        "nyckelord": ["print", "12", "13", "*"]
     },
     {
         "lektion": "Lektion 3",
@@ -71,8 +92,15 @@ alla_fragor = [
     {
         "lektion": "Lektion 4",
         "typ": "kod",
+        "fraga": "Skriv kod som frågar användaren efter namn med input() och sparar i variabeln 'namn'.",
+        "tips": "namn = input(\"Vad heter du? \")",
+        "nyckelord": ["namn", "input"]
+    },
+    {
+        "lektion": "Lektion 4",
+        "typ": "kod",
         "fraga": "Skriv kod som frågar efter ålder med input(), konverterar till heltal med int() och sparar i 'ålder'.",
-        "tips": "ålder = int(input(...))",
+        "tips": "ålder = int(input(\"Ålder: \"))",
         "nyckelord": ["input", "int", "ålder"]
     },
 
@@ -92,6 +120,13 @@ alla_fragor = [
         "tips": "if poäng >= 50: print('Godkänt')",
         "nyckelord": ["if", "poäng", ">=", "print", "Godkänt"]
     },
+    {
+        "lektion": "Lektion 5",
+        "typ": "kod",
+        "fraga": "Skriv en if/else-sats som kollar om 'svar == \"ja\"'. Om sant skriv ut 'Rätt', annars 'Fel'.",
+        "tips": "if svar == \"ja\": print('Rätt') else: print('Fel')",
+        "nyckelord": ["if", "else", "print"]
+    },
 
     # --- LEKTION 6 ---
     {
@@ -108,6 +143,13 @@ alla_fragor = [
         "fraga": "Skriv en while-loop som körs så länge 'x < 3' och skriver ut x.",
         "tips": "while x < 3: print(x)",
         "nyckelord": ["while", "x < 3", "print"]
+    },
+    {
+        "lektion": "Lektion 6",
+        "typ": "kod",
+        "fraga": "Skriv en for-loop med range(1, 6) som skriver ut alla tal från 1 till 5.",
+        "tips": "for i in range(1, 6): print(i)",
+        "nyckelord": ["for", "range(1, 6)", "print"]
     },
 
     # --- LEKTION 7 ---
@@ -126,6 +168,13 @@ alla_fragor = [
         "tips": "frukter = [] och frukter.append('Äpple')",
         "nyckelord": ["frukter", "[]", "append", "Äpple"]
     },
+    {
+        "lektion": "Lektion 7",
+        "typ": "kod",
+        "fraga": "Givet listan 'bilar', skriv kod som tar bort det första elementet (index 0) med pop().",
+        "tips": "bilar.pop(0)",
+        "nyckelord": ["pop", "0"]
+    },
 
     # --- LEKTION 8 ---
     {
@@ -143,6 +192,13 @@ alla_fragor = [
         "tips": "tal[1:4]",
         "nyckelord": ["tal", "[1:4]"]
     },
+    {
+        "lektion": "Lektion 8",
+        "typ": "kod",
+        "fraga": "Skriv kod som importerar math-modulen och beräknar kvadratroten ur 64.",
+        "tips": "import math och math.sqrt(64)",
+        "nyckelord": ["import", "math", "sqrt", "64"]
+    },
 
     # --- LEKTION 9 ---
     {
@@ -159,6 +215,13 @@ alla_fragor = [
         "fraga": "Skriv en funktion som heter 'plus' som tar emot två parametrar (a och b) och returnerar summan.",
         "tips": "def plus(a, b): return a + b",
         "nyckelord": ["def", "plus", "return", "+"]
+    },
+    {
+        "lektion": "Lektion 9",
+        "typ": "kod",
+        "fraga": "Skriv en funktion 'kolla_tal' som tar in x. Om x > 10 ska den returnera 'Stort', annars 'Litet'.",
+        "tips": "def kolla_tal(x): if x > 10: return 'Stort' else: return 'Litet'",
+        "nyckelord": ["def", "kolla_tal", "if", "return", "Stort", "Litet"]
     }
 ]
 
@@ -167,10 +230,10 @@ def kor_quiz():
     print("  VÄLKOMMEN TILL PYTHON TEORIQUIZ & KODLABB (LEKTION 1-9)")
     print("=" * 65)
     
-    print("\nVälj träningsläge:")
+    print("\nVälj lektion eller läge:")
     print("0. Alla övningar (Blandat)")
     for i in range(1, 10):
-        print(f"{i}. Lektion {i} (Teori & Kod)")
+        print(f"{i}. Lektion {i} (Flera kodövningar & teori)")
     
     val = input("\nDitt val (0-9): ").strip()
 
