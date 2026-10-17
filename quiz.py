@@ -19,6 +19,14 @@ alla_fragor = [
     },
     {
         "lektion": "Lektion 1",
+        "typ": "teori",
+        "fraga": "Vad är skillnaden mellan en interpretator och en kompilator?",
+        "alternativ": ["A) En interpretator tolkar koden rad för rad under körning, medan en kompilator översätter hela programmet i förväg", "B) En kompilator används bara i Python", "C) En interpretator skapar alltid en .exe-fil", "D) Det betyder samma sak"],
+        "ratt": "A",
+        "forklaring": "Python är ett tolkande (interpreterat) språk."
+    },
+    {
+        "lektion": "Lektion 1",
         "typ": "kod",
         "fraga": "Skriv kod som skriver ut texten 'Hej Jensen!' på skärmen med print().",
         "tips": "Använd print(\"...\")",
@@ -40,6 +48,14 @@ alla_fragor = [
         "alternativ": ["A) 1_variabel", "B) min variabel", "C) min_variabel_1", "D) min-variabel!"],
         "ratt": "C",
         "forklaring": "Variabelnamn får innehålla understreck (_) och siffror, men inte börja med en siffra eller innehålla mellanslag."
+    },
+    {
+        "lektion": "Lektion 2",
+        "typ": "teori",
+        "fraga": "Vilken datatyp får variabeln x i koden: x = 13.5",
+        "alternativ": ["A) int", "B) float", "C) str", "D) bool"],
+        "ratt": "B",
+        "forklaring": "Tal med decimalpunkt är av datatypen float."
     },
     {
         "lektion": "Lektion 2",
@@ -67,6 +83,14 @@ alla_fragor = [
     },
     {
         "lektion": "Lektion 3",
+        "typ": "teori",
+        "fraga": "Vad beräknar uttrycket 2 ** 3 i Python?",
+        "alternativ": ["A) 2 gånger 3", "B) 2 upphöjt till 3 (8)", "C) 2 dividerat med 3", "D) Resten av 2 / 3"],
+        "ratt": "B",
+        "forklaring": "** är potensoperatorn (2 * 2 * 2 = 8)."
+    },
+    {
+        "lektion": "Lektion 3",
         "typ": "kod",
         "fraga": "Skriv kod som beräknar produkten av 12 och 13 och skriver ut resultatet med print().",
         "tips": "print(12 * 13)",
@@ -88,6 +112,14 @@ alla_fragor = [
         "alternativ": ["A) Ett heltal (int)", "B) En sträng (str)", "C) Ett flyttal (float)", "D) Ett booleskt värde"],
         "ratt": "B",
         "forklaring": "input() ger alltid en sträng, varför man ofta behöver konvertera med int() eller float()."
+    },
+    {
+        "lektion": "Lektion 4",
+        "typ": "teori",
+        "fraga": "Vilka tal genererar funktionen range(1, 6)?",
+        "alternativ": ["A) 1, 2, 3, 4, 5, 6", "B) 0, 1, 2, 3, 4, 5", "C) 1, 2, 3, 4, 5", "D) 2, 3, 4, 5"],
+        "ratt": "C",
+        "forklaring": "Startvärdet 1 ingår, men slutvärdet (6) inkluderas ej."
     },
     {
         "lektion": "Lektion 4",
@@ -115,6 +147,14 @@ alla_fragor = [
     },
     {
         "lektion": "Lektion 5",
+        "typ": "teori",
+        "fraga": "Vilket nyckelord används för flera alternativa villkor efter en if?",
+        "alternativ": ["A) else if", "B) elif", "C) case", "D) elseif"],
+        "ratt": "B",
+        "forklaring": "I Python förkortas else if till elif."
+    },
+    {
+        "lektion": "Lektion 5",
         "typ": "kod",
         "fraga": "Skriv en if-sats som kollar om 'poäng' är >= 50. Om sant, skriv ut 'Godkänt'.",
         "tips": "if poäng >= 50: print('Godkänt')",
@@ -136,6 +176,14 @@ alla_fragor = [
         "alternativ": ["A) När dess villkor blir False", "B) Efter 10 varv", "C) Vid mellanslag", "D) Aldrig"],
         "ratt": "A",
         "forklaring": "En while-loop fortsätter så länge villkoret är True."
+    },
+    {
+        "lektion": "Lektion 6",
+        "typ": "teori",
+        "fraga": "Varför uppstår en oändlig loop om räknaren inte uppdateras?",
+        "alternativ": ["A) Villkoret förblir True för evigt", "B) Python kraschar direkt", "C) Print saknas", "D) Ingen anledning"],
+        "ratt": "A",
+        "forklaring": "Om villkoret aldrig ändras till False körs loopen i oändlighet."
     },
     {
         "lektion": "Lektion 6",
@@ -163,6 +211,14 @@ alla_fragor = [
     },
     {
         "lektion": "Lektion 7",
+        "typ": "teori",
+        "fraga": "Hur tar man bort ett element baserat på dess INDEX?",
+        "alternativ": ["A) pop(index)", "B) remove(index)", "C) clear(index)", "D) delete(index)"],
+        "ratt": "A",
+        "forklaring": "pop(index) tar bort via indexnummer."
+    },
+    {
+        "lektion": "Lektion 7",
         "typ": "kod",
         "fraga": "Skriv kod som skapar en tom lista 'frukter', och lägger till strängen 'Äpple' med append().",
         "tips": "frukter = [] och frukter.append('Äpple')",
@@ -173,7 +229,7 @@ alla_fragor = [
         "typ": "kod",
         "fraga": "Givet listan 'bilar', skriv kod som tar bort det första elementet (index 0) med pop().",
         "tips": "bilar.pop(0)",
-        "nyckelord": ["pop", "0"]
+        "nyckelord": ["bilar", "pop", "0"]
     },
 
     # --- LEKTION 8 ---
@@ -184,6 +240,14 @@ alla_fragor = [
         "alternativ": ["A) [20, 30, 40]", "B) [10, 20, 30]", "C) [20, 30, 40, 50]", "D) [30, 40]"],
         "ratt": "A",
         "forklaring": "Slicing [1:4] tar index 1, 2 och 3 (index 4 inkluderas ej)."
+    },
+    {
+        "lektion": "Lektion 8",
+        "typ": "teori",
+        "fraga": "Hur beräknar man kvadratroten ur 64 efter 'import math'?",
+        "alternativ": ["A) math.sqrt(64)", "B) math.root(64)", "C) math.pow(64)", "D) sqrt(64)"],
+        "ratt": "A",
+        "forklaring": "math.sqrt() beräknar kvadratroten."
     },
     {
         "lektion": "Lektion 8",
@@ -211,6 +275,14 @@ alla_fragor = [
     },
     {
         "lektion": "Lektion 9",
+        "typ": "teori",
+        "fraga": "Vad händer om en funktion saknar en return-sats?",
+        "alternativ": ["A) Den kraschar", "B) Den returnerar automatiskt None", "C) Den returnerar 0", "D) Den körs inte"],
+        "ratt": "B",
+        "forklaring": "Funktioner som saknar return returnerar värdet None."
+    },
+    {
+        "lektion": "Lektion 9",
         "typ": "kod",
         "fraga": "Skriv en funktion som heter 'plus' som tar emot två parametrar (a och b) och returnerar summan.",
         "tips": "def plus(a, b): return a + b",
@@ -233,7 +305,7 @@ def kor_quiz():
     print("\nVälj lektion eller läge:")
     print("0. Alla övningar (Blandat)")
     for i in range(1, 10):
-        print(f"{i}. Lektion {i} (Flera kodövningar & teori)")
+        print(f"{i}. Lektion {i} (Flera teorifrågor & flera kodövningar)")
     
     val = input("\nDitt val (0-9): ").strip()
 
