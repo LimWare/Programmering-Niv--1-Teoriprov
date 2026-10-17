@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Teoriquiz i Python - Programmering 1 (Lektion 1-9)
-Kan köras direkt i terminalen eller VS Code: python quiz.py
+Teoriquiz & Kodlabb i Python - Programmering 1 (Lektion 1-9)
+Körs direkt i terminalen eller VS Code: python quiz.py
 """
 
 import random
 
-fragor = [
+# Flervalsfrågor (Teori & Kodspårning)
+flervalsfragor = [
     {
         "lektion": "Lektion 1",
         "fraga": "Vad är skillnaden mellan en interpretator och en kompilator?",
@@ -62,7 +63,7 @@ fragor = [
             "A) 40",
             "B) 88888",
             "C) 58",
-            "D) SyntaxError"
+            "D) TypeError"
         ],
         "ratt": "B",
         "forklaring": "input() ger alltid en sträng (str) om man inte omvandlar med int() eller float(). 5 * '8' blir '88888'."
@@ -129,19 +130,60 @@ fragor = [
     }
 ]
 
+# Kodlabb-utmaningar (skriv själv)
+kodutmaningar = [
+    {
+        "lektion": "Kodlabb (Lektion 9)",
+        "uppgift": "Skriv en funktion som heter 'plus' som tar emot två parametrar (a och b), adderar dem och returnerar summan.",
+        "tips": "Använd nyckelorden def, plus, return och +",
+        "nyckelord": ["def", "plus", "return", "+"]
+    },
+    {
+        "lektion": "Kodlabb (Lektion 4)",
+        "uppgift": "Skriv en for-loop som skriver ut alla tal från 1 till 5 med range().",
+        "tips": "Använd for, range(1, 6) och print",
+        "nyckelord": ["for", "range", "print"]
+    }
+]
+
 def kor_quiz():
-    print("=" * 60)
-    print("  VÄLKOMMEN TILL PYTHON TEORIQUIZ (LEKTION 1-9)")
-    print("=" * 60)
+    print("=" * 65)
+    print("  VÄLKOMMEN TILL PYTHON TEORIQUIZ & KODLABB (LEKTION 1-9)")
+    print("=" * 65)
     
-    aktuella_fragor = fragor[:]
+    print("\nVälj läge:")
+    print("1. Teoretiskt flervalsquiz")
+    print("2. Kodlabb (skriv kod själv)")
+    val = input("Ditt val (1 eller 2): ").strip()
+
+    if val == "2":
+        print("\n" + "=" * 50)
+        print("  KODLABB: SKRIV KOD SJÄLV")
+        print("=" * 50)
+        for i, u in enumerate(kodutmaningar, 1):
+            print(f"\n[Utmaning {i}] {u['lektion']}")
+            print(u['uppgift'])
+            print(f"Tips: {u['tips']}")
+            print("-" * 40)
+            svar = input("Skriv ditt lösningsförslag här:\n> ").strip()
+            
+            # Validera att nyckelorden finns med
+            godkand = all(kw.lower() in svar.lower() for kw in u['nyckelord'])
+            if godkand:
+                print("✅ Snyggt! Din kod innehåller rätt nyckelord.")
+            else:
+                print("❌ Din kod saknade några viktiga delar.")
+        return
+
+    # Standard flervalsquiz
+    aktuella_fragor = flervalsfragor[:]
     random.shuffle(aktuella_fragor)
     poang = 0
 
     for i, q in enumerate(aktuella_fragor, 1):
         print(f"\nFråga {i} av {len(aktuella_fragor)} [{q['lektion']}]")
         print(q["fraga"])
-        print("-" * 40)
+        print("-" * 45)
         for alt in q["alternativ"]:
             print(alt)
         
@@ -152,14 +194,14 @@ def kor_quiz():
         
         if svar == q["ratt"]:
             print("✅ Rätt svar!")
-            poang = poang + 1
+            poang += 1
         else:
             print(f"❌ Fel! Rätt svar är {q['ratt']}.")
         print(f"Förklaring: {q['forklaring']}")
 
-    print("\n" + "=" * 60)
+    print("\n" + "=" * 65)
     print(f"Slutresultat: Du fick {poang} av {len(aktuella_fragor)} rätt!")
-    print("=" * 60)
+    print("=" * 65)
 
 if __name__ == "__main__":
     kor_quiz()
