@@ -302,17 +302,17 @@
 
 <div class="container">
     <header>
-        <h1>Programmering 1 (Python) – Teoriprov & Kodlabb</h1>
-        <p>JENSEN Education – Teori och lektionsspecifika kodövningar med direkt testkörning!</p>
+        <h1>Programmering 1 (Python) – Teoriprov & Lektionskodlabb</h1>
+        <p>JENSEN Education – Teori och flera kodövningar för varje lektion (1–9) + Blandade övningar!</p>
     </header>
 
     <div class="controls-card">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-            <strong>Välj träningsläge / Lektion:</strong>
+            <strong>Välj lektion eller träningsläge:</strong>
             <button class="secondary-btn" style="padding:5px 10px; font-size:0.8rem;" onclick="shuffleCurrentQuiz()">🔀 Blanda frågor</button>
         </div>
         <div class="filter-group">
-            <button class="filter-btn active" onclick="selectCategory('ALL', this)">Alla (Teori + Kod)</button>
+            <button class="filter-btn active" onclick="selectCategory('ALL', this)">Alla (1–9)</button>
             <button class="filter-btn" onclick="selectCategory('EXAM', this)">⚡ Slutprovsläge (20 slumpade)</button>
             <button class="filter-btn" onclick="selectCategory('L1', this)">Lektion 1</button>
             <button class="filter-btn" onclick="selectCategory('L2', this)">Lektion 2</button>
@@ -323,6 +323,7 @@
             <button class="filter-btn" onclick="selectCategory('L7', this)">Lektion 7</button>
             <button class="filter-btn" onclick="selectCategory('L8', this)">Lektion 8</button>
             <button class="filter-btn" onclick="selectCategory('L9', this)">Lektion 9</button>
+            <button class="filter-btn" onclick="selectCategory('BLANDAT', this)">🔀 Blandade kodövningar</button>
         </div>
     </div>
 
@@ -390,19 +391,13 @@ const allQuestions = [
         explanation: "Maskinkod består av ettor och nollor som hårdvaran direkt förstår."
     },
     {
-        cat: "L1", lesson: "Lektion 1 – Teori",
-        q: "Vad är skillnaden mellan en interpretator och en kompilator?",
-        code: "", options: ["En interpretator tolkar koden rad för rad under körning, medan en kompilator översätter hela programmet i förväg", "En kompilator används bara i Python", "En interpretator skapar alltid en .exe-fil", "Det betyder samma sak"], answer: 0,
-        explanation: "Python är ett tolkande (interpreterat) språk."
-    },
-    {
-        cat: "L1", lesson: "Lektion 1 – Kodlabb",
+        cat: "L1", lesson: "Lektion 1 – Kodlabb 1",
         q: "Skriv kod som skriver ut texten 'Hej Jensen!' på skärmen med print().",
         code: "", type: "code", keywords: ["print", "Hej Jensen!"],
         explanation: "Rätt syntax:\nprint(\"Hej Jensen!\")"
     },
     {
-        cat: "L1", lesson: "Lektion 1 – Kodlabb",
+        cat: "L1", lesson: "Lektion 1 – Kodlabb 2",
         q: "Skriv kod som skriver ut ditt namn med hjälp av print().",
         code: "", type: "code", keywords: ["print"],
         explanation: "Rätt syntax:\nprint(\"Ditt Namn\")"
@@ -416,16 +411,16 @@ const allQuestions = [
         explanation: "Variabelnamn får innehålla understreck (_) och siffror, men inte börja med en siffra eller innehålla mellanslag."
     },
     {
-        cat: "L2", lesson: "Lektion 2 – Teori",
-        q: "Vilken datatyp får variabeln x i koden: x = 13.5",
-        code: "", options: ["int", "float", "str", "bool"], answer: 1,
-        explanation: "Tal med decimalpunkt är av datatypen float."
-    },
-    {
-        cat: "L2", lesson: "Lektion 2 – Kodlabb",
+        cat: "L2", lesson: "Lektion 2 – Kodlabb 1",
         q: "Skapa en variabel som heter 'kurs' och tilldela den strängen 'Programmering 1', skriv sedan ut den.",
         code: "", type: "code", keywords: ["kurs", "=", "print"],
         explanation: "Rätt syntax:\nkurs = \"Programmering 1\"\nprint(kurs)"
+    },
+    {
+        cat: "L2", lesson: "Lektion 2 – Kodlabb 2",
+        q: "Skapa två variabler, 'tal1' med värdet 10 och 'tal2' med värdet 5, och skriv ut deras summa.",
+        code: "", type: "code", keywords: ["tal1", "tal2", "+", "print"],
+        explanation: "Rätt syntax:\ntal1 = 10\ntal2 = 5\nprint(tal1 + tal2)"
     },
 
     // --- LEKTION 3 ---
@@ -436,13 +431,13 @@ const allQuestions = [
         explanation: "Operatorn // utför heltalsdivision och kastar bort eventuella decimaler."
     },
     {
-        cat: "L3", lesson: "Lektion 3 – Teori",
-        q: "Vad beräknar uttrycket 2 ** 3 i Python?",
-        code: "", options: ["2 gånger 3", "2 upphöjt till 3 (8)", "2 dividerat med 3", "Resten av 2 / 3"], answer: 1,
-        explanation: "** är potensoperatorn (2 * 2 * 2 = 8)."
+        cat: "L3", lesson: "Lektion 3 – Kodlabb 1",
+        q: "Skriv kod som beräknar produkten av 12 och 13 och skriver ut resultatet med print().",
+        code: "", type: "code", keywords: ["print", "12", "13", "*"],
+        explanation: "Rätt syntax:\nprint(12 * 13)"
     },
     {
-        cat: "L3", lesson: "Lektion 3 – Kodlabb",
+        cat: "L3", lesson: "Lektion 3 – Kodlabb 2",
         q: "Skriv kod som räknar ut resten av 17 delat med 4 med modulo-operatorn (%) och skriver ut det.",
         code: "", type: "code", keywords: ["print", "17", "%", "4"],
         explanation: "Rätt syntax:\nprint(17 % 4)"
@@ -456,13 +451,13 @@ const allQuestions = [
         explanation: "input() ger alltid en sträng, varför man ofta behöver konvertera med int() eller float()."
     },
     {
-        cat: "L4", lesson: "Lektion 4 – Teori",
-        q: "Vilka tal genererar funktionen range(1, 6)?",
-        code: "", options: ["1, 2, 3, 4, 5, 6", "0, 1, 2, 3, 4, 5", "1, 2, 3, 4, 5", "2, 3, 4, 5"], answer: 2,
-        explanation: "Startvärdet 1 ingår, men slutvärdet (6) inkluderas ej."
+        cat: "L4", lesson: "Lektion 4 – Kodlabb 1",
+        q: "Skriv kod som frågar användaren efter namn med input() och sparar i variabeln 'namn'.",
+        code: "", type: "code", keywords: ["namn", "input"],
+        explanation: "Rätt syntax:\nnamn = input(\"Vad heter du? \")"
     },
     {
-        cat: "L4", lesson: "Lektion 4 – Kodlabb",
+        cat: "L4", lesson: "Lektion 4 – Kodlabb 2",
         q: "Skriv kod som frågar efter ålder med input(), konverterar till heltal med int() och sparar i 'ålder'.",
         code: "", type: "code", keywords: ["input", "int", "ålder"],
         explanation: "Rätt syntax:\nålder = int(input(\"Ålder: \"))"
@@ -476,16 +471,16 @@ const allQuestions = [
         explanation: "== används för jämförelse, medan enkelt = används för tilldelning."
     },
     {
-        cat: "L5", lesson: "Lektion 5 – Teori",
-        q: "Vilket nyckelord används för flera alternativa villkor efter en if?",
-        code: "", options: ["else if", "elif", "case", "elseif"], answer: 1,
-        explanation: "I Python förkortas else if till elif."
-    },
-    {
-        cat: "L5", lesson: "Lektion 5 – Kodlabb",
+        cat: "L5", lesson: "Lektion 5 – Kodlabb 1",
         q: "Skriv en if-sats som kollar om 'poäng' är >= 50. Om sant, skriv ut 'Godkänt'.",
         code: "", type: "code", keywords: ["if", "poäng", ">=", "print", "Godkänt"],
         explanation: "Rätt syntax:\nif poäng >= 50:\n    print(\"Godkänt\")"
+    },
+    {
+        cat: "L5", lesson: "Lektion 5 – Kodlabb 2",
+        q: "Skriv en if/else-sats som kollar om 'svar == \"ja\"'. Om sant skriv ut 'Rätt', annars 'Fel'.",
+        code: "", type: "code", keywords: ["if", "else", "print"],
+        explanation: "Rätt syntax:\nif svar == \"ja\":\n    print(\"Rätt\")\nelse:\n    print(\"Fel\")"
     },
 
     // --- LEKTION 6 ---
@@ -496,16 +491,16 @@ const allQuestions = [
         explanation: "En while-loop fortsätter så länge villkoret är True."
     },
     {
-        cat: "L6", lesson: "Lektion 6 – Teori",
-        q: "Varför uppstår en oändlig loop om räknaren inte uppdateras?",
-        code: "", options: ["Villkoret förblir True för evigt", "Python kraschar direkt", "Print saknas", "Ingen anledning"], answer: 0,
-        explanation: "Om villkoret aldrig ändras till False körs loopen i oändlighet."
-    },
-    {
-        cat: "L6", lesson: "Lektion 6 – Kodlabb",
+        cat: "L6", lesson: "Lektion 6 – Kodlabb 1",
         q: "Skriv en while-loop som körs så länge 'x < 3' och skriver ut x.",
         code: "", type: "code", keywords: ["while", "x < 3", "print"],
         explanation: "Rätt syntax:\nx = 0\nwhile x < 3:\n    print(x)\n    x += 1"
+    },
+    {
+        cat: "L6", lesson: "Lektion 6 – Kodlabb 2",
+        q: "Skriv en for-loop med range(1, 6) som skriver ut alla tal från 1 till 5.",
+        code: "", type: "code", keywords: ["for", "range(1, 6)", "print"],
+        explanation: "Rätt syntax:\nfor i in range(1, 6):\n    print(i)"
     },
 
     // --- LEKTION 7 ---
@@ -516,16 +511,16 @@ const allQuestions = [
         explanation: "append() lägger till elementet längst bak i listan."
     },
     {
-        cat: "L7", lesson: "Lektion 7 – Teori",
-        q: "Hur tar man bort ett element baserat på dess INDEX?",
-        code: "", options: ["pop(index)", "remove(index)", "clear(index)", "delete(index)"], answer: 0,
-        explanation: "pop(index) tar bort via indexnummer."
-    },
-    {
-        cat: "L7", lesson: "Lektion 7 – Kodlabb",
+        cat: "L7", lesson: "Lektion 7 – Kodlabb 1",
         q: "Skriv kod som skapar en tom lista 'frukter', och lägger till strängen 'Äpple' med append().",
         code: "", type: "code", keywords: ["frukter", "[]", "append", "Äpple"],
         explanation: "Rätt syntax:\nfrukter = []\nfrukter.append(\"Äpple\")"
+    },
+    {
+        cat: "L7", lesson: "Lektion 7 – Kodlabb 2",
+        q: "Givet listan 'bilar', skriv kod som tar bort det första elementet (index 0) med pop().",
+        code: "bilar = ['Volvo', 'Saab', 'BMW']", type: "code", keywords: ["bilar", "pop", "0"],
+        explanation: "Rätt syntax:\nbilar.pop(0)"
     },
 
     // --- LEKTION 8 ---
@@ -536,16 +531,16 @@ const allQuestions = [
         explanation: "Slicing [1:4] tar index 1, 2 och 3 (index 4 inkluderas ej)."
     },
     {
-        cat: "L8", lesson: "Lektion 8 – Teori",
-        q: "Hur beräknar man kvadratroten ur 64 efter 'import math'?",
-        code: "", options: ["math.sqrt(64)", "math.root(64)", "math.pow(64)", "sqrt(64)"], answer: 0,
-        explanation: "math.sqrt() beräknar kvadratroten."
-    },
-    {
-        cat: "L8", lesson: "Lektion 8 – Kodlabb",
+        cat: "L8", lesson: "Lektion 8 – Kodlabb 1",
         q: "Givet listan tal = [10, 20, 30, 40, 50], skriv kod som plockar ut [20, 30, 40] med slicing.",
         code: "tal = [10, 20, 30, 40, 50]", type: "code", keywords: ["tal", "[1:4]"],
         explanation: "Rätt syntax:\ndellista = tal[1:4]"
+    },
+    {
+        cat: "L8", lesson: "Lektion 8 – Kodlabb 2",
+        q: "Skriv kod som importerar math-modulen och beräknar kvadratroten ur 64.",
+        code: "", type: "code", keywords: ["import", "math", "sqrt", "64"],
+        explanation: "Rätt syntax:\nimport math\nprint(math.sqrt(64))"
     },
 
     // --- LEKTION 9 ---
@@ -556,16 +551,30 @@ const allQuestions = [
         explanation: "Funktioner definieras med nyckelordet def."
     },
     {
-        cat: "L9", lesson: "Lektion 9 – Teori",
-        q: "Vad händer om en funktion saknar en return-sats?",
-        code: "", options: ["Den kraschar", "Den returnerar automatiskt None", "Den returnerar 0", "Den körs inte"], answer: 1,
-        explanation: "Funktioner som saknar return returnerar värdet None."
-    },
-    {
-        cat: "L9", lesson: "Lektion 9 – Kodlabb",
+        cat: "L9", lesson: "Lektion 9 – Kodlabb 1",
         q: "Skriv en funktion som heter 'plus' som tar emot två parametrar (a och b) och returnerar summan.",
         code: "# Exempel på anrop:\n# print(plus(3, 4)) -> ska ge 7", type: "code", keywords: ["def", "plus", "return", "+"],
         explanation: "Rätt syntax:\ndef plus(a, b):\n    return a + b"
+    },
+    {
+        cat: "L9", lesson: "Lektion 9 – Kodlabb 2",
+        q: "Skriv en funktion 'kolla_tal' som tar in x. Om x > 10 ska den returnera 'Stort', annars 'Litet'.",
+        code: "", type: "code", keywords: ["def", "kolla_tal", "if", "return", "Stort", "Litet"],
+        explanation: "Rätt syntax:\ndef kolla_tal(x):\n    if x > 10:\n        return \"Stort\"\n    else:\n        return \"Litet\""
+    },
+
+    // --- BLANDADE KODÖVNINGAR ---
+    {
+        cat: "BLANDAT", lesson: "Blandad kodövning 1",
+        q: "Skriv en for-loop som skriver ut alla jämna tal från 0 till 10 (använd range med steg 2).",
+        code: "", type: "code", keywords: ["for", "range(0, 11, 2)", "print"],
+        explanation: "Rätt syntax:\nfor i in range(0, 11, 2):\n    print(i)"
+    },
+    {
+        cat: "BLANDAT", lesson: "Blandad kodövning 2",
+        q: "Skriv en funktion 'berakna_area' som tar in bas och hojd, och returnerar arean (bas * hojd / 2).",
+        code: "", type: "code", keywords: ["def", "berakna_area", "return", "*", "/"],
+        explanation: "Rätt syntax:\ndef berakna_area(bas, hojd):\n    return (bas * hojd) / 2"
     }
 ];
 
